@@ -1,11 +1,19 @@
-;; shadow-cljs configuration
 {:source-paths
- ["src/dev"
-  "src/main"
-  "src/test"]
+ ["src"]
 
  :dependencies
  [[reagent "1.1.0"]]
 
+ :npm-deps {:react "18.2.0" ; use the specific version numbers from your package.json
+            :react-dom "18.2.0"}
+ :js-options {:js-provider :require}
+
  :builds
- {}}
+ {:app
+  {:target :browser
+   :output-dir "public/js"
+   :asset-path "/js"
+   :modules {:main {:init-fn app.core/main}}
+   :devtools {:http-root "public"
+              :http-port 3000
+              :browser-repl true}}}}
