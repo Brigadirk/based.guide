@@ -1,0 +1,1609 @@
+; This is the Calva evaluation results output window.
+; TIPS: The keyboard shortcut `ctrl+alt+o o` shows and focuses this window
+;   when connected to a REPL session.
+; Please see https://calva.io/output/ for more info.
+; Happy coding! ♥️
+
+; Jacking in...
+; Connecting using "joyride" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Using host:port localhost:56961 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+; nREPL Connection was closed
+; Connecting using "ClojureScript nREPL Server" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Connecting ...
+; Reading port file: file:///Users/dirk/Documents/Code/basedguide/.nrepl-port ...
+; No nrepl port file found.
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉shadow.user꞉>  ; Use `alt+enter` to evaluate
+clj꞉shadow.user꞉>
+; Creating cljs repl session...
+; Connecting cljs repl: ClojureScript nREPL Server...
+;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+; Syntax error compiling at (.calva/output-window/output.calva-repl:41:6).
+; Unable to resolve symbol: require in this context
+cljs꞉cljs.user꞉>  ; Use `alt+enter` to evaluate
+; Syntax error (ClassNotFoundException) compiling at (src/app/projects.cljs:18:3).
+; app.filereader
+;
+; Syntax error reading source at (REPL:18:57).
+; Unmatched delimiter: )
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:17:1).
+; ((:require-macros [app.filereader :refer [slurp-all]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+;
+; Syntax error compiling at (src/app/projects.cljs:21:3).
+; Unable to resolve symbol: slurp-all in this context
+;
+; Syntax error compiling at (src/app/projects.cljs:23:1).
+; Unable to resolve symbol: println in this context
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:17:1).
+; ((:require-macros [app.filereader :refer [slurp-all]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+;
+; Syntax error compiling at (src/app/projects.cljs:21:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/core.cljs:22:4).
+; No such namespace: projects
+cljs꞉app.core꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:17:1).
+; ((:require-macros [app.filereader :refer [slurp-all]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+;
+; Syntax error compiling at (src/app/projects.cljs:21:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:21:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+; Syntax error reading source at (REPL:21:1).
+; Invalid token: /bases/
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:21:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+; Syntax error reading source at (REPL:21:1).
+; Invalid token: /public/bases/
+cljs꞉app.projects꞉>
+; Syntax error reading source at (REPL:21:1).
+; Invalid token: /public/bases/
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:21:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:21:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+; Syntax error reading source at (REPL:21:1).
+; Invalid token: /public/bases/
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:21:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:21:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+#'app.core/logo
+cljs꞉app.core꞉>
+#'app.core/nav-bar
+cljs꞉app.core꞉>
+; Syntax error compiling at (src/app/core.cljs:21:4).
+; No such namespace: projects
+cljs꞉app.core꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:17:1).
+; ((:require-macros [app.filereader :refer [slurp-all]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+;
+; Syntax error compiling at (src/app/projects.cljs:21:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [slurp-all]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+;
+; Syntax error compiling at (src/app/projects.cljs:21:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+#'app.filereader/slurp-all
+clj꞉app.filereader꞉>
+#'app.filereader/slurp-all
+clj꞉app.filereader꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [slurp-all]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+;
+; Syntax error compiling at (src/app/projects.cljs:21:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:21:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "shadow-cljs" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Starting Jack-in Terminal: pushd /Users/dirk/Documents/Code/basedguide ; npx shadow-cljs -d cider/cider-nrepl:0.28.5 watch :app ; popd
+; Interrupting Jack-in process.
+; Connecting using "ClojureScript nREPL Server" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Connecting ...
+; Reading port file: file:///Users/dirk/Documents/Code/basedguide/.nrepl-port ...
+; No nrepl port file found.
+; Bad url: localhost:
+; Jacking in...
+; Connecting using "shadow-cljs" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Starting Jack-in Terminal: pushd /Users/dirk/Documents/Code/basedguide ; npx shadow-cljs -d cider/cider-nrepl:0.28.5 watch :app ; popd
+; Interrupting Jack-in process.
+; Connecting using "ClojureScript nREPL Server" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Connecting ...
+; Reading port file: file:///Users/dirk/Documents/Code/basedguide/.nrepl-port ...
+; No nrepl port file found.
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉shadow.user꞉>
+clj꞉shadow.user꞉>
+; Creating cljs repl session...
+; Connecting cljs repl: ClojureScript nREPL Server...
+;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+; Syntax error compiling at (.calva/output-window/output.calva-repl:178:6).
+; Unable to resolve symbol: require in this context
+cljs꞉cljs.user꞉>
+#'app.filereader/slurp-all
+clj꞉app.filereader꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [slurp-all]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+;
+; Syntax error compiling at (src/app/projects.cljs:5:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+; Execution error (FileNotFoundException) at app.core/eval11637$loading (REPL:1).
+; Could not locate reagent/dom__init.class, reagent/dom.clj or reagent/dom.cljc on classpath.
+;
+; Syntax error compiling at (src/app/core.cljs:21:4).
+; No such namespace: projects
+;
+; Syntax error compiling at (src/app/core.cljs:31:17).
+; No such namespace: js
+cljs꞉app.core꞉>
+; Execution error (FileNotFoundException) at app.core/eval11658$loading (REPL:1).
+; Could not locate reagent/dom__init.class, reagent/dom.clj or reagent/dom.cljc on classpath.
+cljs꞉app.core꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros (quote [app.filereader :refer [slurp-all]]))) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+;
+; Syntax error compiling at (src/app/projects.cljs:5:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros (quote [app.filereader :refer [slurp-all]]))) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [slurp-all]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [slurp-all]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+cljs꞉app.projects꞉>
+; Syntax error (ClassNotFoundException) compiling at (src/app/projects.cljs:2:1).
+; app.filereader
+cljs꞉app.projects꞉>
+; Syntax error (ClassNotFoundException) compiling at (src/app/projects.cljs:3:1).
+; app.filereader
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [slurp-all]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [slurp-all]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+cljs꞉app.projects꞉>
+#'app.projects/project-list
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:5:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [slurp-all]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+;
+; Syntax error compiling at (src/app/projects.cljs:5:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+; nREPL Connection was closed
+; Connecting using "ClojureScript nREPL Server" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Connecting ...
+; Reading port file: file:///Users/dirk/Documents/Code/basedguide/.nrepl-port ...
+; No nrepl port file found.
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉shadow.user꞉>
+clj꞉shadow.user꞉>
+; Creating cljs repl session...
+; Connecting cljs repl: ClojureScript nREPL Server...
+;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+; Syntax error compiling at (.calva/output-window/output.calva-repl:276:6).
+; Unable to resolve symbol: require in this context
+cljs꞉cljs.user꞉>
+; Syntax error compiling at (src/app/projects.cljs:5:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:0:0).
+; Can't take value of a macro: #'app.filereader/slurp-all
+cljs꞉app.projects꞉>
+#'app.projects/project-list
+cljs꞉app.projects꞉>
+#'app.projects/project-list
+cljs꞉app.projects꞉>
+; Syntax error reading source at (REPL:5:1).
+; Invalid token: /bases/
+cljs꞉app.projects꞉>
+#'app.projects/project-list
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:7:1).
+; Unable to resolve symbol: println in this context
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:7:1).
+; Unable to resolve symbol: println in this context
+cljs꞉app.projects꞉>
+; Syntax error (NullPointerException) compiling at (src/app/projects.cljs:5:3).
+; null
+cljs꞉app.projects꞉>
+; Syntax error (NullPointerException) compiling at (src/app/projects.cljs:5:3).
+; null
+cljs꞉app.projects꞉>
+; nREPL Connection was closed
+; Connecting using "ClojureScript nREPL Server" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Connecting ...
+; Reading port file: file:///Users/dirk/Documents/Code/basedguide/.nrepl-port ...
+; No nrepl port file found.
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉shadow.user꞉>
+clj꞉shadow.user꞉>
+; Creating cljs repl session...
+; Connecting cljs repl: ClojureScript nREPL Server...
+;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+; Syntax error compiling at (.calva/output-window/output.calva-repl:327:6).
+; Unable to resolve symbol: require in this context
+cljs꞉cljs.user꞉>
+#'app.projects/project-list
+cljs꞉app.projects꞉>
+#'app.projects/project-list
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:7:1).
+; Unable to resolve symbol: println in this context
+cljs꞉app.projects꞉>
+["static content for testing"]
+cljs꞉app.projects꞉>
+["static content for testing"]
+cljs꞉app.projects꞉>
+["static content for testing"]
+cljs꞉app.projects꞉>
+["static content for testing"]
+cljs꞉app.projects꞉>
+; nREPL Connection was closed
+; Connecting using "ClojureScript nREPL Server" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Connecting ...
+; Reading port file: file:///Users/dirk/Documents/Code/basedguide/.nrepl-port ...
+; No nrepl port file found.
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉shadow.user꞉>
+clj꞉shadow.user꞉>
+; Creating cljs repl session...
+; Connecting cljs repl: ClojureScript nREPL Server...
+;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+; Syntax error compiling at (.calva/output-window/output.calva-repl:374:6).
+; Unable to resolve symbol: require in this context
+cljs꞉cljs.user꞉>
+; Syntax error compiling at (src/app/projects.cljs:0:0).
+; Unable to resolve symbol: project-list in this context
+cljs꞉app.projects꞉>
+#'app.filereader/slurp-all
+clj꞉app.filereader꞉>
+; Syntax error (NullPointerException) compiling at (src/app/filereader.clj:30:1).
+; null
+clj꞉app.filereader꞉>
+[]
+clj꞉app.filereader꞉>
+[]
+clj꞉app.filereader꞉>
+[]
+clj꞉app.filereader꞉>
+[]
+clj꞉app.filereader꞉>
+[]
+clj꞉app.filereader꞉>
+#'app.filereader/parse-front-matter
+clj꞉app.filereader꞉>
+()
+clj꞉app.filereader꞉>
+; Syntax error compiling at (src/app/filereader.clj:19:13).
+; Unable to resolve symbol: dir-path in this context
+clj꞉app.filereader꞉>
+()
+clj꞉app.filereader꞉>
+()
+clj꞉app.filereader꞉>
+; Execution error (NullPointerException) at app.filereader/parse-front-matter$fn (filereader.clj:15).
+; null
+clj꞉app.filereader꞉>
+; Execution error (NullPointerException) at app.filereader/parse-front-matter$fn (filereader.clj:15).
+; null
+clj꞉app.filereader꞉>
+; Execution error (NullPointerException) at app.filereader/parse-front-matter$fn (filereader.clj:15).
+; null
+clj꞉app.filereader꞉>
+; Execution error (NullPointerException) at app.filereader/parse-front-matter$fn (filereader.clj:15).
+; null
+clj꞉app.filereader꞉>
+; Execution error (NullPointerException) at app.filereader/parse-front-matter$fn (filereader.clj:15).
+; null
+clj꞉app.filereader꞉>
+; Execution error (NullPointerException) at app.filereader/parse-front-matter$fn (filereader.clj:15).
+; null
+clj꞉app.filereader꞉>
+; Execution error (NullPointerException) at app.filereader/parse-front-matter$fn (filereader.clj:15).
+; null
+clj꞉app.filereader꞉>
+; Execution error (NullPointerException) at app.filereader/parse-front-matter$fn (filereader.clj:15).
+; null
+clj꞉app.filereader꞉>
+; Execution error (NullPointerException) at app.filereader/parse-front-matter$fn (filereader.clj:15).
+; null
+clj꞉app.filereader꞉>
+; Syntax error compiling at (src/app/filereader.clj:0:0).
+; Unable to resolve symbol: list-of in this context
+clj꞉app.filereader꞉>
+; Syntax error compiling at (src/app/filereader.clj:0:0).
+; Unable to resolve symbol: list-of in this context
+clj꞉app.filereader꞉>
+; Execution error (NullPointerException) at app.filereader/parse-front-matter$fn (filereader.clj:15).
+; null
+clj꞉app.filereader꞉>
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "shadow-cljs" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Starting Jack-in Terminal: pushd /Users/dirk/Documents/Code/basedguide ; npx shadow-cljs -d cider/cider-nrepl:0.28.5 watch :app ; popd
+; Using host:port localhost:57113 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉shadow.user꞉>
+clj꞉shadow.user꞉>
+; Creating cljs repl session...
+; Connecting cljs repl: shadow-cljs...
+;   The Calva Connection Log might have more connection progress information.
+; Syntax error compiling at (src/app/filereader.clj:46:14).
+; Unable to resolve symbol: parse-front-matter in this context
+clj꞉app.filereader꞉>
+; Syntax error compiling at (src/app/filereader.clj:46:1).
+; Unable to resolve symbol: parse-front-matter in this context
+clj꞉app.filereader꞉>
+; Syntax error compiling at (src/app/filereader.clj:46:1).
+; Unable to resolve symbol: parse-front-matter in this context
+clj꞉app.filereader꞉>
+; Please start your ClojureScript app (load it in the browser, or whatever is appropriate) so that Calva can connect to its REPL...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Syntax error compiling at (src/app/filereader.clj:46:1).
+; Unable to resolve symbol: parse-front-matter in this context
+clj꞉app.filereader꞉>
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Timed out waiting for Shadow CLJS runtimes, pretending we are connected.
+; Connected session: cljs, repl: :app
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+nil
+; No available JS runtime.
+; See https://shadow-cljs.github.io/docs/UsersGuide.html#repl-troubleshooting
+clj꞉cljs.user꞉>
+; Jack-in done.
+clj꞉cljs.user꞉>
+; Syntax error reading source at (REPL:26:1).
+; EOF while reading, starting at line 18
+clj꞉app.filereader꞉>
+; Syntax error compiling at (src/app/filereader.clj:26:1).
+; Unable to resolve symbol: parse-front-matter in this context
+clj꞉app.filereader꞉>
+; Syntax error compiling at (src/app/filereader.clj:26:1).
+; Unable to resolve symbol: parse-front-matter in this context
+clj꞉app.filereader꞉>
+; Syntax error compiling at (src/app/filereader.clj:26:1).
+; Unable to resolve symbol: parse-front-matter in this context
+clj꞉app.filereader꞉>
+; Syntax error compiling at (src/app/filereader.clj:26:1).
+; Unable to resolve symbol: parse-front-matter in this context
+clj꞉app.filereader꞉>
+; Syntax error reading source at (REPL:26:1).
+; EOF while reading, starting at line 18
+clj꞉app.filereader꞉>
+[{:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png"}]
+clj꞉app.filereader꞉>
+[{:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png"}]
+clj꞉app.filereader꞉>
+[{:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png"}]
+clj꞉app.filereader꞉>
+[{:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png"}]
+clj꞉app.filereader꞉>
+[{:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png"}]
+clj꞉app.filereader꞉>
+; Syntax error compiling at (src/app/filereader.clj:25:1).
+; Unable to resolve symbol: read-markdown-files in this context
+clj꞉app.filereader꞉>
+()
+clj꞉app.filereader꞉>
+()
+clj꞉app.filereader꞉>
+([{:id 3, :name "Prospera", :image "/images//images/solarpunk2.png"}]
+ [{:id 4, :name "Syndicalist Spain", :image "/images//images/solarpunk.png"}]
+ [{:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png"}]
+ [{:id 2, :name "Dirksland", :image "/images//images/streetview.png"}])
+clj꞉app.filereader꞉>
+; Syntax error compiling at (src/app/filereader.clj:33:1).
+; Unable to resolve symbol: slurp-all in this context
+clj꞉app.filereader꞉>
+[{:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png"}]
+clj꞉app.filereader꞉>
+[{:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png"}]
+clj꞉app.filereader꞉>
+([{:id 3, :name "Prospera", :image "/images//images/solarpunk2.png"}]
+ [{:id 4, :name "Syndicalist Spain", :image "/images//images/solarpunk.png"}]
+ [{:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png"}]
+ [{:id 2, :name "Dirksland", :image "/images//images/streetview.png"}])
+clj꞉app.filereader꞉>
+([{:id 3, :name "Prospera", :image "/images//images/solarpunk2.png"}]
+ [{:id 4, :name "Syndicalist Spain", :image "/images//images/solarpunk.png"}]
+ [{:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png"}]
+ [{:id 2, :name "Dirksland", :image "/images//images/streetview.png"}])
+clj꞉app.filereader꞉>
+; Execution error (ArityException) at app.filereader/eval18435 (REPL:24).
+; Wrong number of args (3) passed to: clojure.lang.PersistentVector
+clj꞉app.filereader꞉>
+; Execution error (ArityException) at app.filereader/eval18448 (REPL:24).
+; Wrong number of args (3) passed to: clojure.lang.PersistentVector
+clj꞉app.filereader꞉>
+; Execution error (ArityException) at app.filereader/eval18450 (REPL:24).
+; Wrong number of args (3) passed to: clojure.lang.PersistentVector
+clj꞉app.filereader꞉>
+[{:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png"}]
+clj꞉app.filereader꞉>
+; Execution error (ArityException) at app.filereader/eval18466 (REPL:24).
+; Wrong number of args (3) passed to: clojure.lang.PersistentVector
+clj꞉app.filereader꞉>
+#'app.filereader/parsed-result
+clj꞉app.filereader꞉>
+{:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png", :tags (:solarpunk :project)}
+clj꞉app.filereader꞉>
+; Execution error (ArityException) at app.filereader/eval18479 (REPL:25).
+; Wrong number of args (3) passed to: clojure.lang.PersistentVector
+clj꞉app.filereader꞉>
+; Execution error (ArityException) at nrepl.middleware.interruptible-eval/evaluate$fn$fn (interruptible_eval.clj:87).
+; Wrong number of args (3) passed to: clojure.lang.PersistentVector
+clj꞉app.filereader꞉>
+#'app.filereader/parsed-results
+clj꞉app.filereader꞉>
+[{:id 3, :name "Prospera", :image "/images//images/solarpunk2.png", :tags (:solarpunk :project)}
+ {:id 4, :name "Syndicalist Spain", :image "/images//images/solarpunk.png", :tags (:solarpunk :project)}
+ {:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png", :tags (:solarpunk :project)}
+ {:id 2, :name "Dirksland", :image "/images//images/streetview.png", :tags (:solarpunk :project)}]
+clj꞉app.filereader꞉>
+[{:id 3, :name "Prospera", :image "/images//images/solarpunk2.png", :tags nil}
+ {:id 4, :name "Syndicalist Spain", :image "/images//images/solarpunk.png", :tags nil}
+ {:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png", :tags nil}
+ {:id 2, :name "Dirksland", :image "/images//images/streetview.png", :tags nil}]
+clj꞉app.filereader꞉>
+; nREPL Connection was closed
+; Connecting using "ClojureScript nREPL Server" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Connecting ...
+; Reading port file: file:///Users/dirk/Documents/Code/basedguide/.nrepl-port ...
+; No nrepl port file found.
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉shadow.user꞉>
+clj꞉shadow.user꞉>
+; Creating cljs repl session...
+; Connecting cljs repl: ClojureScript nREPL Server...
+;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+; Syntax error compiling at (.calva/output-window/output.calva-repl:624:6).
+; Unable to resolve symbol: require in this context
+cljs꞉cljs.user꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [slurp-all]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [slurp-all]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+;
+; Syntax error compiling at (src/app/projects.cljs:5:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+[{:id 3, :name "Prospera", :image "/images//images/solarpunk2.png", :tags nil} {:id 4, :name "Syndicalist Spain", :image "/images//images/solarpunk.png", :tags nil} {:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png", :tags nil} {:id 2, :name "Dirksland", :image "/images//images/streetview.png", :tags nil}]
+clj꞉app.filereader꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [slurp-all]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+;
+; Syntax error compiling at (src/app/projects.cljs:5:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [slurp-all]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+cljs꞉app.projects꞉>
+; nREPL Connection was closed
+; Connecting using "ClojureScript nREPL Server" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Connecting ...
+; Reading port file: file:///Users/dirk/Documents/Code/basedguide/.nrepl-port ...
+; No nrepl port file found.
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉shadow.user꞉>
+clj꞉shadow.user꞉>
+; Creating cljs repl session...
+; Connecting cljs repl: ClojureScript nREPL Server...
+;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+; Syntax error compiling at (.calva/output-window/output.calva-repl:676:6).
+; Unable to resolve symbol: require in this context
+cljs꞉cljs.user꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [read-markdown-files]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [read-markdown-files]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+;
+; Syntax error compiling at (src/app/projects.cljs:5:3).
+; Unable to resolve symbol: read-markdown-files in this context
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [slurp-all]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+;
+; Syntax error compiling at (src/app/projects.cljs:5:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/filereader.clj:0:0).
+; No such namespace: public
+clj꞉app.filereader꞉>
+[{:id 3, :name "Prospera", :image "/images//images/solarpunk2.png", :tags nil} {:id 4, :name "Syndicalist Spain", :image "/images//images/solarpunk.png", :tags nil} {:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png", :tags nil} {:id 2, :name "Dirksland", :image "/images//images/streetview.png", :tags nil}]
+clj꞉app.filereader꞉>
+[{:id 3, :name "Prospera", :image "/images//images/solarpunk2.png", :tags (:solarpunk :project)} {:id 4, :name "Syndicalist Spain", :image "/images//images/solarpunk.png", :tags (:solarpunk :project)} {:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png", :tags (:solarpunk :project)} {:id 2, :name "Dirksland", :image "/images//images/streetview.png", :tags (:solarpunk :project)}]
+clj꞉app.filereader꞉>
+#'app.filereader/slurp-all
+clj꞉app.filereader꞉>
+[{:id 3, :name "Prospera", :image "/images//images/solarpunk2.png", :tags nil} {:id 4, :name "Syndicalist Spain", :image "/images//images/solarpunk.png", :tags nil} {:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png", :tags nil} {:id 2, :name "Dirksland", :image "/images//images/streetview.png", :tags nil}]
+clj꞉app.filereader꞉>
+#'app.filereader/slurp-all
+clj꞉app.filereader꞉>
+; Syntax error macroexpanding slurp-all at (src/app/filereader.clj:28:1).
+; Attempting to call unbound fn: #'clojure.core/unquote
+clj꞉app.filereader꞉>
+[{:id 3, :name "Prospera", :image "/images//images/solarpunk2.png", :tags nil} {:id 4, :name "Syndicalist Spain", :image "/images//images/solarpunk.png", :tags nil} {:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png", :tags nil} {:id 2, :name "Dirksland", :image "/images//images/streetview.png", :tags nil}]
+clj꞉app.filereader꞉>
+[]
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [slurp-all]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+;
+; Syntax error compiling at (src/app/projects.cljs:5:3).
+; Unable to resolve symbol: slurp-all in this context
+cljs꞉app.projects꞉>
+[{:id 3, :name "Prospera", :image "/images//images/solarpunk2.png", :tags nil} {:id 4, :name "Syndicalist Spain", :image "/images//images/solarpunk.png", :tags nil} {:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png", :tags nil} {:id 2, :name "Dirksland", :image "/images//images/streetview.png", :tags nil}]
+clj꞉app.filereader꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [slurp-all]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+cljs꞉app.projects꞉>
+; nREPL Connection was closed
+; Connecting using "ClojureScript nREPL Server" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Connecting ...
+; Reading port file: file:///Users/dirk/Documents/Code/basedguide/.nrepl-port ...
+; No nrepl port file found.
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉shadow.user꞉>
+clj꞉shadow.user꞉>
+; Creating cljs repl session...
+; Connecting cljs repl: ClojureScript nREPL Server...
+;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+; Syntax error compiling at (.calva/output-window/output.calva-repl:754:6).
+; Unable to resolve symbol: require in this context
+cljs꞉cljs.user꞉>
+; Syntax error compiling at (src/app/projects.cljs:0:0).
+; Unable to resolve symbol: project-list in this context
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [read-md-files]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+cljs꞉app.projects꞉>
+[{:id 3, :name "Prospera", :image "/images//images/solarpunk2.png", :tags (:solarpunk :project)} {:id 4, :name "Syndicalist Spain", :image "/images//images/solarpunk.png", :tags (:solarpunk :project)} {:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png", :tags (:solarpunk :project)} {:id 2, :name "Dirksland", :image "/images//images/streetview.png", :tags (:solarpunk :project)}]
+clj꞉app.filereader꞉>
+[{:id 3, :name "Prospera", :image "/images//images/solarpunk2.png", :tags (:solarpunk :project)} {:id 4, :name "Syndicalist Spain", :image "/images//images/solarpunk.png", :tags (:solarpunk :project)} {:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png", :tags (:solarpunk :project)} {:id 2, :name "Dirksland", :image "/images//images/streetview.png", :tags (:solarpunk :project)}]
+clj꞉app.filereader꞉>
+[{:id 3, :name "Prospera", :image "/images//images/solarpunk2.png", :tags (:solarpunk :project)} {:id 4, :name "Syndicalist Spain", :image "/images//images/solarpunk.png", :tags (:solarpunk :project)} {:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png", :tags (:solarpunk :project)} {:id 2, :name "Dirksland", :image "/images//images/streetview.png", :tags (:solarpunk :project)}]
+clj꞉app.filereader꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [read-md-files]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:0:0).
+; Unable to resolve symbol: read-md-files in this context
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:5:3).
+; Unable to resolve symbol: read-md-files in this context
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [read-md-files]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+;
+; Syntax error compiling at (src/app/projects.cljs:5:3).
+; Unable to resolve symbol: read-md-files in this context
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:5:3).
+; Unable to resolve symbol: read-md-files in this context
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [read-md-files]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+;
+; Syntax error compiling at (src/app/projects.cljs:5:3).
+; Unable to resolve symbol: read-md-files in this context
+cljs꞉app.projects꞉>
+; nREPL Connection was closed
+; Connecting using "undefined" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Aborting connect, error determining connect sequence.
+; Connecting using "ClojureScript nREPL Server" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Connecting ...
+; Reading port file: file:///Users/dirk/Documents/Code/basedguide/.nrepl-port ...
+; No nrepl port file found.
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉shadow.user꞉>
+clj꞉shadow.user꞉>
+; Creating cljs repl session...
+; Connecting cljs repl: ClojureScript nREPL Server...
+;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+; Syntax error compiling at (.calva/output-window/output.calva-repl:827:6).
+; Unable to resolve symbol: require in this context
+cljs꞉cljs.user꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [read-md-files]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+;
+; Syntax error compiling at (src/app/projects.cljs:5:3).
+; Unable to resolve symbol: read-md-files in this context
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding clojure.core/ns at (src/app/projects.cljs:1:1).
+; ((:require-macros [app.filereader :refer [read-md-files]])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+cljs꞉app.projects꞉>
+#'app.projects/project-list
+cljs꞉app.projects꞉>
+[]
+cljs꞉app.projects꞉>
+[]
+cljs꞉app.projects꞉>
+; Syntax error (ArityException) compiling at (src/app/projects.cljs:8:3).
+; Wrong number of args (0) passed to: clojure.lang.PersistentVector
+cljs꞉app.projects꞉>
+; Syntax error (ArityException) compiling at (src/app/projects.cljs:8:3).
+; Wrong number of args (0) passed to: clojure.lang.PersistentVector
+cljs꞉app.projects꞉>
+; Syntax error (ArityException) compiling at (src/app/projects.cljs:8:3).
+; Wrong number of args (0) passed to: clojure.lang.PersistentVector
+cljs꞉app.projects꞉>
+#'app.filereader/read-md-files
+clj꞉app.filereader꞉>
+; Execution error (ArityException) at app.filereader/read-md-files (filereader.clj:21).
+; Wrong number of args (0) passed to: clojure.lang.PersistentVector
+clj꞉app.filereader꞉>
+; Unexpected error (ClassCastException) macroexpanding read-md-files at (src/app/filereader.clj:23:1).
+; class java.lang.String cannot be cast to class clojure.lang.IFn (java.lang.String is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉app.filereader꞉>
+[{:id 3, :name "Prospera", :image "/images//images/solarpunk2.png", :tags (:solarpunk :project)} {:id 4, :name "Syndicalist Spain", :image "/images//images/solarpunk.png", :tags (:solarpunk :project)} {:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png", :tags (:solarpunk :project)} {:id 2, :name "Dirksland", :image "/images//images/streetview.png", :tags (:solarpunk :project)}]
+clj꞉app.filereader꞉>
+; nREPL Connection was closed
+; Connecting using "ClojureScript nREPL Server" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Connecting ...
+; Reading port file: file:///Users/dirk/Documents/Code/basedguide/.nrepl-port ...
+; No nrepl port file found.
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉shadow.user꞉>
+clj꞉shadow.user꞉>
+; Creating cljs repl session...
+; Connecting cljs repl: ClojureScript nREPL Server...
+;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+; Syntax error compiling at (.calva/output-window/output.calva-repl:893:6).
+; Unable to resolve symbol: require in this context
+cljs꞉cljs.user꞉>
+; WARNING: slurp already refers to: #'clojure.core/slurp in namespace: app.testslurp, being replaced by: #'app.slurper/slurp
+;
+; Unexpected error (FileNotFoundException) macroexpanding slurp at (src/app/testslurp.cljs:6:3).
+; projects.clj (No such file or directory)
+cljs꞉app.testslurp꞉>
+; WARNING: slurp already refers to: #'clojure.core/slurp in namespace: app.testslurp, being replaced by: #'app.slurper/slurp
+;
+; Unexpected error (FileNotFoundException) macroexpanding slurp at (src/app/testslurp.cljs:6:3).
+; projects.clj (No such file or directory)
+cljs꞉app.testslurp꞉>
+#object[clojure.lang.Var$Unbound 0x222f922 "Unbound: #'app.testslurp/project-clj"]
+cljs꞉app.testslurp꞉>
+; WARNING: slurp already refers to: #'clojure.core/slurp in namespace: app.testslurp, being replaced by: #'app.slurper/slurp
+;
+; Unexpected error (FileNotFoundException) macroexpanding slurp at (src/app/testslurp.cljs:6:3).
+; projects.clj (No such file or directory)
+cljs꞉app.testslurp꞉>
+"---\nid: 1\nname: Ancap Tokyo\nlogo: images/ancaptokyo.png\ntags: [solarpunk, project]\n---\n\n# Ancap Tokyo\n\nLalalal\n"
+; WARNING: slurp already refers to: #'clojure.core/slurp in namespace: app.testslurp, being replaced by: #'app.slurper/slurp
+cljs꞉app.testslurp꞉>
+; Syntax error compiling at (src/app/projects.cljs:52:1).
+; Unable to resolve symbol: read-markdown-files in this context
+cljs꞉app.projects꞉>
+; WARNING: slurp already refers to: #'clojure.core/slurp in namespace: app.projects, being replaced by: #'app.slurper/slurp
+;
+; Syntax error compiling at (src/app/projects.cljs:46:13).
+; No such namespace: js
+;
+; Execution error (IllegalStateException) at app.projects/eval12552 (REPL:52).
+; Attempting to call unbound fn: #'app.projects/read-markdown-files
+cljs꞉app.projects꞉>
+; Execution error (IllegalStateException) at app.projects/eval12554 (REPL:25).
+; Attempting to call unbound fn: #'app.projects/read-markdown-files
+cljs꞉app.projects꞉>
+"---\nid: 1\nname: Ancap Tokyo\nlogo: images/ancaptokyo.png\ntags: [solarpunk, project]\n---\n\n# Ancap Tokyo\n\nLalalal\n"
+cljs꞉app.testslurp꞉>
+; Execution error (IllegalStateException) at app.projects/eval12576 (REPL:25).
+; Attempting to call unbound fn: #'app.projects/read-markdown-files
+cljs꞉app.projects꞉>
+{:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png", :tags (:solarpunk :project)}
+; WARNING: slurp already refers to: #'clojure.core/slurp in namespace: app.projects, being replaced by: #'app.slurper/slurp
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:21:13).
+; No such namespace: js
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:27:13).
+; No such namespace: io
+;
+; Execution error (IllegalStateException) at app.projects/eval12595 (REPL:32).
+; Attempting to call unbound fn: #'app.projects/read-markdown-files
+cljs꞉app.projects꞉>
+
+cljs꞉app.projects꞉>
+#'app.projects/process-front-matter
+cljs꞉app.projects꞉>
+["public/bases/prospera.md" "public/bases/syndicalistspain.md" "public/bases/ancaptokyo.md" "public/bases/dirksland.md"]
+; WARNING: slurp already refers to: #'clojure.core/slurp in namespace: app.testslurp, being replaced by: #'app.slurper/slurp
+cljs꞉app.testslurp꞉>
+; WARNING: slurp already refers to: #'clojure.core/slurp in namespace: app.projects, being replaced by: #'app.slurper/slurp
+;
+; Syntax error macroexpanding list-md-files at (src/app/projects.cljs:21:15).
+; No implementation of method: :as-file of protocol: #'clojure.java.io/Coercions found for class: clojure.lang.Symbol
+;
+; Execution error (IllegalStateException) at app.projects/eval12664 (REPL:25).
+; Attempting to call unbound fn: #'app.projects/read-markdown-files
+cljs꞉app.projects꞉>
+{:id 1, :name "Ancap Tokyo", :image "/images/images/ancaptokyo.png", :tags (:solarpunk :project)}
+cljs꞉app.projects꞉>
+; Execution error (IllegalStateException) at app.projects/eval12668 (REPL:25).
+; Attempting to call unbound fn: #'app.projects/read-markdown-files
+cljs꞉app.projects꞉>
+#'app.projects/md-files
+cljs꞉app.projects꞉>
+["public/bases/prospera.md" "public/bases/syndicalistspain.md" "public/bases/ancaptokyo.md" "public/bases/dirksland.md"]
+cljs꞉app.projects꞉>
+; WARNING: slurp already refers to: #'clojure.core/slurp in namespace: app.projects, being replaced by: #'app.slurper/slurp
+;
+; Syntax error compiling at (src/app/projects.cljs:25:41).
+; Can't take value of a macro: #'app.slurper/slurp
+cljs꞉app.projects꞉>
+"---\nid: 1\nname: Ancap Tokyo\nlogo: images/ancaptokyo.png\ntags: [solarpunk, project]\n---\n\n# Ancap Tokyo\n\nLalalal\n"
+cljs꞉app.testslurp꞉>
+"---\nid: 1\nname: Ancap Tokyo\nlogo: images/ancaptokyo.png\ntags: [solarpunk, project]\n---\n\n# Ancap Tokyo\n\nLalalal\n"
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:30:41).
+; Can't take value of a macro: #'app.slurper/slurp
+;
+; Syntax error macroexpanding list-md-files at (src/app/projects.cljs:35:15).
+; No implementation of method: :as-file of protocol: #'clojure.java.io/Coercions found for class: clojure.lang.Symbol
+;
+; Execution error (IllegalStateException) at app.projects/eval12703 (REPL:39).
+; Attempting to call unbound fn: #'app.projects/read-markdown-files
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:30:41).
+; Can't take value of a macro: #'app.slurper/slurp
+cljs꞉app.projects꞉>
+"---\nid: 1\nname: Ancap Tokyo\nlogo: images/ancaptokyo.png\ntags: [solarpunk, project]\n---\n\n# Ancap Tokyo\n\nLalalal\n"
+cljs꞉app.projects꞉>
+["public/bases/prospera.md" "public/bases/syndicalistspain.md" "public/bases/ancaptokyo.md" "public/bases/dirksland.md"]
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:30:41).
+; Can't take value of a macro: #'app.slurper/slurp
+cljs꞉app.projects꞉>
+; Syntax error compiling at (src/app/projects.cljs:30:41).
+; Can't take value of a macro: #'app.slurper/slurp
+;
+; Syntax error macroexpanding list-md-files at (src/app/projects.cljs:35:23).
+; No implementation of method: :as-file of protocol: #'clojure.java.io/Coercions found for class: clojure.lang.Symbol
+;
+; Execution error (IllegalStateException) at nrepl.middleware.interruptible-eval/evaluate$fn$fn (interruptible_eval.clj:87).
+; Attempting to call unbound fn: #'app.projects/read-and-process-markdown-files
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding list-md-files at (src/app/projects.cljs:31:23).
+; No implementation of method: :as-file of protocol: #'clojure.java.io/Coercions found for class: clojure.lang.Symbol
+;
+; Execution error (IllegalStateException) at nrepl.middleware.interruptible-eval/evaluate$fn$fn (interruptible_eval.clj:87).
+; Attempting to call unbound fn: #'app.projects/read-and-process-markdown-files
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding list-md-files at (src/app/projects.cljs:31:23).
+; No implementation of method: :as-file of protocol: #'clojure.java.io/Coercions found for class: clojure.lang.Symbol
+;
+; Execution error (IllegalStateException) at nrepl.middleware.interruptible-eval/evaluate$fn$fn (interruptible_eval.clj:87).
+; Attempting to call unbound fn: #'app.projects/read-and-process-markdown-files
+cljs꞉app.projects꞉>
+["public/bases/prospera.md" "public/bases/syndicalistspain.md" "public/bases/ancaptokyo.md" "public/bases/dirksland.md"]
+cljs꞉app.projects꞉>
+; Syntax error reading source at (REPL:31:1).
+; EOF while reading, starting at line 31
+cljs꞉app.projects꞉>
+; Syntax error reading source at (REPL:31:1).
+; EOF while reading, starting at line 30
+cljs꞉app.projects꞉>
+; Syntax error macroexpanding list-md-files at (src/app/projects.cljs:31:17).
+; No implementation of method: :as-file of protocol: #'clojure.java.io/Coercions found for class: clojure.lang.Symbol
+cljs꞉app.projects꞉>
+; nREPL Connection was closed
+; Connecting using "ClojureScript nREPL Server" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Connecting ...
+; Reading port file: file:///Users/dirk/Documents/Code/basedguide/.nrepl-port ...
+; No nrepl port file found.
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉shadow.user꞉>
+clj꞉shadow.user꞉>
+; Creating cljs repl session...
+; Connecting cljs repl: ClojureScript nREPL Server...
+;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+
+cljs꞉cljs.user꞉>
+
+cljs꞉app.projects꞉>
+
+cljs꞉app.projects꞉>
+
+cljs꞉app.projects꞉>
+
+cljs꞉app.projects꞉>
+; nREPL Connection was closed
+; Connecting using "ClojureScript nREPL Server" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Connecting ...
+; Reading port file: file:///Users/dirk/Documents/Code/basedguide/.nrepl-port ...
+; No nrepl port file found.
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉shadow.user꞉>
+clj꞉shadow.user꞉>
+; Creating cljs repl session...
+; Connecting cljs repl: ClojureScript nREPL Server...
+;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+
+cljs꞉cljs.user꞉>
+
+cljs꞉app.projects꞉>
+
+cljs꞉app.projects꞉>
+
+cljs꞉app.testslurp꞉>
+
+cljs꞉app.testslurp꞉>
+
+cljs꞉app.testslurp꞉>
+
+cljs꞉app.testslurp꞉>
+
+cljs꞉app.testslurp꞉>
+
+cljs꞉app.testslurp꞉>
+
+cljs꞉app.testslurp꞉>
+
+cljs꞉app.testslurp꞉>
+
+cljs꞉app.testslurp꞉>
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "shadow-cljs" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Starting Jack-in Terminal: pushd /Users/dirk/Documents/Code/basedguide ; npx shadow-cljs -d cider/cider-nrepl:0.28.5 watch :app ; popd
+; Interrupting Jack-in process.
+; Connecting using "ClojureScript nREPL Server" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Connecting ...
+; Reading port file: file:///Users/dirk/Documents/Code/basedguide/.nrepl-port ...
+; No nrepl port file found.
+; Hooking up nREPL sessions ...
+; nREPL connection failed: Error: connect ECONNREFUSED 127.0.0.1:5050
+; Failed connecting.
+; Connecting using "ClojureScript nREPL Server" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Connecting ...
+; Reading port file: file:///Users/dirk/Documents/Code/basedguide/.nrepl-port ...
+; No nrepl port file found.
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉shadow.user꞉>
+clj꞉shadow.user꞉>
+; Creating cljs repl session...
+; Connecting cljs repl: ClojureScript nREPL Server...
+;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+
+cljs꞉cljs.user꞉>
+; nREPL Connection was closed
+; Connecting using "ClojureScript nREPL Server" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Connecting ...
+; Reading port file: file:///Users/dirk/Documents/Code/basedguide/.nrepl-port ...
+; No nrepl port file found.
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉shadow.user꞉>
+clj꞉shadow.user꞉>
+; Creating cljs repl session...
+; Connecting cljs repl: ClojureScript nREPL Server...
+;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+
+cljs꞉cljs.user꞉>
+; nREPL Connection was closed
+; Connecting using "ClojureScript nREPL Server" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Connecting ...
+; Reading port file: file:///Users/dirk/Documents/Code/basedguide/.nrepl-port ...
+; No nrepl port file found.
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉shadow.user꞉>
+clj꞉shadow.user꞉>
+; Creating cljs repl session...
+; Connecting cljs repl: ClojureScript nREPL Server...
+;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+
+cljs꞉cljs.user꞉>
+; nREPL Connection was closed
+; Connecting using "ClojureScript nREPL Server" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Connecting ...
+; Reading port file: file:///Users/dirk/Documents/Code/basedguide/.nrepl-port ...
+; No nrepl port file found.
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉shadow.user꞉>
+clj꞉shadow.user꞉>
+; Creating cljs repl session...
+; Connecting cljs repl: ClojureScript nREPL Server...
+;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+
+clj꞉cljs.user꞉>
+
+clj꞉app.testslurp꞉>
+
+clj꞉app.slurper꞉>
+
+clj꞉app.slurper꞉>
+; nREPL Connection was closed
+; Connecting using "ClojureScript nREPL Server" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+;
+; Connecting ...
+; Reading port file: file:///Users/dirk/Documents/Code/basedguide/.nrepl-port ...
+; No nrepl port file found.
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉shadow.user꞉>
+clj꞉shadow.user꞉>
+; Creating cljs repl session...
+; Connecting cljs repl: ClojureScript nREPL Server...
+;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+; Syntax error compiling at (.calva/output-window/output.calva-repl:1307:6).
+; Unable to resolve symbol: require in this context
+clj꞉cljs.user꞉>
+; WARNING: slurp already refers to: #'clojure.core/slurp in namespace: app.testslurp, being replaced by: #'app.slurper/slurp
+;
+; Syntax error compiling def at (src/app/testslurp.cljs:11:1).
+; Too many arguments to def
+;
+; Syntax error compiling at (src/app/testslurp.cljs:18:16).
+; Unable to resolve symbol: list-md-files in this context
+clj꞉app.testslurp꞉>
+"---\nid: 1\nname: Ancap Tokyo\nlogo: images/ancaptokyo.png\ntags: [solarpunk, project]\n---\n\n# Ancap Tokyo\n\nLalalal\n"
+clj꞉app.slurper꞉>
+"---\nid: 1\nname: Ancap Tokyo\nlogo: images/ancaptokyo.png\ntags: [solarpunk, project]\n---\n\n# Ancap Tokyo\n\nLalalal\n"
+clj꞉app.testslurp꞉>
+; Syntax error compiling def at (src/app/testslurp.cljs:11:1).
+; Too many arguments to def
+;
+; Syntax error compiling at (src/app/testslurp.cljs:18:16).
+; Unable to resolve symbol: list-md-files in this context
+clj꞉app.testslurp꞉>
+; Syntax error compiling at (src/app/testslurp.cljs:18:16).
+; Unable to resolve symbol: list-md-files in this context
+clj꞉app.testslurp꞉>
+; Syntax error compiling at (src/app/testslurp.cljs:18:16).
+; Unable to resolve symbol: list-md-files in this context
+clj꞉app.testslurp꞉>
+; Execution error (IllegalAccessError) at app.testslurp/eval19495$loading (REPL:1).
+; file-macro does not exist
+;
+; Syntax error compiling at (src/app/testslurp.cljs:19:3).
+; Unable to resolve symbol: file-macro in this context
+clj꞉app.testslurp꞉>
+; Execution error (IllegalAccessError) at app.testslurp/eval19501$loading (REPL:1).
+; file-macro does not exist
+clj꞉app.testslurp꞉>
+; Execution error (IllegalAccessError) at app.testslurp/eval19507$loading (REPL:1).
+; file-macro does not exist
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "app.slurper" is not available, it was required by "app/projects.cljs".
+; "app/slurper.clj" was found on the classpath. Should this be a .cljs file?
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "app.slurper" is not available, it was required by "app/projects.cljs".
+; "app/slurper.clj" was found on the classpath. Should this be a .cljs file?
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "app.slurper" is not available, it was required by "app/projects.cljs".
+; "app/slurper.clj" was found on the classpath. Should this be a .cljs file?
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/dirk/Documents/Code/basedguide/src/app/projects.cljs:4:69
+; --------------------------------------------------------------------------------
+;    1 | (ns app.projects
+;    2 |   (:require [clojure.string :as str]
+;    3 |             [app.slurper :include-macros true :refer [slurp-macro]
+;    4 |             [app.lsdir :include-macros true :refer [list-md-files]])) ; Assuming app.slurper/slurp is ClojureScript compatible
+; ---------------------------------------------------------------------------^----
+; app/projects.cljs [line 4, col 69] Unmatched delimiter ).
+;
+; --------------------------------------------------------------------------------
+;    5 |
+;    6 | (defn process-front-matter [s]
+;    7 |   (let [id-regex #"id:\s*(\d+)"
+;    8 |         name-regex #"name:\s*(.+)"
+; --------------------------------------------------------------------------------
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "app.slurper" is not available, it was required by "app/projects.cljs".
+; "app/slurper.clj" was found on the classpath. Should this be a .cljs file?
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "app.slurper" is not available, it was required by "app/projects.cljs".
+; "app/slurper.clj" was found on the classpath. Should this be a .cljs file?
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "app.slurper" is not available, it was required by "app/projects.cljs".
+; "app/slurper.clj" was found on the classpath. Should this be a .cljs file?
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "app.slurper" is not available, it was required by "app/projects.cljs".
+; "app/slurper.clj" was found on the classpath. Should this be a .cljs file?
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "app.lsdir" is not available, it was required by "app/projects.cljs".
+; "app/lsdir.clj" was found on the classpath. Should this be a .cljs file?
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; Resource does not have expected namespace
+; {:tag :shadow.build.resolve/unexpected-ns, :resource "app/projects.cljs", :expected-ns app.projects, :actual-ns app.testslurp}
+; ExceptionInfo: Resource does not have expected namespace
+; 	shadow.build.resolve/check-correct-ns! (resolve.clj:517)
+; 	shadow.build.resolve/check-correct-ns! (resolve.clj:513)
+; 	shadow.build.resolve/find-resource-for-symbol* (resolve.clj:534)
+; 	shadow.build.resolve/find-resource-for-symbol* (resolve.clj:523)
+; 	shadow.build.resolve/find-resource-for-symbol (resolve.clj:576)
+; 	shadow.build.resolve/find-resource-for-symbol (resolve.clj:570)
+; 	shadow.build.resolve/resolve-symbol-require (resolve.clj:630)
+; 	shadow.build.resolve/resolve-symbol-require (resolve.clj:626)
+; 	shadow.build.resolve/resolve-require (resolve.clj:676)
+; 	shadow.build.resolve/resolve-require (resolve.clj:672)
+; 	shadow.build.resolve/resolve-deps/fn--11383 (resolve.clj:52)
+; 	clojure.lang.PersistentVector.reduce (PersistentVector.java:343)
+; 	clojure.core/reduce (core.clj:6885)
+; 	clojure.core/red
+; uce (core.clj:6868)
+; 	shadow.cljs.util/reduce-> (util.clj:42)
+; 	shadow.cljs.util/reduce-> (util.clj:41)
+; 	shadow.build.resolve/resolve-deps (resolve.clj:50)
+; 	shadow.build.resolve/resolve-deps (resolve.clj:34)
+; 	shadow.build.resolve/resolve-symbol-require (resolve.clj:666)
+; 	shadow.build.resolve/resolve-symbol-require (resolve.clj:626)
+; 	shadow.build.resolve/resolve-require (resolve.clj:676)
+; 	shadow.build.resolve/resolve-require (resolve.clj:672)
+; 	shadow.build.resolve/resolve-entry (resolve.clj:686)
+; 	shadow.build.resolve/resolve-entry (resolve.clj:685)
+; 	clojure.lang.PersistentVector.reduce (PersistentVector.java:343)
+; 	clojure.core/reduce (core.clj:6885)
+; 	clojure.core/reduce (core.clj:6868)
+; 	shadow.cljs.util/reduce-> (util.clj:42)
+; 	shadow.cljs.util/reduce-> (util.clj:41)
+; 	shadow.build.resolve/resolve-entries (resolve.clj:700)
+; 	shadow.build.resolve/resolve-entries (resolve.clj:691)
+; 	shadow.build.modules/resolve-module/fn--14006 (modules.clj:252)
+; 	shadow.build.modules/resolve-module (modules.clj:248)
+; 	shadow.build.modu
+; les/resolve-module (modules.clj:238)
+; 	clojure.lang.PersistentVector.reduce (PersistentVector.java:343)
+; 	clojure.core/reduce (core.clj:6885)
+; 	clojure.core/reduce (core.clj:6868)
+; 	shadow.build.modules/resolve-modules (modules.clj:258)
+; 	shadow.build.modules/resolve-modules (modules.clj:257)
+; 	shadow.build.modules/analyze (modules.clj:312)
+; 	shadow.build.modules/analyze (modules.clj:303)
+; 	shadow.build/resolve (build.clj:459)
+; 	shadow.build/resolve (build.clj:453)
+; 	shadow.build/compile (build.clj:509)
+; 	shadow.build/compile (build.clj:493)
+; 	shadow.cljs.devtools.server.worker.impl/build-compile (impl.clj:368)
+; 	shadow.cljs.devtools.server.worker.impl/build-compile (impl.clj:349)
+; 	shadow.cljs.devtools.server.worker.impl/do-resource-update (impl.clj:540)
+; 	shadow.cljs.devtools.server.worker.impl/do-resource-update (impl.clj:495)
+; 	shadow.cljs.devtools.server.util/server-thread/fn--15359/fn--15360/fn--15368 (util.clj:283)
+; 	shadow.cljs.devtools.server.util/server-thread/fn--15359/fn--15360 (util.clj:282)
+; 	shadow.cljs.devtools
+; .server.util/server-thread/fn--15359 (util.clj:255)
+; 	java.lang.Thread.run (Thread.java:829)
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "app.slurper" is not available, it was required by "app/projects.cljs".
+; "app/slurper.clj" was found on the classpath. Should this be a .cljs file?
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "app.slurper" is not available, it was required by "app/projects.cljs".
+; "app/slurper.clj" was found on the classpath. Should this be a .cljs file?
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "app.slurper" is not available, it was required by "app/projects.cljs".
+; "app/slurper.clj" was found on the classpath. Should this be a .cljs file?
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "app.slurper" is not available, it was required by "app/projects.cljs".
+; "app/slurper.clj" was found on the classpath. Should this be a .cljs file?
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "app.slurper" is not available, it was required by "app/projects.cljs".
+; "app/slurper.clj" was found on the classpath. Should this be a .cljs file?
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "app.slurper" is not available, it was required by "app/projects.cljs".
+; "app/slurper.clj" was found on the classpath. Should this be a .cljs file?
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "macro.slurper" is not available, it was required by "app/projects.cljs".
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "macro.slurper" is not available, it was required by "app/projects.cljs".
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "macro.slurper" is not available, it was required by "app/projects.cljs".
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "macro.slurper" is not available, it was required by "app/projects.cljs".
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "macros.slurper" is not available, it was required by "app/projects.cljs".
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "macros.slurper" is not available, it was required by "app/projects.cljs".
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "macros.slurper" is not available, it was required by "app/projects.cljs".
+;
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+clj꞉app.testslurp꞉>
+; nREPL Connection was closed

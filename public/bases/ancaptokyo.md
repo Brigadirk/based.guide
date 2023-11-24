@@ -1,6 +1,7 @@
 ---
-name: Prospera
-logo: /images/ancaptokyo.png
+id: 1
+name: Ancap Tokyo
+logo: images/ancaptokyo.png
 tags: [solarpunk, project]
 ---
 

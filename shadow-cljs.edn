@@ -1,8 +1,13 @@
 {:source-paths
- ["src"]
+ ["src", "app"]
 
  :dependencies
- [[reagent "1.1.0"]]
+ [
+ [reagent "1.1.0"]
+ [cider/cider-nrepl "0.43.3"]
+ ]
+
+ :nrepl {:middleware [cider.nrepl/cider-middleware]}
 
  :npm-deps {:react "18.2.0" ; use the specific version numbers from your package.json
             :react-dom "18.2.0"}
