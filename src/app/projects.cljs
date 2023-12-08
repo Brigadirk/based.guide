@@ -1,4 +1,10 @@
-(ns app.projects)
+(ns app.projects
+  :require [cljs-http.client :as http])
+
+;; (defn fetch-projects []
+;;   (http/get "http://localhost:8080/api/projects" {:with-credentials? false})
+;;   ;; Handle the response and error
+;;   )
 
 (def project-list
   [{:id 1 :name "Prospera" :image "/images/solarpunk2.png"}

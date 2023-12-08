@@ -5,6 +5,7 @@
  [
  [reagent "1.1.0"]
  [cider/cider-nrepl "0.43.3"]
+ [cljs-http "0.1.48"]
  ]
 
  :nrepl {:middleware [cider.nrepl/cider-middleware]}
