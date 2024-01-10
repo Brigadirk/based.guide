@@ -41,7 +41,7 @@ html {
 body {
   margin: 0; /* 1 */
   line-height: inherit; /* 2 */
-  font-family: 'Courier', monospace;
+  font-family: 'Georgia', monospace;
 }
 
 /*
