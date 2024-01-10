@@ -1,6 +1,10 @@
 ---
+pageid: oceanix
 name: Oceanix
-tags: land-reclamation, sustainable-urbanism, coastal-development
+tags:
+  - land-reclamation
+  - sustainable-urbanism
+  - coastal-development
 images:
   front: images/placeholder.png
 associated_links:

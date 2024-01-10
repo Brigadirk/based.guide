@@ -1,6 +1,10 @@
 ---
+pageid: porta-norte
 name: Porta Norte
-tags: European-town, nature-integration, sustainable-living
+tags:
+  - European-town
+  - nature-integration
+  - sustainable-living
 images:
   front: images/placeholder.png
 associated_links:

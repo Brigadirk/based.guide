@@ -1,6 +1,10 @@
 ---
+pageid: city-of-telosa
 name: City of Telosa
-tags: sustainable-development, urban-planning, stakeholder-economy
+tags:
+  - sustainable-development
+  - urban-planning
+  - stakeholder-economy
 images:
   front: images/placeholder.png
 associated_links:

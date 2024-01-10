@@ -1,6 +1,10 @@
 ---
+pageid: proof-of-humanity
 name: Proof of Humanity
-tags: decentralized-democracy, social-verification, blockchain
+tags:
+  - decentralized-democracy
+  - social-verification
+  - blockchain
 images:
   front: images/placeholder.png
 associated_links:

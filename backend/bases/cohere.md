@@ -1,6 +1,10 @@
 ---
+pageid: cohere
 name: Cohere
-tags: co-living, co-working, community-driven
+tags:
+  - co-living
+  - co-working
+  - community-driven
 images:
   front: images/placeholder.png
 associated_links:

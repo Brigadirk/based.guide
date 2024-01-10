@@ -1,6 +1,10 @@
 ---
+pageid: jur
 name: Jur
-tags: digital-jurisdiction, blockchain, digital-economy
+tags:
+  - digital-jurisdiction
+  - blockchain
+  - digital-economy
 images:
   front: images/placeholder.png
 associated_links:

@@ -1,6 +1,10 @@
 ---
+pageid: city-dao
 name: CityDAO
-tags: blockchain, smart-city, digital-governance
+tags:
+  - blockchain
+  - smart-city
+  - digital-governance
 images:
   front: images/placeholder.png
 associated_links:

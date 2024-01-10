@@ -1,6 +1,10 @@
 ---
+pageid: kift
 name: Kift
-tags: vanlife, community-living, nomadic-lifestyle
+tags:
+  - vanlife
+  - community-living
+  - nomadic-lifestyle
 images:
   front: images/placeholder.png
 associated_links:

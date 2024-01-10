@@ -1,6 +1,10 @@
 ---
+pageid: itana-by-talent-cities
 name: Itana by Talent Cities
-tags: remote-work, lekki-free-zone, nigeria
+tags:
+  - remote-work
+  - lekki-free-zone
+  - nigeria
 images:
   front: images/placeholder.png
 associated_links:

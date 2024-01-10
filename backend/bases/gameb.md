@@ -1,6 +1,10 @@
 ---
+pageid: game-b
 name: Game B
-tags: social-networks, societal-rethink, community
+tags:
+  - social-networks
+  - societal-rethink
+  - community
 images:
   front: images/placeholder.png
 associated_links:

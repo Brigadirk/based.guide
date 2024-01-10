@@ -1,6 +1,12 @@
 ---
+pageid: prospera
 name: Prospera
-tags: network-state, zede, private-city, special-economic-zone, charter-city
+tags:
+  - network-state
+  - zede
+  - private-city
+  - special-economic-zone
+  - charter-city
 images:
   front: images/placeholder.png
 associated_links:

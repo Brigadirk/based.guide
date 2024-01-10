@@ -1,6 +1,10 @@
 ---
+pageid: satoshi-island
 name: Satoshi Island
-tags: crypto-community, vanuatu, blockchain
+tags:
+  - crypto-community
+  - vanuatu
+  - blockchain
 images:
   front: images/placeholder.png
 associated_links:

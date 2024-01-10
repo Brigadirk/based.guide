@@ -1,6 +1,11 @@
 ---
+pageid: bow-tied-jungle
 name: BowTiedJungle
-tags: pseudonymous-community, anti-bank, pro-crypto, decentralized
+tags:
+  - pseudonymous-community
+  - anti-bank
+  - pro-crypto
+  - decentralized
 images:
   front: images/placeholder.png
 associated_links:

@@ -1,6 +1,10 @@
 ---
+pageid: afropolitan
 name: Afropolitan
-tags: pan-African, digital-nation, community
+tags:
+  - pan-African
+  - digital-nation
+  - community
 images:
   front: images/placeholder.png
 associated_links:

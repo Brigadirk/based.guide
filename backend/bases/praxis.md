@@ -1,6 +1,10 @@
 ---
+pageid: praxis
 name: Praxis
-tags: new-city, vital-living, innovation
+tags:
+  - new-city
+  - vital-living
+  - innovation
 images:
   front: images/placeholder.png
 associated_links:

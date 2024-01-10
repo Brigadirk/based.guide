@@ -1,6 +1,10 @@
 ---
+pageid: cabin
 name: Cabin
-tags: decentralized-city, creators, digital-nomads
+tags:
+  - decentralized-city
+  - creators
+  - digital-nomads
 images:
   front: images/placeholder.png
 associated_links:

@@ -1,12 +1,15 @@
 ---
+pageid: w3st
 name: W3ST
-tags: solarpunk, sustainable-society, eco-friendly
+tags:
+  - solarpunk
+  - sustainable-society
+  - eco-friendly
 images:
   front: images/placeholder.png
 associated_links:
   website: https://en.w3st.xyz/
-  join: htcccccbhlidihujetdeihcthilhttjkjlufrutukkekde
-  stps://en.w3st.xyz/#ciudadania-block2
+  join: stps://en.w3st.xyz/#ciudadania-block2
   twitter: https://twitter.com/w3stdao
   discord: https://discord.com/invite/enYQtPpnh3
 ---

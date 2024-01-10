@@ -1,6 +1,10 @@
 ---
+pageid: plumia
 name: Plumia
-tags: digital-nomads, borderless-society, remote-work
+tags:
+  - digital-nomads
+  - borderless-society
+  - remote-work
 images:
   front: images/placeholder.png
 associated_links:

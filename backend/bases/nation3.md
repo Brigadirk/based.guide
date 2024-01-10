@@ -1,6 +1,10 @@
 ---
+pageid: nation3
 name: Nation3
-tags: solarpunk, web3, digital-society
+tags:
+  - solarpunk
+  - web3
+  - digital-society
 images:
   front: images/placeholder.png
 associated_links:

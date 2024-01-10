@@ -1,6 +1,10 @@
 ---
+pageid: culdesac
 name: Culdesac
-tags: car-free, sustainable-living, urban-community
+tags:
+  - car-free
+  - sustainable-living
+  - urban-community
 images:
   front: images/placeholder.png
 associated_links:

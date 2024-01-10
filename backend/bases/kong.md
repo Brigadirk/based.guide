@@ -1,6 +1,10 @@
 ---
+pageid: kong
 name: Kong
-tags: metaverse, real-world-bridge, digital-assets
+tags:
+  - metaverse
+  - real-world-bridge
+  - digital-assets
 images:
   front: images/placeholder.png
 associated_links:

@@ -1,6 +1,10 @@
 ---
+pageid: figment
 name: Figment
-tags: metaverse, digital-club, virtual-community
+tags:
+  - metaverse
+  - digital-club
+  - virtual-community
 images:
   front: images/placeholder.png
 associated_links:
