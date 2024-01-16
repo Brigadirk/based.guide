@@ -1,14 +1,10 @@
 (ns app.projects
   (:require [ajax.core :refer [GET]]
+            [app.state :as state]
+            [app.components.common :refer [handler error-handler]]
             [clojure.core :refer [atom]]))
 
 (def project-list (atom []))
-
-(defn handler [response]
-  (.log js/console (str response)))
-
-(defn error-handler [{:keys [status status-text]}]
-  (.log js/console (str "something bad happened: " status " " status-text)))
 
 (defn transform-project [project]
   {:name (get project "projects/name")
