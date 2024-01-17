@@ -1,13 +1,6 @@
 (ns app.components.navbar
-  (:require [app.routing :as routing]))
-
-(defn nav-link [path title]
-  [:a {:href "#"
-       :on-click (fn [event]
-                   (.preventDefault event)
-                   (js/console.log "Navigating to:" path) ;; Debug log
-                   (routing/navigate path))}
-   title])
+  (:require [app.routing :as routing]
+            [app.components.common :refer [nav-link]]))
 
 (defn navbar []
   [:nav {:class "bg-blue-500 p-4 text-white flex justify-center"}
