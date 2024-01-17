@@ -4,5 +4,5 @@
 
 (defn navigate [path]
   (let [new-content (route-component-map path)]
-    (reset! state/current-content (new-content))
-    (.pushState js/window.history nil "" path)))
+    (reset! state/current-content [new-content]))
+    (.pushState js/window.history nil "" path))

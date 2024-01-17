@@ -16,12 +16,7 @@
 (defn fetch-and-update-projects []
   (GET "http://localhost:8080/front"
     {:handler (fn [response]
-                (reset! project-list (map transform-project response))
-                ;; Debug code to check whether the projects are really there (they always are):
-                (let [projects @project-list]
-                (doall
-                 (for [project projects]
-                   (js/console.log "Project " project))))) ;; This always prints all the projects
+                (reset! project-list (mapv transform-project response)))
      :error-handler error-handler}))
 
 (defn main-grid []
@@ -30,17 +25,16 @@
    (let [projects @project-list]
      (if (and projects (empty? projects))
        [:div {:class "flex justify-center items-center h-full"}
-        [:h2 "No projects found"]] ; We get here each time after refreshing or compiling the page
+        [:h2 "No projects found"]]
 
-       ;; This works -consistently- upon navigating to "/" via the navbar
-        (for [project projects]
-          ^{:key (:name project)}
-          [:div {:class "w-full md:w-1/3 p-4"}
-           (nav-link (str "/" (:pageid project))
-                     [:div {:class "rounded-lg shadow relative"}
-                      [:img {:class "max-w-full h-auto shadow-lg rounded-lg" :src (:image project)}]
-                      [:div {:class "absolute inset-0 flex items-center justify-center"}
-                       [:h3 {:class "text-xl font-bold text-center text-black shadow-white"} (:name project)]]])])))])
+       (for [project projects]
+         ^{:key (:name project)}
+         [:div {:class "w-full md:w-1/3 p-4"}
+          (nav-link (str "/" (:pageid project))
+                    [:div {:class "rounded-lg shadow relative"}
+                     [:img {:class "max-w-full h-auto shadow-lg rounded-lg" :src (:image project)}]
+                     [:div {:class "absolute inset-0 flex items-center justify-center"}
+                      [:h3 {:class "text-xl font-bold text-center text-black shadow-white"} (:name project)]]])])))])
 
 
 
