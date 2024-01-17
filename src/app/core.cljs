@@ -2,7 +2,6 @@
   (:require [reagent.core :as r]
             [reagent.dom :as rdom]
             [app.state :as state]
-            [app.projects :as projects]
             [app.routing :as routing]
             [app.layout :as layout]))
 
@@ -13,9 +12,6 @@
 
 (defn ^:export main []
   (init-routing)
-
-  ;; Fetch and update projects
-  (projects/fetch-and-update-projects)
 
   ;; Re-establish the current route based on the browser's URL
   (let [current-path (.-pathname js/window.location)]
