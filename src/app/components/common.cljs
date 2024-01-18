@@ -1,4 +1,3 @@
-;; In app.components.common
 (ns app.components.common
   (:require [app.state :as state]))
 
@@ -6,7 +5,6 @@
   [:a {:href "#"
        :on-click (fn [event]
                    (.preventDefault event)
-                   (js/console.log "Navigating to:" path) ;; Debug log
                    (reset! state/current-route path))}
    title])
 
