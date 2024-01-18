@@ -9,5 +9,5 @@
     (= path "/") main-grid
     (= path "/about") about-page
     (= path "/contact") contact-page
-    :else (project-page {:project-id (last (clojure.string/split path #"/"))})
+    :else (project-page {:pageid (last (clojure.string/split path #"/"))})
     ))
