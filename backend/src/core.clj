@@ -1,4 +1,5 @@
 (ns core
+  (:gen-class)
   (:require [org.httpkit.server :as server]
             [db :as db]
             [next.jdbc :as jdbc]
