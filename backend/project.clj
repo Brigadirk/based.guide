@@ -1,4 +1,4 @@
-(defproject backend "0.1.0-SNAPSHOT"
+(defproject backend "based.guide"
   :description "Freedom grants options"
   :url "https://based.guide"
   :license {:name "Eclipse Public License"
@@ -10,6 +10,7 @@
                  [ring-cors "0.1.13"]
                  [clj-commons/clj-yaml "1.0.27"]
                  [org.postgresql/postgresql "42.3.3"]]
-  :main ^:skip-aot core
+  :main core
+  :aot [core]
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
