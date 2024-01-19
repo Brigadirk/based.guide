@@ -1,6 +1,11 @@
 (ns app.components.common
   (:require [app.state :as state]))
 
+(defn horizontal-line []
+  [:div {:style {:height "1px" ; Set the height of the line
+                 :background-color "black" ; Set the color of the line
+                 :margin "5px 0"}}]) ; Add some margin for spacing
+
 (defn nav-link [path title]
   [:a {:href "#"
        :on-click (fn [event]

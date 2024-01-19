@@ -14,8 +14,8 @@
       [:div
        [:h1 "Page not found"]]
     [:div
-     [:h1 "Name: " (:name project)]
-     [:div "Text" (:markdown-text project)]
+     [:h1 (:name project)]
+     [:div  x(:markdown-text project)]
      ]
     )
   )
