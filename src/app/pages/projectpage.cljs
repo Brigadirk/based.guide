@@ -11,13 +11,9 @@
   (fn []
   (let [project @state/project-page]
     (if (and project (empty? project))
-      [:div
+      [:div {}
        [:h1 "Page not found"]]
-    [:div
+    [:div {:class "flex justify-center my-4"}
      [:h1 (:name project)]
-     [:div  x(:markdown-text project)]
-     ]
-    )
-  )
-  )
-)
+     [:div  (:markdown-text project)]
+     ]))))
