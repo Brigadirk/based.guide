@@ -34,6 +34,16 @@
   (filter #(re-matches #".*\.md$" (.getName %))
           (file-seq (io/file directory))))
 
+(defn create-projects-table []
+  (jdbc/execute! db/db-spec
+                 ["CREATE TABLE IF NOT EXISTS projects (
+                   pageid VARCHAR PRIMARY KEY,
+                   name VARCHAR,
+                   images JSON,
+                   associated_links JSON,
+                   tags VARCHAR,
+                   markdown_text TEXT)"]))
+
 (defn insert-into-db [data]
   (jdbc/execute! db/db-spec
                  ["INSERT INTO projects (pageid, name, images, associated_links, tags, markdown_text)

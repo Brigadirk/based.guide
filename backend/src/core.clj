@@ -44,6 +44,7 @@
              :access-control-allow-headers ["Content-Type" "Authorization"]))
 
 (defn -main [& args]
+  (parser/create-projects-table)
   (parser/process-markdown-files "bases")
   (println "Starting server with custom handler on port 8080...")
   (server/run-server app {:port 8080}))
