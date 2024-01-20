@@ -28,6 +28,11 @@
      :body (json/generate-string projects)}
     ))
 
+(defn handle-health-check [request]
+  {:status 200
+   :headers {"Content-Type" "text/plain"}
+   :body "OK"})
+
 (defn handler [request]
   (let [uri (:uri request)]
     (cond
@@ -35,6 +40,7 @@
                                               (handle-page-request request pageid))
       (= uri "/projects") (handle-projects-request request)
       (= uri "/front") (handle-front-images-request request)
+      (= uri "/healthz") (handle-health-check request)
       :else {:status 404 :body "Not Found"})))
 
 (def app
