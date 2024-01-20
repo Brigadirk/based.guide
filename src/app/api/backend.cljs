@@ -10,7 +10,7 @@
    :image (get project "frontimage")})
 
 (defn fetch-and-update-projects []
-  (GET "http://localhost:8080/front"
+  (GET "https://based-guide-backend.onrender.com/front"
     {:handler (fn [response]
                 (reset! state/project-list (mapv transform-project response)))
      :error-handler error-handler}))
@@ -23,7 +23,7 @@
    :markdown-text (get project "projects/markdown_text")})
 
 (defn fetch-project [page]
-  (GET (str "http://localhost:8080/projects/" (:pageid page))
+  (GET (str "https://based-guide-backend.onrender.com/projects/" (:pageid page))
     {:handler (fn [response]
                 (reset! state/project-page (transform-page (first response))))
      :error-handler error-handler}))
