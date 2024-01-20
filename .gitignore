@@ -1,6 +1,11 @@
 node_modules/
 public/js
 
+.calva
+.clj-kondo
+.joyride
+.lsp
+
 backend/target/*
 backend/.calva/*
 
