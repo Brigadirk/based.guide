@@ -9,10 +9,10 @@ app.core.init_routing();
 
 app.api.backend.fetch_and_update_projects();
 
-var current_path_15537 = window.location.pathname;
-cljs.core.reset_BANG_(app.state.current_route,current_path_15537);
+var current_path_15566 = window.location.pathname;
+cljs.core.reset_BANG_(app.state.current_route,current_path_15566);
 
-app.routing.navigate(current_path_15537);
+app.routing.navigate(current_path_15566);
 
 reagent.dom.render.cljs$core$IFn$_invoke$arity$2(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [app.layout.layout], null),document.getElementById("app"));
 

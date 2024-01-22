@@ -3,6 +3,13 @@
             [app.state :as state]
             [app.components.common :refer [handler error-handler]]))
 
+(goog-define env "prod")
+
+(defn api-url []
+  (if (= env "dev")
+    "http://localhost:8080"  ;; Your local dev URL
+    "https://based-guide-backend.onrender.com")) ;; Your production URL
+
 (defn transform-project [project]
   {:name (get project "projects/name")
    :pageid (get project "projects/pageid")
@@ -10,7 +17,9 @@
    :image (get project "frontimage")})
 
 (defn fetch-and-update-projects []
-  (GET "https://based-guide-backend.onrender.com/front"
+  (js/console.log "env" env)
+  (js/console.log "Linky: " (str (api-url) "/front"))
+  (GET (str (api-url) "/front")
     {:handler (fn [response]
                 (reset! state/project-list (mapv transform-project response)))
      :error-handler error-handler}))
@@ -23,7 +32,7 @@
    :markdown-text (get project "projects/markdown_text")})
 
 (defn fetch-project [page]
-  (GET (str "https://based-guide-backend.onrender.com/projects/" (:pageid page))
+  (GET (str (api-url) "/projects/" (:pageid page))
     {:handler (fn [response]
                 (reset! state/project-page (transform-page (first response))))
      :error-handler error-handler}))
