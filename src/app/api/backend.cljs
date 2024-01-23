@@ -1,7 +1,7 @@
 (ns app.api.backend
   (:require [ajax.core :refer [GET]]
             [app.state :as state]
-            [app.components.common :refer [handler error-handler]]))
+            [app.components.common :refer [error-handler]]))
 
 (goog-define env "prod")
 
@@ -17,8 +17,6 @@
    :image (get project "frontimage")})
 
 (defn fetch-and-update-projects []
-  (js/console.log "env" env)
-  (js/console.log "Linky: " (str (api-url) "/front"))
   (GET (str (api-url) "/front")
     {:handler (fn [response]
                 (reset! state/project-list (mapv transform-project response)))
@@ -32,6 +30,7 @@
    :markdown-text (get project "projects/markdown_text")})
 
 (defn fetch-project [page]
+  (reset! state/project-page nil)
   (GET (str (api-url) "/projects/" (:pageid page))
     {:handler (fn [response]
                 (reset! state/project-page (transform-page (first response))))
