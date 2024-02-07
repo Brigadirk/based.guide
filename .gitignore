@@ -1,3 +1,9 @@
+public/js/cljs-runtime/*
+public/js/manifest.edn
+
+backend/.calva/*
+backend/target/*
+
 pom.xml
 pom.xml.asc
 *.jar
@@ -26,7 +32,7 @@ profiles.clj
 .lsp/*
 .clj-kondo/*
 .calva/*
-/joyride/*
+.joyride/*
 
 /.shadow-cljs/
 node_modules/
