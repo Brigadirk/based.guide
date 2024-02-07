@@ -1,6 +1,6 @@
 ---
-pageid: prospera
-name: Prospera
+pageid: seasteading
+name: Seasteading
 tags:
   - network-state
   - zede
@@ -16,7 +16,7 @@ associated_links:
   discord: https://discord.gg/eQGnF6aW6p
 ---
 
-# Prospera
+# Seasteading
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue ultricies lorem id vehicula. Integer a metus suscipit, luctus magna et, semper ex. Ut quis felis tellus. Mauris accumsan nulla at nisi viverra, in commodo nunc mattis. Fusce ac gravida enim, id suscipit enim. Proin a arcu odio. Curabitur aliquam massa mi, ornare ultricies elit facilisis eget. Fusce ut tristique lorem. Vivamus sed laoreet mauris. Morbi interdum tempor pellentesque. Praesent non nulla elementum, vestibulum leo ut, vehicula ante. Praesent lobortis velit id arcu gravida tristique. Mauris quam urna, blandit eu orci ac, ullamcorper vestibulum tellus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer mattis risus lacus, et mollis ante consequat ut.
 

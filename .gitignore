@@ -3,6 +3,7 @@ public/js/manifest.edn
 
 backend/.calva/*
 backend/target/*
+backend/bases-archive/*
 
 pom.xml
 pom.xml.asc
