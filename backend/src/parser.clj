@@ -1,19 +1,15 @@
 (ns parser
   (:require [clojure.java.io :as io]
             [clj-yaml.core :as yaml]
+            [clojure.set :as set]
             [cheshire.core :as json]
+            [clojure.string :as string]
             [next.jdbc :as jdbc]
             [db :as db]))
 
-(defn read-file [filename]
-  (slurp filename))
-
-(defn parse-yaml [yaml-string]
-  (yaml/parse-string yaml-string))
-
 (defn parse-markdown [content]
   (let [yaml-part (re-find #"(?s)---\n(.*?)\n---" content)
-        yaml-contents (parse-yaml (second yaml-part))
+        yaml-contents (yaml/parse-string (second yaml-part))
         body (second (re-find #"(?s)\n# .*\n\n(.*)" content))]
     (merge yaml-contents {:body body})))
 
@@ -21,7 +17,7 @@
   (let [{:keys [pageid name tags images associated_links]} parsed-content
         images-json (json/generate-string images)
         links-json (json/generate-string associated_links)
-        tags-string (clojure.string/join ", " tags)] ;; Join the vector of tags
+        tags-string (string/join ", " tags)] ;; Join the vector of tags
     {
      :pageid pageid
      :name name
@@ -55,11 +51,32 @@
                    markdown_text = EXCLUDED.markdown_text"
                   (:pageid data) (:name data) (:images data) (:associated_links data) (:tags data) (:markdown_text data)]))
 
+;; (defn process-markdown-files [directory]
+;;   (doseq [file (get-markdown-files directory)]
+;;     (let [content (slurp (.getAbsolutePath file))
+;;           parsed-content (parse-markdown content)
+;;           db-data (convert-to-db-format parsed-content)]
+;;       (insert-into-db db-data))))
+
+(defn fetch-existing-pageids []
+  (map :pageid (jdbc/execute! db/db-spec ["SELECT pageid FROM projects"])))
+
+(defn delete-orphans [orphans]
+  (doseq [orphan orphans]
+    (jdbc/execute! db/db-spec ["DELETE FROM projects WHERE pageid = ?" orphan])))
+
 (defn process-markdown-files [directory]
-  (doseq [file (get-markdown-files directory)]
-    (let [content (read-file (.getAbsolutePath file))
-          parsed-content (parse-markdown content)
-          db-data (convert-to-db-format parsed-content)]
-      (insert-into-db db-data))))
+  (let [processed-pageids (atom [])] ; Atom to store processed pageids
+    ; Process files and collect pageids
+    (doseq [file (get-markdown-files directory)]
+      (let [content (slurp (.getAbsolutePath file))
+            parsed-content (parse-markdown content)
+            db-data (convert-to-db-format parsed-content)]
+        (swap! processed-pageids conj (:pageid parsed-content)) ; Add pageid to atom
+        (insert-into-db db-data)))
+    ; Fetch existing pageids from DB and find orphans
+    (let [existing-pageids (fetch-existing-pageids)
+          orphans (set/difference (set existing-pageids) (set @processed-pageids))]
+      (delete-orphans orphans)))) ; Delete orphaned entries
 
 (process-markdown-files "/bases/")
