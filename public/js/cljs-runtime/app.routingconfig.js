@@ -6,12 +6,8 @@ return app.pages.main.main_grid;
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(path,"/about")){
 return app.pages.about.about_page;
 } else {
-if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(path,"/contact")){
-return app.pages.contact.contact_page;
-} else {
 return app.pages.projectpage.project_page(new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"pageid","pageid",160137765),cljs.core.last(clojure.string.split.cljs$core$IFn$_invoke$arity$2(path,/\//))], null));
 
-}
 }
 }
 });

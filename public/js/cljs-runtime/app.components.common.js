@@ -12,11 +12,11 @@ return cljs.core.reset_BANG_(app.state.current_route,path);
 app.components.common.handler = (function app$components$common$handler(response){
 return console.log(cljs.core.str.cljs$core$IFn$_invoke$arity$1(response));
 });
-app.components.common.error_handler = (function app$components$common$error_handler(p__15583){
-var map__15584 = p__15583;
-var map__15584__$1 = cljs.core.__destructure_map(map__15584);
-var status = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__15584__$1,new cljs.core.Keyword(null,"status","status",-1997798413));
-var status_text = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__15584__$1,new cljs.core.Keyword(null,"status-text","status-text",-1834235478));
+app.components.common.error_handler = (function app$components$common$error_handler(p__15548){
+var map__15549 = p__15548;
+var map__15549__$1 = cljs.core.__destructure_map(map__15549);
+var status = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__15549__$1,new cljs.core.Keyword(null,"status","status",-1997798413));
+var status_text = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__15549__$1,new cljs.core.Keyword(null,"status-text","status-text",-1834235478));
 return console.log(["something bad happened: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(status)," ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(status_text)].join(''));
 });
 

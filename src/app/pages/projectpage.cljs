@@ -1,10 +1,6 @@
 (ns app.pages.projectpage
-  (:require [reagent.core :as r]
-            [app.state :as state]
-            [app.api.backend :as be]
-            [app.components.common :refer [handler error-handler]]
-            [ajax.core :refer [GET]]
-            [clojure.core :refer [atom]]))
+  (:require [app.state :as state]
+            [app.api.backend :as be]))
 
 (defn project-page [pageid]
   (be/fetch-project pageid)
