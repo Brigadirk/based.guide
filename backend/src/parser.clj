@@ -74,4 +74,6 @@
   (delete-inactive-entries))
 
 ;; Example usage
-(process-markdown-files "/bases")
+; (process-markdown-files "/bases")
+
+
