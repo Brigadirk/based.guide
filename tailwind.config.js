@@ -1,8 +1,15 @@
 // tailwind.config.js
 module.exports = {
-  purge: ['./public/index.html', './src/app/core.cljs'], // Adjust the paths to match ClojureScript files
+  content: [
+      './src/**/*.cljs',  // if your cljs files are in src
+      './public/**/*.html', // the index.html file
+  ],
   theme: {
-    extend: {},
+    extend: {
+      maxWidth: {
+      'custom': '500px'
+      },
+    },
   },
   variants: {},
   plugins: [],
