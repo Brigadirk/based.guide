@@ -3,8 +3,8 @@
 
 (defn horizontal-line []
   [:div {:style {:height "1px" ; Set the height of the line
-                 :background-color "black" ; Set the color of the line
-                 :margin "5px 0"}}]) ; Add some margin for spacing
+                 :background-color "#D3D3D3" ; Set the color of the line
+                 :margin "0px 0"}}]) ; Add some margin for spacing
 
 (defn nav-link [path title]
   [:a {:href "#"

@@ -6,7 +6,7 @@
 
 (defn layout []
   [:div
-   [logo]
-      [horizontal-line]
-   [navbar]
+   [logo] 
+   [navbar] 
+   [horizontal-line]
   @state/current-content]) ;; Dereference current-content here

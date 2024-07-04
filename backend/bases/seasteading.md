@@ -2,28 +2,53 @@
 pageid: seasteading
 name: Seasteading
 tags:
+  - planned
   - network-state
   - zede
   - private-city
   - special-economic-zone
   - charter-city
 images:
-  front: images/placeholder.png
+  front: images/seasteading.png
 associated_links:
-  website: https://www.prospera.co/
-  join: https://www.prospera.co/residence-form
-  twitter: https://twitter.com/ProsperaGlobal
-  discord: https://discord.gg/eQGnF6aW6p
+  website: https://www.seasteading.org/
+  join: https://www.seasteading.org/get-involved/
+  twitter: https://x.com/Seasteading
+  discord: https://discord.com/invite/jWxchrW
 ---
 
 # Seasteading
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue ultricies lorem id vehicula. Integer a metus suscipit, luctus magna et, semper ex. Ut quis felis tellus. Mauris accumsan nulla at nisi viverra, in commodo nunc mattis. Fusce ac gravida enim, id suscipit enim. Proin a arcu odio. Curabitur aliquam massa mi, ornare ultricies elit facilisis eget. Fusce ut tristique lorem. Vivamus sed laoreet mauris. Morbi interdum tempor pellentesque. Praesent non nulla elementum, vestibulum leo ut, vehicula ante. Praesent lobortis velit id arcu gravida tristique. Mauris quam urna, blandit eu orci ac, ullamcorper vestibulum tellus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer mattis risus lacus, et mollis ante consequat ut.
+## Introduction
 
-Maecenas sem velit, finibus ac pellentesque quis, tincidunt id tortor. Donec tempor, velit at dictum mollis, nisl lectus volutpat sem, bibendum commodo nisi metus eget odio. Quisque aliquet iaculis faucibus. Aenean dignissim, ex et congue posuere, lacus libero aliquam nisi, ut hendrerit libero nisl sed diam. Donec mattis, neque sed semper consectetur, dolor dui posuere ipsum, eu efficitur nibh erat quis leo. Vivamus gravida scelerisque arcu ut vulputate. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc enim nulla, convallis quis risus vel, cursus tincidunt libero. Donec nec laoreet lorem.
+This is a boring LLM generated text and is meant a placeholder. Seasteading is a concept that involves the creation of floating cities on the ocean. The idea is to build permanent, self-sustaining communities on the water that are independent of any existing nation-state. Seasteading has been promoted by a number of advocates as a way to experiment with new forms of governance, promote innovation, and address global challenges such as climate change and rising sea levels. In this report, we will examine the history, design, and potential impact of seasteading, as well as the challenges it faces in becoming a reality.
 
-Sed tincidunt est ut tempus laoreet. Aenean a viverra arcu. Curabitur risus enim, lacinia ut egestas vel, rhoncus eu dui. Mauris ac dignissim massa, ut vehicula ligula. Duis sed cursus erat. Maecenas aliquet venenatis urna, sed interdum nunc. Suspendisse potenti. Quisque venenatis leo eget urna condimentum luctus. Sed hendrerit id lectus porta faucibus. Cras euismod, nisl ac placerat aliquet, orci ipsum pulvinar mi, vel dictum nisi tortor vitae odio.
+## History
 
-Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris pretium porta sem. Maecenas sodales magna eu ullamcorper interdum. Nunc ut turpis commodo, malesuada nibh at, interdum velit. Fusce ultricies ornare commodo. Etiam cursus diam magna, ac commodo ante molestie tempor. Maecenas laoreet erat eget bibendum vestibulum. Integer nisi massa, porta eu neque eget, volutpat iaculis ipsum.
+The concept of seasteading was first proposed by the American political theorist and economist Murray Rothbard in the 1960s. However, it was not until the early 2000s that the idea gained significant attention, thanks in large part to the efforts of Patri Friedman, the grandson of the economist Milton Friedman. Friedman founded the Seasteading Institute in 2008 to promote the concept and develop practical designs for floating cities.
 
-In pretium massa at velit commodo consequat. Aenean nec justo pharetra, porta ante vitae, egestas purus. Aliquam eget dignissim ex. Proin et ullamcorper lacus, aliquet mollis metus. Nullam mollis sapien tortor. Nunc vehicula odio at arcu ornare ultricies. Cras ultricies non leo sed elementum. Pellentesque cursus imperdiet lorem eu ornare. In eget magna venenatis, eleifend ex non, ullamcorper neque.
+## Design
+
+Seasteading communities are envisioned as modular, floating platforms that can be connected together to form larger structures. The platforms would be designed to be self-sustaining, with their own power, water, and waste management systems. They would also be designed to withstand extreme weather conditions, such as hurricanes and tsunamis.
+
+The design of seasteading communities is highly flexible, with the potential for a wide range of architectural styles and layouts. Some designs feature high-rise buildings and dense urban environments, while others emphasize green spaces and low-density development. The modular nature of the platforms also allows for the creation of specialized zones for different activities, such as research, industry, or tourism.
+
+## Potential Impact
+
+Seasteading has the potential to have a significant impact on a number of global challenges. One of the main benefits of seasteading is the ability to experiment with new forms of governance and social organization. Seasteading communities could serve as laboratories for testing out new ideas in areas such as economics, politics, and social policy.
+
+Seasteading also has the potential to promote innovation and economic growth. By creating new spaces for entrepreneurship and experimentation, seasteading communities could attract talent and investment from around the world. This could lead to the development of new technologies and industries, as well as the creation of new jobs and economic opportunities.
+
+Seasteading could also help address global challenges such as climate change and rising sea levels. By building communities on the water, seasteaders could avoid the risks associated with coastal development, such as flooding and erosion. Seasteading communities could also serve as models for sustainable development, with a focus on renewable energy, water conservation, and waste reduction.
+
+## Challenges
+
+Despite its potential benefits, seasteading faces a number of significant challenges. One of the main challenges is the legal and regulatory framework for creating and maintaining floating cities. Seasteading communities would need to operate in international waters, outside the jurisdiction of any existing nation-state. This raises a number of complex legal and political issues, such as the right to self-determination, the provision of public goods and services, and the resolution of disputes.
+
+Another challenge is the technical feasibility of building and maintaining floating cities. While there have been a number of successful experiments with floating structures, such as oil rigs and cruise ships, the creation of permanent, self-sustaining communities on the water would require significant advances in engineering and technology.
+
+Finally, there are concerns about the social and environmental impact of seasteading. Critics argue that seasteading communities could exacerbate existing inequalities, by creating exclusive enclaves for the wealthy and privileged. There are also concerns about the potential environmental impact of seasteading, such as the disruption of marine ecosystems and the generation of waste and pollution.
+
+## Conclusion
+
+Seasteading represents a bold and innovative vision for the future of human settlement. By creating floating cities on the ocean, seasteaders hope to experiment with new forms of governance, promote innovation, and address global challenges such as climate change and rising sea levels. However, seasteading also faces significant challenges, including legal and regulatory hurdles, technical feasibility, and social and environmental concerns. As the concept of seasteading continues to evolve, it will be important to address these challenges in order to realize its full potential.

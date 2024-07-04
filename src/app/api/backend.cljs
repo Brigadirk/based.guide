@@ -1,7 +1,8 @@
 (ns app.api.backend
   (:require [ajax.core :refer [GET]]
             [app.state :as state]
-            [app.components.common :refer [error-handler]]))
+            [app.components.common :refer [error-handler]]
+            [clojure.string :as string]))
 
 (goog-define env "prod")
 
@@ -19,7 +20,10 @@
 (defn fetch-and-update-projects []
   (GET (str (api-url) "/front")
     {:handler (fn [response]
-                (reset! state/project-list (mapv transform-project response)))
+                (reset! state/project-list
+                        (->> response
+                             (mapv transform-project)
+                             (remove #(= (clojure.string/lower-case (:name %)) "about")))))
      :error-handler error-handler}))
 
 (defn transform-page [project]

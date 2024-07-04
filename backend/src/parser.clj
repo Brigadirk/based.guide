@@ -45,7 +45,7 @@
 (defn parse-markdown [content]
   (let [yaml-part (re-find #"(?s)---\n(.*?)\n---" content)
         yaml-contents (parse-yaml (second yaml-part))
-        body (second (re-find #"(?s)\n# .*\n\n(.*)" content))]
+        body (second (re-find #"(?s)\n# .*?\n\n(.*)" content))]
     (merge yaml-contents {:body body})))
 
 (defn convert-to-db-format [parsed-content]
