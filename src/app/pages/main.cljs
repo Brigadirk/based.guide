@@ -19,7 +19,7 @@
                 (:name project)]]])])
 
 (defn main-grid []
-   [:div {:class "flex flex-wrap"}
+   [:div {:class "flex flex-wrap"} ;TODO: try putting this on in grid item instead
     (let [projects @state/project-list]
       (if (and projects (empty? projects))
         [no-results]
