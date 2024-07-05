@@ -8,8 +8,8 @@
 
 (defn api-url []
   (if (= env "dev")
-    "based-guide-backend:8080"  ;; Your local dev URL
-    "based-guide-backend:8080")) ;; Your production URL
+    "https://based-guide-backend.onrender.com"  ;; Your local dev URL
+    "https://based-guide-backend.onrender.com")) ;; Your production URL
 
 (defn transform-project [project]
   {:name (get project "projects/name")
