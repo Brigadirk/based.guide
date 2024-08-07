@@ -2,9 +2,12 @@
   (:require [app.state :as state]))
 
 (defn horizontal-line []
-  [:div {:style {:height "1px" ; Set the height of the line
-                 :background-color "#D3D3D3" ; Set the color of the line
-                 :margin "0px 0"}}]) ; Add some margin for spacing
+  [:div {:style {:height "1px"
+                 :background-color "#D3D3D3"
+                 :margin "10px 0"
+                 :margin-left "170px" ; Add left margin (adjust as needed)
+                ;;  
+                }}]) ; Adjust width to account for left margin
 
 (defn nav-link [path title]
   [:a {:href "#"
