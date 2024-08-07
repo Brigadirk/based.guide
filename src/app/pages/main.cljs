@@ -20,7 +20,7 @@
                              :align-items "center"
                              :justify-content "center"
                             ;;  :background "linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.7))"
-                             }} ; Semi-transparent gradient backdrop
+                             }} 
                [:h3 {:style {:font-size "1.75rem"
                              :text-align "center"
                              :color "white"
