@@ -5,8 +5,7 @@
   [:div {:style {:height "1px"
                  :background-color "#D3D3D3"
                  :margin "10px 0"
-                 :margin-left "170px" ; Add left margin (adjust as needed)
-                ;;  
+                 :margin-left "170px" ;;wrap around the logo
                 }}]) ; Adjust width to account for left margin
 
 (defn nav-link [path title]
