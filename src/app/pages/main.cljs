@@ -1,6 +1,7 @@
 (ns app.pages.main
   (:require [app.state :as state]
-            [app.components.common :refer [nav-link]]))
+            [app.components.common :refer [nav-link]]
+            [clojure.string :as str]))
 
 (defn no-results []
   [:div {:style {:display "flex" :justify-content "center" :align-items "center" :height "100%"}}
@@ -29,10 +30,40 @@
                              }} ; Text shadow for better readability
                 (:name project)]]])])
 
+(defn filter-bar []
+  (let [filter-state @state/filter-state]
+    [:div {:style {:display "flex" :justify-content "center" :margin-bottom "20px"}}
+     (for [filter [:current :planned :historical :fictional]]
+       [:button {:key filter
+                 :style {:margin "5px"
+                         :padding "10px"
+                         :background-color (if (filter-state filter) "orange" "grey")
+                         :color "white"
+                         :border "none"
+                         :border-radius "5px"
+                         :cursor "pointer"}
+                 :on-click #(swap! state/filter-state update filter not)}
+        (str/capitalize (name filter))])]))
+
+(defn filter-projects []
+  (let [projects @state/project-list
+        active-filters (filter val @state/filter-state)
+        active-filter-set (set (map (comp name key) active-filters))]
+    (filter (fn [project]
+              (let [tags (if (str/includes? (:tags project) ",")
+                           (str/split (:tags project) #", ")
+                           [(:tags project)])]
+                ;; (js/console.log "Project Tags:" tags)
+                (some (fn [tag]
+                        (contains? active-filter-set tag))
+                      tags)))
+            projects)))
+
 (defn main-grid []
   [:div {:style {:width "65%" :margin "0 auto"}}
+   [filter-bar]
    [:div {:style {:display "flex" :flex-wrap "wrap"}}
-    (let [projects @state/project-list]
+    (let [projects (filter-projects)]
       (if (and projects (empty? projects))
         [no-results]
         (for [project projects]
