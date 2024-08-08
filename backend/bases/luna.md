@@ -4,7 +4,7 @@ name: Luna
 tags:
   - fictional
 images:
-  front: images/luna.png
+  front: images/grid/luna.png
 associated_links:
   website: https://www.goodreads.com/book/show/16690.The_Moon_Is_a_Harsh_Mistress
 ---
@@ -61,9 +61,9 @@ While technically feasible, and an optimistic vision for the future, such a soci
 
 ### General Information:
 
-- Wikipedia: <https://en.wikipedia.org/wiki/The_Moon_Is_a_Harsh_Mistress>
-- Goodreads: <https://www.goodreads.com/book/show/16690.The_Moon_Is_a_Harsh_Mistress>
-- Heinlein society: <https://www.heinleinsociety.org/>
+- [Wikipedia](https://en.wikipedia.org/wiki/The_Moon_Is_a_Harsh_Mistress)
+- [Goodreads](https://www.goodreads.com/book/show/16690.The_Moon_Is_a_Harsh_Mistress)
+- [Heinlein society](https://www.heinleinsociety.org/)
 
 ### Learning Resources:
 
@@ -71,6 +71,6 @@ While technically feasible, and an optimistic vision for the future, such a soci
 - [EconLib](https://www.econlib.org/archives/2018/05/reading_the_moo.html)
 - [Reason.com](https://reason.com/2024/05/03/the-moon-is-a-harsh-mistress/)
 - [Reactormag](https://reactormag.com/is-the-moon-is-a-harsh-mistress-heinleins-all-time-greatest-work/)
-- Youtube: <https://www.youtube.com/watch?v=l4_LnkfoBM8>
+- [Youtube](https://www.youtube.com/watch?v=l4_LnkfoBM8)
 
-> Written by Kitt Johnson
+Written by Kitt Johnson

@@ -1,6 +1,5 @@
 (ns app.pages.main
-  (:require [reagent.core :as r]
-            [app.state :as state]
+  (:require [app.state :as state]
             [app.components.common :refer [nav-link]]))
 
 (defn no-results []

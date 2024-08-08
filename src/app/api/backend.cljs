@@ -8,7 +8,7 @@
 
 (defn api-url []
   (if (= env "dev")
-    "https://based-guide-backend.onrender.com"  ;; Your local dev URL
+    "https://based-guide-backend.onrender.com"  ;; Your local dev URL TODO: fix that this doesn't work in cloud if set to localhost
     "https://based-guide-backend.onrender.com")) ;; Your production URL
 
 (defn transform-project [project]

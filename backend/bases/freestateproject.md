@@ -5,7 +5,7 @@ tags:
   - current
   - intentional-community
 images:
-  front: images/fsp.png
+  front: images/grid/fsp.png
 associated_links:
   website: https://www.fsp.org/
   join: https://www.fsp.org/move-to-nh
@@ -55,21 +55,21 @@ For more information about moving and inquiries related to buying or renting a h
 
 ### General Information:
 
-- Main website: <https://www.fsp.org/>
-- How to move: <https://www.fsp.org/move-to-nh>
+- [Official website](https://www.fsp.org/)
+- [How to move](https://www.fsp.org/move-to-nh)
 
 ### Community & Events: 
 
-- <https://www.fsp.org/community>
-- <https://x.com/freestatenh>
-- <https://discord.com/invite/free-state-project-547451199381569538>
-- <https://www.facebook.com/FreeStateProject.org/>
+- [Official community site](https://www.fsp.org/community)
+- [X](https://x.com/freestatenh)
+- [Discord](https://discord.com/invite/free-state-project-547451199381569538)
+- [Facebook](https://www.facebook.com/FreeStateProject.org/)
 
 ### Learning Resources:
 
-- (Libertopia): <https://www.youtube.com/watch?v=PXSw0nYKiU8>
-- (101 Reason): <https://www.youtube.com/watch?v=vxCNeK97_C8>
-- (NBS Life Liberty New Hampshire): <https://www.youtube.com/watch?v=dfTYuqoO2Mg&list=PLGE3I9evF9H8SdlfJsAkDg8ALsM4cG0En>
-- Free State Project YouTube: <https://www.youtube.com/@FreeStateProjectNH>
+- [Libertopia](https://www.youtube.com/watch?v=PXSw0nYKiU8)
+- [101 Reason](https://www.youtube.com/watch?v=vxCNeK97_C8)
+- [NBS Life Liberty New Hampshire](https://www.youtube.com/watch?v=dfTYuqoO2Mg&list=PLGE3I9evF9H8SdlfJsAkDg8ALsM4cG0En)
+- [Free State Project YouTube](https://www.youtube.com/@FreeStateProjectNH)
 
-> Written by Kitt Johnson
+Written by Kitt Johnson

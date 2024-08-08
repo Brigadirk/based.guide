@@ -6,7 +6,7 @@ tags:
   - intentional-community
   - autonomous entity
 images:
-  front: images/liberland.png
+  front: images/grid/liberland.png
 associated_links:
   website: https://liberland.org/
   join: https://sso.liberland.org/signup
@@ -92,4 +92,4 @@ Additional Information
 - [Politics with Paint](https://www.youtube.com/watch?v=pR9lSS6jmJI)
 - [Reason](https://www.youtube.com/watch?v=P75YE6wZKZY)
 
-> Written by Kitt Johnson
+Written by Kitt Johnson
