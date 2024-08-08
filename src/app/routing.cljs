@@ -1,7 +1,8 @@
 (ns app.routing
   (:require [app.state :as state]
             [app.pages.main :refer [main-grid]]
-            [app.pages.projectpage :refer [project-page]]))
+            [app.pages.projectpage :refer [project-page]]
+            [clojure.string :as string]))
 
 (defn route-component-map [path]
   (cond

@@ -19,12 +19,12 @@
                   :margin-left "1rem"
                   :margin-right "1rem"
                   :margin-bottom "1rem"}
-          :src "/images/founder_ape.svg"}]
+          :src "/images/logo/founder_ape.svg"}]
 
    [:img {:style {:width "500px"
                   :height "auto"
                   :margin-top "2rem"}
-          :src "/images/logo_font_horizontal.svg"}]
+          :src "/images/logo/logo_font_horizontal.svg"}]
 
    [:div {:style {:position "absolute"
                   :right "1rem"
@@ -33,14 +33,14 @@
                   :gap "1rem"}}
     [:a {:href "https://x.com/basedguide"
          :target "_blank"}
-     [:img {:style {:width "32px"
-                    :height "32px"}
-            :src "/images/twitter-svg.svg"}]]
+     [:img {:style {:width "58px"
+                    :height "58px"}
+            :src "/images/socials/x.svg"}]]
     [:a {:href "https://t.me/+p-Z0TvQ7CL9hYzlk"
          :target "_blank"}
      [:img {:style {:width "32px"
                     :height "32px"}
-            :src "/images/telegram-svg.svg"}]]]
+            :src "/images/socials/telegram.svg"}]]]
 
 ;;    [:label {:style {:position "relative"
 ;;                     :display "inline-block"

@@ -9,7 +9,7 @@ tags:
   - special-economic-zone
   - charter-city
 images:
-  front: images/island.png
+  front: images/grid/island.png
 associated_links:
   website: https://www.prospera.co/
   join: https://www.prospera.co/residence-form
@@ -79,24 +79,24 @@ Inquire below!
 
 ### General Information:
 
-- Main website: <https://www.prospera.co/>
-- Physical & E-residency: <https://eprospera.hn/residency>
-- Doing business: <https://eprospera.hn/residency>
-- How to live in Prospera: <https://wiki.prospera.city/Moving%20Guide>
+- [Main website](https://www.prospera.co/)
+- [Physical & E-residency](https://eprospera.hn/residency)
+- [Doing business](https://eprospera.hn/residency)
+- [How to live in Prospera](https://wiki.prospera.city/Moving%20Guide)
 
 ### Community & Events: 
 
-- <https://eprospera.hn/community>
-- <https://x.com/ProsperaGlobal> 
-- <https://discord.gg/nXWh7ytuXB>
-- <https://www.facebook.com/ProsperaHn/>
-- <https://community.prospera.co/c/events> 
+- [Community](https://eprospera.hn/community)
+- [X](https://x.com/ProsperaGlobal)
+- [Discord](https://discord.gg/nXWh7ytuXB)
+- [Facebook](https://www.facebook.com/ProsperaHn/)
+- [Events](https://community.prospera.co/c/events)
 
 ### Learning Resources:
 
-- (Anthony Pompliano interview with founder): <https://www.youtube.com/watch?v=cVMxQ2umdPA&t>
-- (Prospera Official Introduction): <https://www.youtube.com/watch?v=0VKGtYooaTY>
-- (Reason Documentary): <https://www.youtube.com/watch?v=TwiE1dxGYNY>
-- Prospera Honduras YouTube: <https://www.youtube.com/@prosperahn255>
+- [Anthony Pompliano interview with founder](https://www.youtube.com/watch?v=cVMxQ2umdPA&t)
+- [Prospera Official Introduction](https://www.youtube.com/watch?v=0VKGtYooaTY)
+- [Reason Documentary](https://www.youtube.com/watch?v=TwiE1dxGYNY)
+- [Prospera Honduras YouTube](https://www.youtube.com/@prosperahn255)
 
-> Written by Kitt Johnson
+Written by Kitt Johnson

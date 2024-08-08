@@ -1,6 +1,5 @@
 (ns app.components.navbar
-  (:require [app.routing :as routing]
-            [app.components.common :refer [nav-link]]))
+  (:require [app.components.common :refer [nav-link]]))
 
 (defn navbar []
   [:nav {:class "p-2 flex justify-center"}
