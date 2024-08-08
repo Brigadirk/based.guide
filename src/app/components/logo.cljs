@@ -33,13 +33,13 @@
                   :gap "1rem"}}
     [:a {:href "https://x.com/basedguide"
          :target "_blank"}
-     [:img {:style {:width "58px"
-                    :height "58px"}
+     [:img {:style {:width "32px"
+                    :height "32px"}
             :src "/images/socials/x.svg"}]]
     [:a {:href "https://t.me/+p-Z0TvQ7CL9hYzlk"
          :target "_blank"}
-     [:img {:style {:width "32px"
-                    :height "32px"}
+     [:img {:style {:width "34px"
+                    :height "34px"}
             :src "/images/socials/telegram.svg"}]]]
 
 ;;    [:label {:style {:position "relative"

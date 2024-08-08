@@ -1,10 +1,15 @@
 (ns app.state
   (:require [reagent.core :as r]))
 
-(def current-route (r/atom "/"))
-(def current-content (r/atom nil))
-(def project-list (r/atom []))
-(def project-page (r/atom {}))
+(defonce filter-state (r/atom {:current true, 
+                           :planned true,
+                           :historical true,
+                           :fictional true}))
+
+(defonce current-route (r/atom "/"))
+(defonce current-content (r/atom nil))
+(defonce project-list (r/atom []))
+(defonce project-page (r/atom {}))
 
 
 
