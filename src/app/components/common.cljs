@@ -23,9 +23,8 @@
   (add-horizontal-line-styles)
   [:div.horizontal-line])
 
-
 (defn nav-link [path title]
-  [:a {:href "#"
+  [:a.navbar-link {:href "#"
        :on-click (fn [event]
                    (.preventDefault event)
                    (reset! state/current-route path))}
