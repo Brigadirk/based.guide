@@ -8,7 +8,7 @@
    [:h2 "No projects found"]])
 
 (defn grid-item [project]
-  [:div {:style {:width "33%" :padding "8px" :box-sizing "border-box"}}
+  [:div {:style {:width "400px" :padding "8px" :box-sizing "border-box"}}
    (nav-link (str "/" (:pageid project))
              [:div {:style {:position "relative" :padding-top "56.25%"}} ; 16:9 aspect ratio
               [:img {:style {:position "absolute" :top 0 :left 0 :width "100%" :height "100%" :object-fit "cover"}
@@ -60,7 +60,7 @@
             projects)))
 
 (defn main-grid []
-  [:div {:style {:width "65%" :margin "0 auto"}}
+  [:div {:style {:width "1200px" :margin "0 auto"}}
    [filter-bar]
    [:div {:style {:display "flex" :flex-wrap "wrap"}}
     (let [projects (filter-projects)]

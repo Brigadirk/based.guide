@@ -5,7 +5,6 @@
  [
  [reagent "1.2.0"]
  [cljs-ajax "0.8.4"]
- [metosin/reitit "0.7.0-alpha7"]
  [cider/cider-nrepl "0.44.0"]
  [markdown-clj "1.12.1"]
  ]
