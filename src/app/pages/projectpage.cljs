@@ -13,7 +13,6 @@
             flex-direction: column;
             align-items: center;
             margin-top: 100px;
-            padding: 0 1rem; /* Add padding to ensure content doesn't touch the edges */
           }
           .project-title {
             font-size: 1.875rem; /* 3xl */
