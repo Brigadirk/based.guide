@@ -4,7 +4,7 @@
 (defonce filter-state (r/atom {:current true, 
                            :planned true,
                            :historical true,
-                           :fictional true}))
+                           :fictional false}))
 
 (defonce current-route (r/atom "/"))
 (defonce current-content (r/atom nil))
