@@ -8,8 +8,10 @@
 
 (defn api-url []
   (if (= env "dev")
-    "https://based-guide-backend.onrender.com"  ;; Your local dev URL TODO: fix that this doesn't work in cloud if set to localhost
+    "http://localhost:8080"  ;; Your local dev URL TODO: fix that this doesn't work in cloud if set to localhost
     "https://based-guide-backend.onrender.com")) ;; Your production URL
+
+;; Bases
 
 (defn transform-project [project]
   {:name (get project "projects/name")
@@ -38,5 +40,24 @@
   (GET (str (api-url) "/projects/" (:pageid page))
     {:handler (fn [response]
                 (reset! state/project-page (transform-page (first response))))
+     :error-handler error-handler}))
+
+;; Events
+
+(defn transform-event [event]
+  {:name (get event "events/name")
+   :eventid (get event "events/eventid")
+   :startdate (get event "events/startdate")
+   :location (js/JSON.parse (get event "event/location"))
+   :enddate (get event "events/enddate")
+   :link (get event "events/link")
+   :tags (get event "events/tags")})
+
+(defn fetch-events []
+  (GET (str (api-url) "/events")
+    {:handler (fn [response]
+                (reset! state/event-list
+                        (->> response 
+                             (mapv transform-event))))
      :error-handler error-handler}))
 

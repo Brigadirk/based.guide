@@ -34,7 +34,6 @@
             height: 100%;
             object-fit: cover;
             border-radius: 10px;
-            
           }
           .grid-item-overlay {
             position: absolute;
@@ -55,6 +54,8 @@
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
+            width: 100%;
+            flex-wrap: wrap;
           }
           .filter-button {
             margin: 5px;
@@ -64,6 +65,9 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            flex: 1;
+            min-width: 100px;
+            text-align: center;
           }
           .filter-button.active {
             background-color: orange;
@@ -95,8 +99,23 @@
             .grid-item {
               width: calc(100% - 16px); /* 1 item per row with some margin */
             }
+            .filter-button {
+              font-size: 2rem;
+            }
             .grid-item-overlay h3 {
               font-size: 4rem;
+            }
+          }
+          @media (max-width: 600px) {
+            .filter-button {
+              font-size: 2.5rem;
+              padding: 15px;
+            }
+          }
+          @media (max-width: 400px) {
+            .filter-button {
+              font-size: 3rem;
+              padding: 20px;
             }
           }
           ")

@@ -10,6 +10,7 @@
 (defonce current-content (r/atom nil))
 (defonce project-list (r/atom []))
 (defonce project-page (r/atom {}))
+(defonce event-list (r/atom []))
 
 
 

@@ -47,4 +47,5 @@
    [:div.navbar-container
     [:ul.navbar-list
      [:li.navbar-item [nav-link "/" "Home"]]
+     [:li.navbar-item [nav-link "/events" "Events"]]
      [:li.navbar-item [nav-link "/about" "About"]]]]])
