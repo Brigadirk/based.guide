@@ -1,15 +1,30 @@
 (ns app.components.common
   (:require [app.state :as state]))
 
+(defn add-horizontal-line-styles []
+  (let [style-element (js/document.createElement "style")]
+    (set! (.-innerHTML style-element)
+          "
+          .horizontal-line {
+            height: 1px;
+            background-color: #D3D3D3;
+            margin: 10px 0;
+            margin-left: 145px;  /* Wrap around the logo */
+          }
+          @media (max-width: 1000px) {
+            .horizontal-line {
+              margin-left: 0px; 
+            } 
+          }
+          ")
+    (js/document.head.appendChild style-element)))
+
 (defn horizontal-line []
-  [:div {:style {:height "1px"
-                 :background-color "#D3D3D3"
-                 :margin "10px 0"
-                 :margin-left "170px" ;;wrap around the logo
-                }}]) ; Adjust width to account for left margin
+  (add-horizontal-line-styles)
+  [:div.horizontal-line])
 
 (defn nav-link [path title]
-  [:a {:href "#"
+  [:a.navbar-link {:href "#"
        :on-click (fn [event]
                    (.preventDefault event)
                    (reset! state/current-route path))}

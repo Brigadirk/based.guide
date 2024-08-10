@@ -3,45 +3,123 @@
             [app.components.common :refer [nav-link]]
             [clojure.string :as str]))
 
+(defn add-styles []
+  (let [style-element (js/document.createElement "style")]
+    (set! (.-innerHTML style-element)
+          "
+          .no-results {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+          }
+          .no-results h2 {
+            font-size: 2rem;
+          }
+          .grid-item {
+            width: calc(33.333% - 16px); /* 3 items per row with some margin */
+            padding: 8px;
+            box-sizing: border-box;
+            margin: 8px;
+          }
+          .grid-item-inner {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 aspect ratio */
+          }
+          .grid-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            
+          }
+          .grid-item-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .grid-item-overlay h3 {
+            font-size: 1.75rem;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            padding: 0 12px;
+            text-shadow: 3px 3px 4px rgba(0,0,0,0.8);
+          }
+          .filter-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+          }
+          .filter-button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 1rem;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+          .filter-button.active {
+            background-color: orange;
+          }
+          .filter-button.inactive {
+            background-color: grey;
+          }
+          .main-grid {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+          }
+          .main-grid-inner {
+            display: flex;
+            flex-wrap: wrap;
+          }
+          @media (max-width: 1200px) {
+            .grid-item {
+              width: calc(50% - 16px); /* 2 items per row with some margin */
+            }
+            .filter-button {
+              font-size: 1.5rem;
+            }
+            .grid-item-overlay h3 {
+              font-size: 2.5rem;
+            }
+          }
+          @media (max-width: 800px) {
+            .grid-item {
+              width: calc(100% - 16px); /* 1 item per row with some margin */
+            }
+            .grid-item-overlay h3 {
+              font-size: 4rem;
+            }
+          }
+          ")
+    (js/document.head.appendChild style-element)))
+
 (defn no-results []
-  [:div {:style {:display "flex" :justify-content "center" :align-items "center" :height "100%"}}
+  [:div.no-results
    [:h2 "No projects found"]])
 
 (defn grid-item [project]
-  [:div {:style {:width "33%" :padding "8px" :box-sizing "border-box"}}
+  [:div.grid-item
    (nav-link (str "/" (:pageid project))
-             [:div {:style {:position "relative" :padding-top "56.25%"}} ; 16:9 aspect ratio
-              [:img {:style {:position "absolute" :top 0 :left 0 :width "100%" :height "100%" :object-fit "cover"}
-                     :class "rounded-lg"
-                     :src (:image project)}]
-              [:div {:style {:position "absolute"
-                             :inset 0
-                             :display "flex"
-                             :align-items "center"
-                             :justify-content "center"
-                            ;;  :background "linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.7))"
-                             }} 
-               [:h3 {:style {:font-size "1.75rem"
-                             :text-align "center"
-                             :color "white"
-                             :font-weight "bold"
-                             :padding "0 12px"
-                             :text-shadow "3px 3px 4px rgba(0,0,0,0.8)"
-                             }} ; Text shadow for better readability
-                (:name project)]]])])
+             [:div.grid-item-inner
+              [:img {:src (:image project)}]
+              [:div.grid-item-overlay
+               [:h3 (:name project)]]])])
 
 (defn filter-bar []
   (let [filter-state @state/filter-state]
-    [:div {:style {:display "flex" :justify-content "center" :margin-bottom "20px"}}
+    [:div.filter-bar
      (for [filter [:current :planned :historical :fictional]]
        [:button {:key filter
-                 :style {:margin "5px"
-                         :padding "10px"
-                         :background-color (if (filter-state filter) "orange" "grey")
-                         :color "white"
-                         :border "none"
-                         :border-radius "5px"
-                         :cursor "pointer"}
+                 :class (str "filter-button " (if (filter-state filter) "active" "inactive"))
                  :on-click #(swap! state/filter-state update filter not)}
         (str/capitalize (name filter))])]))
 
@@ -53,16 +131,16 @@
               (let [tags (if (str/includes? (:tags project) ",")
                            (str/split (:tags project) #", ")
                            [(:tags project)])]
-                ;; (js/console.log "Project Tags:" tags)
                 (some (fn [tag]
                         (contains? active-filter-set tag))
                       tags)))
             projects)))
 
 (defn main-grid []
-  [:div {:style {:width "65%" :margin "0 auto"}}
+  (add-styles)
+  [:div.main-grid
    [filter-bar]
-   [:div {:style {:display "flex" :flex-wrap "wrap"}}
+   [:div.main-grid-inner
     (let [projects (filter-projects)]
       (if (and projects (empty? projects))
         [no-results]

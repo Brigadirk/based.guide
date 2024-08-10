@@ -1,64 +1,121 @@
-(ns app.components.logo)
+(ns app.components.logo
+  (:require [app.components.common :refer [nav-link]]))
 
-;; (defn toggle-dark-mode [e]
-;;   (let [checked (-> e .-target .-checked)]
-;;     (if checked
-;;       (js/document.documentElement.classList.add "dark")
-;;       (js/document.documentElement.classList.remove "dark"))))
+(defn add-styles []
+  (let [style-element (js/document.createElement "style")]
+    (set! (.-innerHTML style-element)
+          "
+          .logo-container {
+            position: relative;
+            max-width: 100%;
+            overflow: visible;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 0;  /* Remove or reduce bottom margin */
+          }
+          .logo-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            position: relative;
+          }
+          .main-logo {
+            width: 100%;
+            max-width: 550px;  /* Slightly reduced max-width */
+            height: auto;
+            position: relative;
+            z-index: 1;
+          }
+          .founder-ape {
+            position: absolute;
+            left: 0.5rem;  /* Adjusted left position */
+            top: 50%;
+            transform: translateY(-50%);
+            width: 180px;  /* Slightly reduced width */
+            height: auto;
+            max-height: none;
+            z-index: 0;
+          }
+          .social-links {
+            display: flex;
+            gap: 0.5rem;  /* Reduced gap */
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+          }
+          .social-icon {
+            width: 32px;  /* Slightly reduced size */
+            height: 32px;
+          }
+          @media (max-width: 875px) {
+            .founder-ape {
+              display: none;
+            }
+          }
+          @media (max-width: 1000px) {
+            .logo-container {
+              min-height: auto;
+              align-items: flex-start;
+            }
+            .main-logo {
+              width: 100%;
+              max-width: 750px;
+              padding-bottom: 20px;
+            }
+            .social-links {
+              position: relative;
+              margin-bottom: 0.5rem; /* Reduced margin */
+              display: flex;
+              justify-content: center; /* Center the social links */
+              width: 100%;
+            }
+            .founder-ape {
+              display: none;
+            }
+            .social-icon {
+              width: 52px;
+              height: 52px;
+              padding-bottom: 20px;
+              padding-right: 5px;
+              padding-left: 5px;
+            }
+          }
+          @media (max-width: 480px) {
+            .social-links {
+              margin-bottom: 1rem;  /* Reduced margin */
+              align-items: center;
+            }
+          }
+          ")
+    (js/document.head.appendChild style-element)))
 
 (defn logo []
-  [:div {:style {:position "relative"
-                 :display "flex"
-                 :justify-content "center"
-                 :align-items "center"}}
-   [:img {:style {:position "absolute"
-                  :left "0"
-                  :width "188px"
-                  :height "auto"
-                  :margin-top "2rem"
-                  :margin-left "1rem"
-                  :margin-right "1rem"
-                  :margin-bottom "1rem"}
-          :src "/images/logo/founder_ape.svg"}]
+  (add-styles)
+  [:div.logo-container
 
-   [:img {:style {:width "500px"
-                  :height "auto"
-                  :margin-top "2rem"}
-          :src "/images/logo/logo_font_horizontal.svg"}]
+   [:div.logo-main
 
-   [:div {:style {:position "absolute"
-                  :right "1rem"
-                  :top "1rem"
-                  :display "flex"
-                  :gap "1rem"}}
+    ;; Ape
+    (nav-link "/"
+              [:img.founder-ape {:src "/images/logo/founder_ape.svg"
+                                 :alt "Founder Ape"}])
+
+    ;; Based.Guide
+              [:img.main-logo {:src "/images/logo/logo_font_horizontal.svg"
+                               :alt "Main Logo"}]]
+
+   [:div.social-links
+
+    ;; Twitter
     [:a {:href "https://x.com/basedguide"
          :target "_blank"}
-     [:img {:style {:width "32px"
-                    :height "32px"}
-            :src "/images/socials/x.svg"}]]
+     [:img.social-icon {:src "/images/socials/x.svg"
+                        :alt "X (Twitter)"}]]
+
+    ;; Telegram
     [:a {:href "https://t.me/+p-Z0TvQ7CL9hYzlk"
          :target "_blank"}
-     [:img {:style {:width "34px"
-                    :height "34px"}
-            :src "/images/socials/telegram.svg"}]]]
-
-;;    [:label {:style {:position "relative"
-;;                     :display "inline-block"
-;;                     :width "60px"
-;;                     :height "34px"}}
-;;     [:input {:type "checkbox"
-;;              :on-change #(toggle-dark-mode %)
-;;              :style {:opacity "0"
-;;                      :width "0"
-;;                      :height "0"}}]
-;;     [:span {:class "slider round"
-;;             :style {:position "absolute"
-;;                     :cursor "pointer"
-;;                     :top "0"
-;;                     :left "0"
-;;                     :right "0"
-;;                     :bottom "0"
-;;                     :background-color "#ccc"
-;;                     :transition ".4s"
-;;                     :border-radius "34px"}}]]
-   ])
+     [:img.social-icon {:src "/images/socials/telegram.svg"
+                        :alt "Telegram"}]]]])
