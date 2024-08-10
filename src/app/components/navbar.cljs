@@ -33,6 +33,11 @@
           .navbar-link:hover {
             color: #000;  /* Adjust as needed */
           }
+          @media (max-width: 1000px) {
+          .navbar-link {
+            font-size: 28px;
+            }
+          }
           ")
     (js/document.head.appendChild style-element)))
 
