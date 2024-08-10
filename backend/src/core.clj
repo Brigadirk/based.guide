@@ -4,8 +4,11 @@
             [db :as db]
             [next.jdbc :as jdbc]
             [cheshire.core :as json]
-            [parser :as parser]
+            [baseparser :as baseparser]
+            [eventparser :as eventparser]
             [ring.middleware.cors :refer [wrap-cors]])) ;; Add this line
+
+;; Bases
 
 (defn handle-projects-request [request]
   (let [query "SELECT pageid, name, images::text, associated_links::text, tags, markdown_text FROM projects"]
@@ -28,6 +31,17 @@
      :body (json/generate-string projects)}
     ))
 
+;; Events
+
+(defn handle-events-request [request]
+  (let [query "SELECT eventid, name, startdate, enddate, location::text, link, tags FROM events"]
+    (let [events (jdbc/execute! db/db-spec [query])]
+      {:status 200
+       :headers {"Content-Type" "application/json"}
+       :body (json/generate-string events)})))
+
+;; Health
+
 (defn handle-health-check [request]
   {:status 200
    :headers {"Content-Type" "text/plain"}
@@ -40,6 +54,7 @@
                                               (handle-page-request request pageid))
       (= uri "/projects") (handle-projects-request request)
       (= uri "/front") (handle-front-images-request request)
+      (= uri "/events") (handle-events-request request)
       (= uri "/healthz") (handle-health-check request)
       :else {:status 404 :body "Not Found"})))
 
@@ -50,7 +65,9 @@
              :access-control-allow-headers ["Content-Type" "Authorization"]))
 
 (defn -main [& args]
-  (parser/create-projects-table)
-  (parser/process-markdown-files "bases")
+  (baseparser/create-projects-table)
+  (baseparser/process-markdown-files "bases")
+  (eventparser/create-events-table)
+  (eventparser/process-yaml-files "events")
   (println "Starting server with custom handler on port 8080...")
   (server/run-server app {:port 8080}))

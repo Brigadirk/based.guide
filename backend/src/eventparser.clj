@@ -1,47 +1,63 @@
 (ns eventparser
   (:require [clojure.java.io :as io]
             [utils :as utils]
-            [clj-yaml.core :as yaml]
             [cheshire.core :as json]
             [next.jdbc :as jdbc]
             [clojure.string :as str]
-            [db :as db]))
+            [db :as db])
+  (:import [java.sql Date]
+           [java.time LocalDate]
+           [java.time.format DateTimeFormatter]))
 
 (defn create-events-table []
   (jdbc/execute! db/db-spec
-                 ["CREATE TABLE IF NOT EXISTS projects (
-                   pageid VARCHAR PRIMARY KEY,
+                 ["CREATE TABLE IF NOT EXISTS events (
+                   eventid VARCHAR PRIMARY KEY,
                    name VARCHAR,
+                   startdate DATE,
+                   enddate DATE,
                    active BOOLEAN DEFAULT true,
-                   images JSON,
-                   associated_links JSON,
-                   tags VARCHAR,
-                   markdown_text TEXT)"]))
+                   location JSON,
+                   link VARCHAR,
+                   tags VARCHAR)"]))
+
+(def date-formatters
+  [(DateTimeFormatter/ofPattern "yyyy-MM-dd")
+   (DateTimeFormatter/ofPattern "dd-MM-yyyy")
+   (DateTimeFormatter/ofPattern "MM/dd/yyyy")])
+
+(defn parse-date [date-str]
+  (when date-str
+    (some (fn [formatter]
+            (try
+              (LocalDate/parse date-str formatter)
+              (catch Exception _
+                nil)))
+          date-formatters)))
+
+(defn- to-sql-date [date-str]
+  (when-let [local-date (parse-date date-str)]
+    (Date/valueOf local-date)))
 
 (defn insert-yaml-into-db [data]
   (jdbc/execute! db/db-spec
-                 ["INSERT INTO projects (pageid, name, images, associated_links, tags, markdown_text, active)
-                   VALUES (?, ?, ?::json, ?::json, ?, ?, true)
-                   ON CONFLICT (pageid) DO UPDATE
+                 ["INSERT INTO events (eventid, name, startdate, enddate, location, link, tags, active)
+                   VALUES (?, ?, ?, ?, ?::json, ?, ?, true)
+                   ON CONFLICT (eventid) DO UPDATE
                    SET name = EXCLUDED.name,
-                       images = EXCLUDED.images,
-                       associated_links = EXCLUDED.associated_links,
+                       startdate = EXCLUDED.startdate,
+                       enddate = EXCLUDED.enddate,
+                       location = EXCLUDED.location,
+                       link = EXCLUDED.link,
                        tags = EXCLUDED.tags,
-                       markdown_text = EXCLUDED.markdown_text,
                        active = EXCLUDED.active"
-                  (:pageid data) (:name data) (:images data) (:associated_links data) (:tags data) (:markdown_text data)]))
-
-(defn convert-to-db-format [parsed-content]
-  (let [{:keys [pageid name tags images associated_links]} parsed-content
-        images-json (json/generate-string images)
-        links-json (json/generate-string associated_links)
-        tags-string (str/join ", " tags)]
-    {:pageid pageid
-     :name name
-     :images images-json
-     :associated_links links-json
-     :tags tags-string
-     :markdown_text (:body parsed-content)}))
+                  (:eventid data)
+                  (:name data)
+                  (to-sql-date (:startdate data))
+                  (to-sql-date (:enddate data))
+                  (:location data)
+                  (:link data)
+                  (:tags data)]))
 
 (defn get-yaml-files [directory]
   (filter #(re-matches #".*\.yaml$" (.getName %))
@@ -51,12 +67,13 @@
   (let [{:keys [eventid name startdate enddate location link tags]} parsed-content
         location-json (json/generate-string location)
         tags-string (str/join ", " tags)]
-    {:pageid eventid
+    {:eventid eventid
      :name name
-     :images (json/generate-string {})
-     :associated_links (json/generate-string {:link link})
-     :tags tags-string
-     :markdown_text (str "Start Date: " startdate "\nEnd Date: " enddate "\nLocation: " location-json)}))
+     :startdate startdate
+     :enddate enddate
+     :location location-json
+     :link link
+     :tags tags-string}))
 
 (defn process-yaml-files [directory]
   (utils/mark-entries-as-inactive)

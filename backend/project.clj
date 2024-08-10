@@ -7,8 +7,8 @@
                  [http-kit "2.7.0"]
                  [com.github.seancorfield/next.jdbc "1.3.894"]
                  [cheshire "5.12.0"]
-                 [ring-cors "0.1.13"]
                  [clj-commons/clj-yaml "1.0.27"]
+                 [ring-cors "0.1.13"]
                  [org.postgresql/postgresql "42.3.3"]]
   :main core
   :aot [core]

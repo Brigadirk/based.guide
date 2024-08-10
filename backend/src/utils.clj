@@ -1,6 +1,6 @@
 (ns utils
   (:require [next.jdbc :as jdbc]
-            [yclj-yaml.core :as yaml]
+            [clj-yaml.core :as yaml]
             [db :as db]))
 
 (defn read-file [filename]
