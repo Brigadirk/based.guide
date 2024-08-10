@@ -27,15 +27,15 @@
           }
           .navbar-link {
             text-decoration: none;
-            color: #333;  /* Adjust as needed */
-            font-weight: bold;
+            color: gray;  /* Adjust as needed */
+            font-size: 16px;
           }
           .navbar-link:hover {
-            color: #000;  /* Adjust as needed */
+            color: #333;  /* Adjust as needed */
           }
           @media (max-width: 1000px) {
           .navbar-link {
-            font-size: 28px;
+            font-size: 34px;
             }
           }
           ")

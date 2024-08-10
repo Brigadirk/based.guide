@@ -1,4 +1,5 @@
-(ns app.components.logo)
+(ns app.components.logo
+  (:require [app.components.common :refer [nav-link]]))
 
 (defn add-styles []
   (let [style-element (js/document.createElement "style")]
@@ -61,6 +62,7 @@
             .main-logo {
               width: 100%;
               max-width: 750px;
+              padding-bottom: 20px;
             }
             .social-links {
               position: relative;
@@ -73,8 +75,11 @@
               display: none;
             }
             .social-icon {
-              width: 42px;
-              height: 42px;
+              width: 52px;
+              height: 52px;
+              padding-bottom: 20px;
+              padding-right: 5px;
+              padding-left: 5px;
             }
           }
           @media (max-width: 480px) {
@@ -89,27 +94,28 @@
 (defn logo []
   (add-styles)
   [:div.logo-container
-   
+
    [:div.logo-main
-    
+
     ;; Ape
-    [:img.founder-ape {:src "/images/logo/founder_ape.svg" 
-                       :alt "Founder Ape"}]
-    
+    (nav-link "/"
+              [:img.founder-ape {:src "/images/logo/founder_ape.svg"
+                                 :alt "Founder Ape"}])
+
     ;; Based.Guide
-    [:img.main-logo {:src "/images/logo/logo_font_horizontal.svg" 
-                     :alt "Main Logo"}]]
+              [:img.main-logo {:src "/images/logo/logo_font_horizontal.svg"
+                               :alt "Main Logo"}]]
 
    [:div.social-links
-    
+
     ;; Twitter
-    [:a {:href "https://x.com/basedguide" 
+    [:a {:href "https://x.com/basedguide"
          :target "_blank"}
      [:img.social-icon {:src "/images/socials/x.svg"
                         :alt "X (Twitter)"}]]
-    
+
     ;; Telegram
-    [:a {:href "https://t.me/+p-Z0TvQ7CL9hYzlk" 
+    [:a {:href "https://t.me/+p-Z0TvQ7CL9hYzlk"
          :target "_blank"}
      [:img.social-icon {:src "/images/socials/telegram.svg"
                         :alt "Telegram"}]]]])
