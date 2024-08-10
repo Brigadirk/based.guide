@@ -48,8 +48,7 @@
 
 (defn render-event [event]
   [:div.event-item
-   [:h2 (:name event)]
-   [:p "Event ID: " (:eventid event)]
+   [:h2 (str (:name event))]
    [:p "Start Date: " (:startdate event)]
    [:p "End Date: " (:enddate event)]
    [:p "Location: " (str (:city (:location event)) ", " (:country (:location event)))]

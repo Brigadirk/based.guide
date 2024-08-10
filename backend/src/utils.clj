@@ -9,8 +9,8 @@
 (defn parse-yaml [yaml-string]
   (yaml/parse-string yaml-string))
 
-(defn mark-entries-as-inactive []
-  (jdbc/execute! db/db-spec ["UPDATE projects SET active = false"]))
+(defn mark-entries-as-inactive [table]
+  (jdbc/execute! db/db-spec [(str "UPDATE " table " SET active = false")]))
 
-(defn delete-inactive-entries []
-  (jdbc/execute! db/db-spec ["DELETE FROM projects WHERE active = false"]))
+(defn delete-inactive-entries [table]
+  (jdbc/execute! db/db-spec [(str "DELETE FROM " table " WHERE active = false")]))

@@ -8,7 +8,7 @@
 
 (defn api-url []
   (if (= env "dev")
-    "https://based-guide-backend.onrender.com"  ;; Your local dev URL TODO: fix that this doesn't work in cloud if set to localhost
+    "http://localhost:8080"  ;; Your local dev URL TODO: fix that this doesn't work in cloud if set to localhost
     "https://based-guide-backend.onrender.com")) ;; Your production URL
 
 ;; Bases
@@ -57,8 +57,7 @@
   (GET (str (api-url) "/events")
     {:handler (fn [response]
                 (reset! state/event-list
-                        (->> response
-                             (mapv transform-event)
-                             )))
+                        (->> response 
+                             (mapv transform-event))))
      :error-handler error-handler}))
 

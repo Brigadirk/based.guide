@@ -53,13 +53,13 @@
      :markdown_text (:body parsed-content)}))
 
 (defn process-markdown-files [directory]
-  (utils/mark-entries-as-inactive)
+  (utils/mark-entries-as-inactive "projects")
   (doseq [file (get-markdown-files directory)]
     (let [content (utils/read-file (.getAbsolutePath file))
           parsed-content (parse-markdown content)
           db-data (convert-to-db-format parsed-content)]
       (insert-into-db db-data)))
-  (utils/delete-inactive-entries))
+  (utils/delete-inactive-entries "projects"))
 
 ;; Example usage
 ; (process-markdown-files "/bases")

@@ -14,8 +14,8 @@
                  ["CREATE TABLE IF NOT EXISTS events (
                    eventid VARCHAR PRIMARY KEY,
                    name VARCHAR,
-                   startdate DATE,
-                   enddate DATE,
+                   startdate VARCHAR,
+                   enddate VARCHAR,
                    active BOOLEAN DEFAULT true,
                    location JSON,
                    link VARCHAR,
@@ -76,13 +76,13 @@
      :tags tags-string}))
 
 (defn process-yaml-files [directory]
-  (utils/mark-entries-as-inactive)
+  (utils/mark-entries-as-inactive "events") 
   (doseq [file (get-yaml-files directory)]
     (let [content (utils/read-file (.getAbsolutePath file))
           parsed-content (utils/parse-yaml content)
           db-data (convert-yaml-to-db-format parsed-content)]
       (insert-yaml-into-db db-data)))
-  (utils/delete-inactive-entries))
+  (utils/delete-inactive-entries "events"))
 
 ;; Example usage
 ; (process-yaml-files "/events")

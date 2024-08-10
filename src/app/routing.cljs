@@ -8,7 +8,7 @@
 (defn route-component-map [path]
   (cond
     (= path "/") main-grid
-    (= path "events") events-page
+    (= path "/events") events-page
     :else (project-page {:pageid (last (clojure.string/split path #"/"))})))
 
 (defn navigate [path]
