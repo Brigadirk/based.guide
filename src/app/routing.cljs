@@ -2,11 +2,13 @@
   (:require [app.state :as state]
             [app.pages.main :refer [main-grid]]
             [app.pages.projectpage :refer [project-page]]
+            [app.pages.events :refer [events-page]]
             [clojure.string :as string]))
 
 (defn route-component-map [path]
   (cond
     (= path "/") main-grid
+    (= path "events") events-page
     :else (project-page {:pageid (last (clojure.string/split path #"/"))})))
 
 (defn navigate [path]
