@@ -11,7 +11,7 @@
             margin: 10px 0;
             margin-left: 145px;  /* Wrap around the logo */
           }
-          @media (max-width: 875px) {
+          @media (max-width: 1000px) {
             .horizontal-line {
               margin-left: 0px; 
             } 

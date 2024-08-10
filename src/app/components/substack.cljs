@@ -12,7 +12,7 @@
           }
           .embed {
             display: block;
-            width: 30%;
+            width: 100%;
             max-width: 500px;
             height: auto;
             aspect-ratio: 500 / 200; /* Maintain the aspect ratio */
@@ -26,7 +26,7 @@
           }
           @media (max-width: 1000px) {
             .embed {
-              width: 80%; /* Adjust width for medium screens */
+              width: 100%; /* Adjust width for medium screens */
               max-width: none;
               height: auto;
             }
