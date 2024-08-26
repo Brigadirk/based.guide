@@ -1,7 +1,8 @@
 (ns app.pages.projectpage
   (:require [app.state :as state]
             [app.api.backend :as be]
-            [markdown.core :as md]))
+            [markdown.core :as md]
+            [reagent.core :as r]))
 
 (defn add-project-page-styles []
   (let [style-element (js/document.createElement "style")]
@@ -101,14 +102,26 @@
    [:h1.project-title (:name project)]
    [:div.project-content
     [:div.prose {:dangerouslySetInnerHTML {:__html html-text}}]]])
-    ;; TODO: we get rid of the dangerouslySetInnerHTML here
 
 (defn project-page [pageid]
   (be/fetch-project pageid)
-  (fn []
-    (let [project @state/project-page
-          markdown-text (:markdown-text project)
-          html-text (style-html-from-markdown markdown-text)]
-      (if (and project (empty? project))
-        [page-not-found]
-        [render-page project html-text]))))
+  (r/create-class
+   {:component-did-mount
+    (fn [this]
+      (let [path (.-pathname (.-location js/window))
+            anchor (second (clojure.string/split path #"#"))]
+        (when anchor
+          (js/setTimeout
+           (fn []
+             (let [element (.getElementById js/document anchor)]
+               (when element
+                 (.scrollIntoView element))))
+           0)))) ; Use setTimeout to ensure the DOM is updated
+    :reagent-render
+    (fn []
+      (let [project @state/project-page
+            markdown-text (:markdown-text project)
+            html-text (style-html-from-markdown markdown-text)]
+        (if (and project (empty? project))
+          [page-not-found]
+          [render-page project html-text])))}))

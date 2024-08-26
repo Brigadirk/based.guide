@@ -34,7 +34,7 @@
 ;; Events
 
 (defn handle-events-request [request]
-  (let [query "SELECT eventid, name, startdate, enddate, location::text, link, tags FROM events"]
+  (let [query "SELECT eventid, name, startdate, enddate, location::text, organiser, organiserlink, link, tags FROM events"]
     (let [events (jdbc/execute! db/db-spec [query])]
       {:status 200
        :headers {"Content-Type" "application/json"}
