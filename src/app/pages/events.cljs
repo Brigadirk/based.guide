@@ -31,14 +31,25 @@
           }
           .event-item {
             margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
           }
-          .event-item h2 {
+          .event-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .event-item-header h2 {
             font-size: 1.5em;
             font-weight: bold;
-            margin-bottom: 1rem;
+            margin-bottom: 0;
           }
-          .event-item p {
-            margin-bottom: 1rem;
+          .event-item-header p {
+            margin-bottom: 0;
+          }
+          .event-item-subtext {
+            font-size: 0.875em; /* sm */
+            color: #6b7280; /* gray-500 */
           }
           .event-item a {
             color: #0000EE;
@@ -47,13 +58,19 @@
     (js/document.head.appendChild style-element)))
 
 (defn render-event [event]
-  [:div.event-item
-   [:h2 (str (:name event))]
-   [:p "Start Date: " (:startdate event)]
-   [:p "End Date: " (:enddate event)]
-   [:p "Location: " (str (:city (:location event)) ", " (:country (:location event)))]
-   [:p [:a {:href (:link event)} "More Info"]]
-   [:p "Tags: " (:tags event)]])
+  (let [start-date (:startdate event)
+        end-date (:enddate event)
+        date-text (if (= start-date end-date)
+                    (str (subs start-date 0 10))
+                    (str (subs start-date 0 10) " - " (subs end-date 0 10)))
+        location (:location event)]
+    [:div.event-item
+     [:div.event-item-header
+      [:h2 [:a {:href (:link event)} (:name event)]]
+      [:p date-text]]
+     [:p.event-item-subtext "Organised by: " [:a {:href (:organiserlink event)} (:organiser event)]]
+     [:p "Location: " (str (aget location "city") ", " (str (aget location "country")))] 
+     ]))
 
 (defn render-events [events]
   (add-event-page-styles)

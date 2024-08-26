@@ -7,7 +7,6 @@
           "
           .horizontal-line {
             height: 1px;
-            background-color: #D3D3D3;
             margin: 10px 0;
             margin-left: 145px;  /* Wrap around the logo */
           }

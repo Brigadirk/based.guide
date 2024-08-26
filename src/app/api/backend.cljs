@@ -48,8 +48,10 @@
   {:name (get event "events/name")
    :eventid (get event "events/eventid")
    :startdate (get event "events/startdate")
-   :location (js/JSON.parse (get event "event/location"))
+   :location (js/JSON.parse (get event "location"))
    :enddate (get event "events/enddate")
+   :organiser (get event "events/organiser")
+   :organiserlink (get event "events/organiserlink")
    :link (get event "events/link")
    :tags (get event "events/tags")})
 

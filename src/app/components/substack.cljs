@@ -23,7 +23,6 @@
             margin-bottom: 10px;
             padding: 5px 10px;
             border: none;
-            background: white;
             cursor: pointer;
           }
           @media (max-width: 600px) {
