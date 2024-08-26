@@ -9,10 +9,19 @@
   (cond
     (= path "/") main-grid
     (= path "/events") events-page
-    :else (project-page {:pageid (last (clojure.string/split path #"/"))})))
+    :else (project-page {:pageid (last (string/split path #"/"))})))
 
 (defn navigate [path]
-  (let [new-content (route-component-map path)]
-    (reset! state/current-content [new-content])) ;Has to be between square brackets for Reagent to work!
-    (.pushState js/window.history nil "" path))
-
+  (let [path-parts (string/split path #"#")
+        base-path (first path-parts)
+        anchor (second path-parts)]
+    (let [new-content (route-component-map base-path)]
+      (reset! state/current-content [new-content]) ; Has to be between square brackets for Reagent to work!
+      (.pushState js/window.history nil "" base-path)
+      (when anchor
+        (js/setTimeout
+         (fn []
+           (let [element (.getElementById js/document anchor)]
+             (when element
+               (.scrollIntoView element))))
+         0))))) ; Use setTimeout to ensure the DOM is updated

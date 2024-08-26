@@ -1,10 +1,12 @@
 eventid: networksocietycamp2024
-name: Network Society Camp
+name: The Network Society Camp
 startdate: 2024-10-11
 enddate: 2024-10-14
 location:
   city: Austin
   country: United States
+organiser: The Network Society Camp
+organiserlink: https://x.com/tnsdotcamp
 link: https://tns.camp/
 tags:
   - camp

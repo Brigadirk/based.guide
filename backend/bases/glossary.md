@@ -15,8 +15,8 @@ associated_links:
 
 # Glossary
 
-<a id="nation"></a>
-**Nation**: A large body of people united by common descent, history, culture, or language, inhabiting a particular country or territory
+<a id="nation">**Nation**:</a>
+A large body of people united by common descent, history, culture, or language, inhabiting a particular country or territory
 
 <a id="nation-state"></a>
 **Nation state**: A sovereign state whose citizens or subjects are relatively homogeneous in factors such as language or common descent
