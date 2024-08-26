@@ -48,4 +48,5 @@
     [:ul.navbar-list
      [:li.navbar-item [nav-link "/" "Home"]]
      [:li.navbar-item [nav-link "/events" "Events"]]
+     [:li.navbar-item [nav-link "/glossary" "Glossary"]]
      [:li.navbar-item [nav-link "/about" "About"]]]]])
