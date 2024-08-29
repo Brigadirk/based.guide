@@ -36,7 +36,6 @@
 
 (defn fetch-project [page]
   (reset! state/project-page nil)
-  (js/console.log "arg passed to project-page" page)
   (GET (str (api-url) "/projects/" (:pageid page))
     {:handler (fn [response]
                 (reset! state/project-page (transform-page (first response))))

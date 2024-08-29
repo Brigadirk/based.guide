@@ -64,3 +64,4 @@
 (defn horizontal-line []
   (add-styling line-css)
   [:div.horizontal-line])
+

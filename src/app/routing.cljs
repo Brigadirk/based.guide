@@ -8,31 +8,20 @@
 
 (def router
   (r/router [["/"
-              {:name ::home
-               :view main-grid}]
+              {:view main-grid}]
 
              ["/events"
-              {:name ::events
-               :view events-page}]
+              {:view events-page}]
 
              ["/projects/:pageid"
-              {:name ::project
-               :view project-page
-               :parameters {:path {:pageid string?}}}]]))
-
-(defn route-component-map [path]
-  (let [match (r/match-by-path router path)]
-    (if match
-      (let [view (:view (:data match))
-            params (:path-params match)]
-        [view params])
-      [main-grid])))
+              {:view project-page :parameters {:path ::pageid}}]]))
 
 (defn init-routing []
   (rfe/start!
    router
    (fn [match]
-     (let [path (:path match)
-           [new-content params] (route-component-map path)]
-       (reset! state/current-content [new-content params])))
+     (let [view (:view (:data match))
+           params (:path-params match)
+           path (:path match)]
+       (reset! state/current-content (with-meta [view params] {:path path}))))
    {:use-fragment false}))
