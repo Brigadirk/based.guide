@@ -1,14 +1,15 @@
 (ns app.layout
-  (:require  [app.state :as state]
-             [app.components.common :refer [horizontal-line]]
-             [app.components.logo :refer [logo]]
-             [app.components.navbar :refer [navbar]]
-             [app.components.substack :refer [substack-embed]]))
+  (:require [app.state :as state]
+            [app.components.logo :refer [logo]]
+            [app.components.navbar :refer [navbar horizontal-line]]
+            [app.components.substack :refer [substack-embed]]))
 
 (defn layout []
   [:div
    [substack-embed]
-   [logo] 
-   [navbar] 
+   [logo]
+   [navbar]
    [horizontal-line]
-  @state/current-content]) ;; Dereference current-content here
+   (let [[view params] @state/current-content]
+     ^{:key (:path (meta @state/current-content))}
+     [view params])])

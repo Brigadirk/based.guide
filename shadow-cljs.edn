@@ -2,11 +2,12 @@
  ["src" "app"]
 
  :dependencies
- [[reagent "1.2.0"]
-  [cljs-ajax "0.8.4"]
-  [cider/cider-nrepl "0.44.0"]
-  [markdown-clj "1.12.1"]]
-
+    [[reagent "1.2.0"]
+     [cljs-ajax "0.8.4"]
+     [cider/cider-nrepl "0.44.0"]
+     [markdown-clj "1.12.1"]
+     [metosin/reitit "0.7.1"]]
+ 
  :nrepl {:middleware [cider.nrepl/cider-middleware]}
 
  :npm-deps {:react "18.2.0"

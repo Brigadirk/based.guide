@@ -1,7 +1,7 @@
 (ns app.api.backend
   (:require [ajax.core :refer [GET]]
             [app.state :as state]
-            [app.components.common :refer [error-handler]]
+            [app.components.utils :refer [error-handler]]
             [clojure.string :as string]))
 
 (goog-define env "prod")
@@ -12,7 +12,6 @@
     "https://based-guide-backend.onrender.com")) ;; Your production URL
 
 ;; Bases
-
 (defn transform-project [project]
   {:name (get project "projects/name")
    :pageid (get project "projects/pageid")
@@ -43,7 +42,6 @@
      :error-handler error-handler}))
 
 ;; Events
-
 (defn transform-event [event]
   {:name (get event "events/name")
    :eventid (get event "events/eventid")
@@ -62,4 +60,3 @@
                         (->> response 
                              (mapv transform-event))))
      :error-handler error-handler}))
-

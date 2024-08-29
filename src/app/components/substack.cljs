@@ -1,6 +1,5 @@
 (ns app.components.substack
-  (:require [reagent.core :as r]
-            [reagent.dom :as rdom]))
+  (:require [reagent.core :as r]))
 
 (defn add-styles []
   (let [style-element (js/document.createElement "style")]
@@ -52,10 +51,3 @@
          [:iframe.embed {:src "https://basedguide.substack.com/embed"
                          :frameBorder "0"
                          :scrolling "yes"}])])))
-
-;; If you're using Reagent to render your components, you can use this:
-(defn render-substack-embed []
-  (rdom/render [substack-embed] (.getElementById js/document "substack-embed-container")))
-
-;; Call this function when your page loads
-(render-substack-embed)
