@@ -1,8 +1,7 @@
 (ns app.layout
   (:require  [app.state :as state]
-             [app.components.common :refer [horizontal-line]]
              [app.components.logo :refer [logo]]
-             [app.components.navbar :refer [navbar]]
+             [app.components.navbar :refer [navbar horizontal-line]]
              [app.components.substack :refer [substack-embed]]))
 
 (defn layout []

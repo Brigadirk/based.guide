@@ -1,6 +1,4 @@
-(ns db
-  (:require [next.jdbc :as jdbc]
-            [clojure.java.io :as io]))
+(ns db)
 
 (defn get-db-spec []
   (if (= (System/getenv "ENV") "dev")

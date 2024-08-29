@@ -4,7 +4,8 @@
             [utils :as utils]
             [next.jdbc :as jdbc]
             [clojure.string :as str]
-            [db :as db]))
+            [db :as db]
+            [markdown.core :as md]))
 
 (defn create-projects-table []
   (jdbc/execute! db/db-spec
@@ -37,8 +38,9 @@
 (defn parse-markdown [content]
   (let [yaml-part (re-find #"(?s)---\n(.*?)\n---" content)
         yaml-contents (utils/parse-yaml (second yaml-part))
-        body (second (re-find #"(?s)\n# .*?\n\n(.*)" content))]
-    (merge yaml-contents {:body body})))
+        body (second (re-find #"(?s)\n# .*?\n\n(.*)" content))
+        parsed-body (md/md-to-html-string body)]
+    (merge yaml-contents {:body parsed-body})))
 
 (defn convert-to-db-format [parsed-content]
   (let [{:keys [pageid name tags images associated_links]} parsed-content
@@ -63,5 +65,3 @@
 
 ;; Example usage
 ; (process-markdown-files "/bases")
-
-

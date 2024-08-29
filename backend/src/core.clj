@@ -9,7 +9,6 @@
             [ring.middleware.cors :refer [wrap-cors]])) ;; Add this line
 
 ;; Bases
-
 (defn handle-projects-request [request]
   (let [query "SELECT pageid, name, images::text, associated_links::text, tags, markdown_text FROM projects"]
     (let [projects (jdbc/execute! db/db-spec [query])]
@@ -32,7 +31,6 @@
     ))
 
 ;; Events
-
 (defn handle-events-request [request]
   (let [query "SELECT eventid, name, startdate, enddate, location::text, organiser, organiserlink, link, tags FROM events"]
     (let [events (jdbc/execute! db/db-spec [query])]
@@ -41,7 +39,6 @@
        :body (json/generate-string events)})))
 
 ;; Health
-
 (defn handle-health-check [request]
   {:status 200
    :headers {"Content-Type" "text/plain"}
