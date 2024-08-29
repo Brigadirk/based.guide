@@ -9,6 +9,7 @@
                  [cheshire "5.12.0"]
                  [clj-commons/clj-yaml "1.0.27"]
                  [ring-cors "0.1.13"]
+                 [markdown-clj "1.12.1"]
                  [org.postgresql/postgresql "42.3.3"]]
   :main core
   :aot [core]
