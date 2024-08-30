@@ -18,7 +18,7 @@
    :tags (get project "projects/tags")
    :image (get project "frontimage")})
 
-(defn fetch-and-update-projects []
+(defn fetch-and-update-projects [] 
   (GET (str (api-url) "/front")
     {:handler (fn [response]
                 (reset! state/project-list
@@ -35,7 +35,6 @@
    :markdown-text (get project "projects/markdown_text")})
 
 (defn fetch-project [page]
-  (reset! state/project-page nil)
   (GET (str (api-url) "/projects/" (:pageid page))
     {:handler (fn [response]
                 (reset! state/project-page (transform-page (first response))))
@@ -53,7 +52,7 @@
    :link (get event "events/link")
    :tags (get event "events/tags")})
 
-(defn fetch-events []
+(defn fetch-events [] 
   (GET (str (api-url) "/events")
     {:handler (fn [response]
                 (reset! state/event-list

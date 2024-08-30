@@ -2,22 +2,26 @@
   (:require [app.state :as state]
             [app.components.utils :refer [add-styling]]
             [app.api.backend :as be]
-            [markdown.core :as md]))
+            [hickory.core :as hickory]
+            [reagent.core :as r]))
 
 (def css
-"
+  "
 .anchor-link {
   text-decoration: none;
 }
 .anchor-link:hover {
   color: #999;
 }
+   .highlight {
+  background-color: yellow; /* or any other highlighting style */
+}
+
 .project-page {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
 }
 .project-title {
   font-size: 1.875rem; /* 3xl */
@@ -29,7 +33,6 @@
 .project-content {
   width: 100%;
   max-width: 1000px;
-  background-color: #fff;
   padding: 2.25rem; /* 9 */
   border-radius: 0.375rem; /* rounded-lg */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
@@ -91,30 +94,28 @@
 }
 ")
 
-(defn page-not-found []
-  [:div {}
-   [:h1 "Page not found"]
-   [:p "Page not found"]])
-
-(defn style-html-from-markdown [markdown-text]
-  (md/md-to-html-string markdown-text))
-
-(defn render-page [project html-text]
+(defn project-page [pageid] 
+  (reset! state/project-page nil)
+  (be/fetch-project pageid) 
   (add-styling css)
-  [:div.project-page
-   [:h1.project-title (:name project)]
-   [:div.project-content
-    [:div.prose {:dangerouslySetInnerHTML {:__html html-text}}]]])
-    ;; TODO: we get rid of the dangerouslySetInnerHTML here
-
-(defn project-page [pageid]
-  (be/fetch-project pageid)
   (fn []
     (let [project @state/project-page
           markdown-text (:markdown-text project)
-          html-text (style-html-from-markdown markdown-text)]
-      (if (and project (empty? project))
-        [page-not-found]
-        [render-page project html-text]))))
+          html-hiccup (r/atom nil)]
+      
+      (when markdown-text
+        (reset! html-hiccup (hickory/as-hiccup (hickory/parse markdown-text))))
+      
+      [:div.project-page
+       [:h1.project-title (:name project)]
 
-
+       (if (and project (empty? project))
+         
+         [:div {}
+          [:h1 "Page not found"]
+          [:p "Page not found"]]
+       
+         [:div.project-content
+          [:div.prose @html-hiccup]])]
+      
+      )))

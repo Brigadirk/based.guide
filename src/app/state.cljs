@@ -6,7 +6,7 @@
                                :historical true,
                                :fictional false}))
 
-(defonce current-content (r/atom nil))
+(defonce current-content (r/atom {}))
 (defonce project-list (r/atom []))
 (defonce project-page (r/atom {}))
 (defonce event-list (r/atom []))
