@@ -40,10 +40,7 @@
            params (:path-params match)
            path (:path match)
            fragment (:fragment match)]
-       ;; Log the match data for debugging
-       (js/console.log "Match data:" match)
        (reset! state/current-content (with-meta [view params] {:path path :fragment fragment}))
-       ;; Handle fragment
        (handle-fragment fragment)))
    {:use-fragment false})
 

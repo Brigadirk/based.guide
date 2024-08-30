@@ -56,26 +56,25 @@
 }
 ")
 
-(defn render-event [event]
+(defn render-event [event key]
   (let [start-date (:startdate event)
         end-date (:enddate event)
         date-text (if (= start-date end-date)
                     (str (subs start-date 0 10))
                     (str (subs start-date 0 10) " - " (subs end-date 0 10)))
         location (:location event)]
-    [:div.event-item
+    [:div {:key key}
      [:div.event-item-header
       [:h2 [:a {:href (:link event)} (:name event)]]
       [:p date-text]]
      [:p.event-item-subtext "Organised by: " [:a {:href (:organiserlink event)} (:organiser event)]]
-     [:p "Location: " (str (aget location "city") ", " (str (aget location "country")))] 
-     ]))
+     [:p "Location: " (str (aget location "city") ", " (str (aget location "country")))]]))
 
 (defn render-events [events]
   [:div.event-page
    [:h1.event-title "Events"]
    [:div.event-content
-    (map render-event events)]])
+    (map-indexed (fn [index event] (render-event event index)) events)]])
 
 (defn events-page []
   (be/fetch-events)

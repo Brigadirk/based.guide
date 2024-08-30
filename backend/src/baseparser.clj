@@ -6,8 +6,7 @@
             [clojure.string :as str]
             [db :as db]
             [markdown.core :as md]
-            [hickory.core :as hickory]
-            [hickory.select :as s]))
+            [hickory.core :as hickory]))
 
 (defn create-projects-table []
   (jdbc/execute! db/db-spec
@@ -18,20 +17,20 @@
                    images JSON,
                    associated_links JSON,
                    tags VARCHAR,
-                   markdown_text TEXT)"]))
+                   hiccup_text TEXT)"]))
 
 (defn insert-into-db [data]
   (jdbc/execute! db/db-spec
-                 ["INSERT INTO projects (pageid, name, images, associated_links, tags, markdown_text, active)
+                 ["INSERT INTO projects (pageid, name, images, associated_links, tags, hiccup_text, active)
                    VALUES (?, ?, ?::json, ?::json, ?, ?, true)
                    ON CONFLICT (pageid) DO UPDATE
                    SET name = EXCLUDED.name,
                        images = EXCLUDED.images,
                        associated_links = EXCLUDED.associated_links,
                        tags = EXCLUDED.tags,
-                       markdown_text = EXCLUDED.markdown_text,
+                       hiccup_text = EXCLUDED.hiccup_text,
                        active = EXCLUDED.active"
-                  (:pageid data) (:name data) (:images data) (:associated_links data) (:tags data) (:markdown_text data)]))
+                  (:pageid data) (:name data) (:images data) (:associated_links data) (:tags data) (:hiccup_text data)]))
 
 (defn get-markdown-files [directory]
   (filter #(re-matches #".*\.md$" (.getName %))
@@ -60,21 +59,20 @@
         parsed-body (md/md-to-html-string body)
         hiccup-body (hickory/as-hiccup (hickory/parse parsed-body))
         hiccup-with-keys (add-unique-keys hiccup-body)]
-    ;; (println hiccup-with-keys) ;; This is excellent
     (merge yaml-contents {:body hiccup-with-keys})))
 
 (defn convert-to-db-format [parsed-content]
   (let [{:keys [pageid name tags images associated_links]} parsed-content
         images-json (json/generate-string images)
         links-json (json/generate-string associated_links)
-        tags-string (str/join ", " tags)]
-    (println {:body parsed-content})
+        tags-string (str/join ", " tags)
+        hiccup-text (pr-str (:body parsed-content))]
     {:pageid pageid
      :name name
      :images images-json
      :associated_links links-json
      :tags tags-string
-     :markdown_text {:body {:body parsed-content}}}))
+     :hiccup_text hiccup-text}))
 
 (defn process-markdown-files [directory]
   (utils/mark-entries-as-inactive "projects")

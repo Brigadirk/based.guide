@@ -2,8 +2,8 @@
   (:require [app.state :as state]
             [app.components.utils :refer [add-styling]]
             [app.api.backend :as be]
-            [hickory.core :as hickory]
-            [reagent.core :as r]))
+            [reagent.core :as r]
+            [clojure.edn :as edn]))
 
 (def css
   "
@@ -13,6 +13,9 @@
 .anchor-link:hover {
   color: #999;
 }
+.highlight {
+  background-color: yellow; /* or any other highlighting style */
+}   
 .project-page {
   width: 100%;
   display: flex;
@@ -90,39 +93,24 @@
 }
 ")
 
-(defn add-keys [elements]
-  (for [[idx elem] (map-indexed vector elements)]
-    (if (vector? elem)
-      (with-meta (update elem 0 keyword) {:key idx})
-      elem)))
-
-(defn strip-top-level-tags [elements]
-  (filter (fn [element]
-            (let [tag (first element)]
-              (not (contains? #{:html :head :body} tag))))
-          elements))
-
 (defn project-page [pageid]
   (reset! state/project-page nil)
   (be/fetch-project pageid)
   (add-styling css)
   (fn []
     (let [project @state/project-page
-          markdown-text (:markdown-text project)
+          hiccup-text (:hiccup-text project)
           html-hiccup (r/atom nil)]
 
-      (when markdown-text
-        (let [parsed-html (hickory/as-hiccup (hickory/parse markdown-text))
-              stripped-html (strip-top-level-tags parsed-html)
-              keyed-html (add-keys stripped-html)]
-          (reset! html-hiccup keyed-html)))
+      (when hiccup-text
+        (reset! html-hiccup (edn/read-string hiccup-text)))
 
       [:div.project-page
-       [:h1.project-title (:name project)]
+        [:h1.project-title (:name project)]
 
-       (if (and project (empty? project))
+        (if (and project (empty? project))
 
-         [:div]
+          [:div]
 
-         [:div.project-content
+          [:div.project-content
           [:div.prose @html-hiccup]])])))
