@@ -31,7 +31,7 @@
            (.add (.-classList element) "highlight")
            ;; Update the last highlighted element
            (reset! state/last-highlighted element))))
-     8))) ; Small delay to ensure the DOM has updated
+     10))) ; Small delay to ensure the DOM has updated
 
 (defn on-navigate [new-match]
   (let [view (:view (:data new-match))
