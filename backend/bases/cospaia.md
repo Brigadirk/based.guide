@@ -14,7 +14,7 @@ associated_links:
 
 ## What was it?
 
-The Republic of Cospaia was one of the most distinct and long lasting examples of a stateless society in history. Originating in central Italy during 1440, it survived until 1826 and owed its creation to a mapmaking error from the negotiations between Florence and the Papal States. Due to this error, the small territory of Cospaia totalling 330 hectares was able to claim its independence. 
+The Republic of Cospaia was one of the most distinct and long lasting examples of a [stateless society](/projects/glossary#anarcho-capitalism) in history. Originating in central Italy during 1440, it survived until 1826 and owed its creation to a mapmaking error from the negotiations between Florence and the Papal States. Due to this error, the small territory of Cospaia totalling 330 hectares was able to claim its independence. 
 
 Its motto, ‘Perpetua et firma libertas’ (Perpetual and secure freedom), reflected its particular values and status as one of the only successful challenges to the idea that such a nation could not exist peacefully amongst other nationstates. 
 

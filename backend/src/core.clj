@@ -9,12 +9,12 @@
             [ring.middleware.cors :refer [wrap-cors]])) ;; Add this line
 
 ;; Bases
-(defn handle-projects-request [request]
-  (let [query "SELECT pageid, name, images::text, associated_links::text, tags, markdown_text FROM projects"]
-    (let [projects (jdbc/execute! db/db-spec [query])]
-      {:status 200
-       :headers {"Content-Type" "application/json"}
-       :body (json/generate-string projects)})))
+;; (defn handle-projects-request [request]
+;;   (let [query "SELECT pageid, name, images::text, associated_links::text, tags, hiccup_text FROM projects"]
+;;     (let [projects (jdbc/execute! db/db-spec [query])]
+;;       {:status 200
+;;        :headers {"Content-Type" "application/json"}
+;;        :body (json/generate-string projects)})))
 
 (defn handle-front-images-request [request]
   (let [query "SELECT pageid, name, tags, images->>'front' as frontimage FROM projects"]
@@ -24,7 +24,7 @@
        :body (json/generate-string projects)})))
 
 (defn handle-page-request [request pageid]
-  (let [projects (jdbc/execute! db/db-spec ["SELECT pageid, name, images::text, associated_links::text, tags, markdown_text FROM projects WHERE pageid = ?" pageid])]
+  (let [projects (jdbc/execute! db/db-spec ["SELECT pageid, name, images::text, associated_links::text, tags, hiccup_text FROM projects WHERE pageid = ?" pageid])]
     {:status 200
      :headers {"Content-Type" "application/json"}
      :body (json/generate-string projects)}
@@ -49,7 +49,7 @@
     (cond
       (re-matches #"/projects/([^/]+)" uri) (let [pageid (second (re-matches #"/projects/([^/]+)" uri))]
                                               (handle-page-request request pageid))
-      (= uri "/projects") (handle-projects-request request)
+      ;; (= uri "/projects") (handle-projects-request request)
       (= uri "/front") (handle-front-images-request request)
       (= uri "/events") (handle-events-request request)
       (= uri "/healthz") (handle-health-check request)

@@ -2,8 +2,8 @@
   (:require [app.state :as state]
             [app.components.utils :refer [add-styling]]
             [app.api.backend :as be]
-            [hickory.core :as hickory]
-            [reagent.core :as r]))
+            [reagent.core :as r]
+            [clojure.edn :as edn]))
 
 (def css
   "
@@ -13,10 +13,9 @@
 .anchor-link:hover {
   color: #999;
 }
-   .highlight {
+.highlight {
   background-color: yellow; /* or any other highlighting style */
-}
-
+}   
 .project-page {
   width: 100%;
   display: flex;
@@ -94,28 +93,24 @@
 }
 ")
 
-(defn project-page [pageid] 
+(defn project-page [pageid]
   (reset! state/project-page nil)
-  (be/fetch-project pageid) 
+  (be/fetch-project pageid)
   (add-styling css)
   (fn []
     (let [project @state/project-page
-          markdown-text (:markdown-text project)
+          hiccup-text (:hiccup-text project)
           html-hiccup (r/atom nil)]
-      
-      (when markdown-text
-        (reset! html-hiccup (hickory/as-hiccup (hickory/parse markdown-text))))
-      
-      [:div.project-page
-       [:h1.project-title (:name project)]
 
-       (if (and project (empty? project))
-         
-         [:div {}
-          [:h1 "Page not found"]
-          [:p "Page not found"]]
-       
-         [:div.project-content
-          [:div.prose @html-hiccup]])]
-      
-      )))
+      (when hiccup-text
+        (reset! html-hiccup (edn/read-string hiccup-text)))
+
+      [:div.project-page
+        [:h1.project-title (:name project)]
+
+        (if (and project (empty? project))
+
+          [:div]
+
+          [:div.project-content
+          [:div.prose @html-hiccup]])])))

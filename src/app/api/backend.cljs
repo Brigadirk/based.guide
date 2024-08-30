@@ -32,7 +32,7 @@
    :pageid (get project "projects/pageid")
    :associated-links (js/JSON.parse (get project "associated_links"))
    :tags (get project "projects/tags")
-   :markdown-text (get project "projects/markdown_text")})
+   :hiccup-text (get project "projects/hiccup_text")})
 
 (defn fetch-project [page]
   (GET (str (api-url) "/projects/" (:pageid page))

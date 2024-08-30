@@ -5,8 +5,7 @@
     [[reagent "1.2.0"]
      [cljs-ajax "0.8.4"]
      [cider/cider-nrepl "0.44.0"]
-     [metosin/reitit "0.7.1"]
-     [org.clj-commons/hickory "0.7.4"]]
+     [metosin/reitit "0.7.1"]]
  
  :nrepl {:middleware [cider.nrepl/cider-middleware]}
 
@@ -24,5 +23,5 @@
               :http-port 3000
               :after-load app.core/main
               :browser-repl true}
-   ;; :dev {:closure-defines {app.api.backend/env "dev"}}
+   :dev {:closure-defines {app.api.backend/env "dev"}}
    :release {:closure-defines {app.api.backend/env "prod"}}}}}

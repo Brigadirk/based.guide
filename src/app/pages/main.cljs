@@ -117,10 +117,6 @@
 }
 ")
 
-(defn no-results []
-  [:div.no-results
-   [:h2 "No projects found"]])
-
 (defn grid-item [project]
   [:div.grid-item
    [:a.navbar-link {:href (str "/projects/" (:pageid project))}
@@ -158,7 +154,7 @@
    [:div.main-grid-inner
     (let [projects (filter-projects)]
       (if (and projects (empty? projects))
-        [no-results]
+        [:div ]
         (for [project projects]
           ^{:key (:name project)}
           [grid-item project])))]])

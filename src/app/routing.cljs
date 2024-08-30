@@ -19,6 +19,19 @@
 
 (def last-highlighted (rc/atom nil))
 
+(defn handle-fragment [fragment]
+  (when fragment
+    (let [element (.getElementById js/document fragment)]
+      (when element
+        (.scrollIntoView element)
+        ;; Remove highlight class from the last highlighted element
+        (when-let [last-element @last-highlighted]
+          (.remove (.-classList last-element) "highlight"))
+        ;; Add highlight class to the new element
+        (.add (.-classList element) "highlight")
+        ;; Update the last highlighted element
+        (reset! last-highlighted element)))))
+
 (defn init-routing []
   (rfe/start!
    router
@@ -27,19 +40,12 @@
            params (:path-params match)
            path (:path match)
            fragment (:fragment match)]
-       ;; Log the match data for debugging
-       (js/console.log "Match data:" match)
        (reset! state/current-content (with-meta [view params] {:path path :fragment fragment}))
-       ;; Scroll to the fragment if present
-       (when fragment
-         (let [element (.getElementById js/document fragment)]
-           (when element
-             (.scrollIntoView element)
-             ;; Remove highlight class from the last highlighted element
-             (when-let [last-element @last-highlighted]
-               (.remove (.-classList last-element) "highlight"))
-             ;; Add highlight class to the new element
-             (.add (.-classList element) "highlight")
-             ;; Update the last highlighted element
-             (reset! last-highlighted element))))))
-   {:use-fragment false}))
+       (handle-fragment fragment)))
+   {:use-fragment false})
+
+  ;; Handle fragment on initial page load
+  (set! (.-onload js/window)
+        (fn []
+          (let [fragment (-> js/window .-location .-hash (clojure.string/replace #"^#" ""))]
+            (handle-fragment fragment)))))
