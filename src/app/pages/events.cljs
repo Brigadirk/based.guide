@@ -83,9 +83,5 @@
   (fn []
     (let [events @state/event-list]
       (if (empty? events)
-        
-        [:div {}
-         [:h1 "No events found"]
-         [:p "No events found"]]
-        
+        [:div ] 
         [render-events events]))))

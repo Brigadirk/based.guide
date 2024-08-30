@@ -5,7 +5,9 @@
             [next.jdbc :as jdbc]
             [clojure.string :as str]
             [db :as db]
-            [markdown.core :as md]))
+            [markdown.core :as md]
+            [hickory.core :as hickory]
+            [hickory.select :as s]))
 
 (defn create-projects-table []
   (jdbc/execute! db/db-spec
@@ -35,30 +37,50 @@
   (filter #(re-matches #".*\.md$" (.getName %))
           (file-seq (io/file directory))))
 
-(defn parse-markdown [content]
+(defn add-unique-keys [hiccup]
+  (let [counter (atom 0)
+        traverse (fn traverse [node]
+                   (cond
+                     (vector? node)
+                     (let [key (str "key-" (swap! counter inc))
+                           [tag attrs & children] node]
+                       (into [tag (assoc attrs :key key)]
+                             (map traverse children)))
+
+                     (seq? node)
+                     (map traverse node)
+
+                     :else node))]
+    (traverse hiccup)))
+
+(defn parse-markdown-into-hiccup [content]
   (let [yaml-part (re-find #"(?s)---\n(.*?)\n---" content)
         yaml-contents (utils/parse-yaml (second yaml-part))
         body (second (re-find #"(?s)\n# .*?\n\n(.*)" content))
-        parsed-body (md/md-to-html-string body)]
-    (merge yaml-contents {:body parsed-body})))
+        parsed-body (md/md-to-html-string body)
+        hiccup-body (hickory/as-hiccup (hickory/parse parsed-body))
+        hiccup-with-keys (add-unique-keys hiccup-body)]
+    ;; (println hiccup-with-keys) ;; This is excellent
+    (merge yaml-contents {:body hiccup-with-keys})))
 
 (defn convert-to-db-format [parsed-content]
   (let [{:keys [pageid name tags images associated_links]} parsed-content
         images-json (json/generate-string images)
         links-json (json/generate-string associated_links)
         tags-string (str/join ", " tags)]
+    (println {:body parsed-content})
     {:pageid pageid
      :name name
      :images images-json
      :associated_links links-json
      :tags tags-string
-     :markdown_text (:body parsed-content)}))
+     :markdown_text {:body {:body parsed-content}}}))
 
 (defn process-markdown-files [directory]
   (utils/mark-entries-as-inactive "projects")
   (doseq [file (get-markdown-files directory)]
     (let [content (utils/read-file (.getAbsolutePath file))
-          parsed-content (parse-markdown content)
+          parsed-content (parse-markdown-into-hiccup content)
           db-data (convert-to-db-format parsed-content)]
       (insert-into-db db-data)))
   (utils/delete-inactive-entries "projects"))

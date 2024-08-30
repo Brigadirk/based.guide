@@ -13,10 +13,6 @@
 .anchor-link:hover {
   color: #999;
 }
-   .highlight {
-  background-color: yellow; /* or any other highlighting style */
-}
-
 .project-page {
   width: 100%;
   display: flex;
@@ -94,28 +90,39 @@
 }
 ")
 
-(defn project-page [pageid] 
+(defn add-keys [elements]
+  (for [[idx elem] (map-indexed vector elements)]
+    (if (vector? elem)
+      (with-meta (update elem 0 keyword) {:key idx})
+      elem)))
+
+(defn strip-top-level-tags [elements]
+  (filter (fn [element]
+            (let [tag (first element)]
+              (not (contains? #{:html :head :body} tag))))
+          elements))
+
+(defn project-page [pageid]
   (reset! state/project-page nil)
-  (be/fetch-project pageid) 
+  (be/fetch-project pageid)
   (add-styling css)
   (fn []
     (let [project @state/project-page
           markdown-text (:markdown-text project)
           html-hiccup (r/atom nil)]
-      
+
       (when markdown-text
-        (reset! html-hiccup (hickory/as-hiccup (hickory/parse markdown-text))))
-      
+        (let [parsed-html (hickory/as-hiccup (hickory/parse markdown-text))
+              stripped-html (strip-top-level-tags parsed-html)
+              keyed-html (add-keys stripped-html)]
+          (reset! html-hiccup keyed-html)))
+
       [:div.project-page
        [:h1.project-title (:name project)]
 
        (if (and project (empty? project))
-         
-         [:div {}
-          [:h1 "Page not found"]
-          [:p "Page not found"]]
-       
+
+         [:div]
+
          [:div.project-content
-          [:div.prose @html-hiccup]])]
-      
-      )))
+          [:div.prose @html-hiccup]])])))
