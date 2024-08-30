@@ -129,23 +129,35 @@
   (let [filter-state @state/filter-state]
     [:div.filter-bar
      (for [filter [:current :planned :historical :fictional]]
-       [:button {:key filter
-                 :class (str "filter-button " (if (filter-state filter) "active" "inactive"))
-                 :on-click #(swap! state/filter-state update filter not)}
+       [:button
+        {:key filter
+         :class (str "filter-button " (if (filter-state filter) "active" "inactive"))
+         :on-click (fn []
+                     (swap! state/filter-state update filter not)
+                     (reset! state/filter-order (into [] (remove #(= filter %) @state/filter-order)))
+                     (when (get @state/filter-state filter)
+                       (swap! state/filter-order conj filter)))}
         (str/capitalize (name filter))])]))
 
 (defn filter-projects []
   (let [projects @state/project-list
         active-filters (filter val @state/filter-state)
         active-filter-set (set (map (comp name key) active-filters))]
-    (filter (fn [project]
-              (let [tags (if (str/includes? (:tags project) ",")
-                           (str/split (:tags project) #", ")
-                           [(:tags project)])]
-                (some (fn [tag]
-                        (contains? active-filter-set tag))
-                      tags)))
-            projects)))
+    (sort-by (fn [project]
+               (let [tags (if (str/includes? (:tags project) ",")
+                            (str/split (:tags project) #", ")
+                            [(:tags project)])]
+                 (some (fn [tag]
+                         (.indexOf @state/filter-order (keyword tag)))
+                       tags)))
+             (filter (fn [project]
+                       (let [tags (if (str/includes? (:tags project) ",")
+                                    (str/split (:tags project) #", ")
+                                    [(:tags project)])]
+                         (some (fn [tag]
+                                 (contains? active-filter-set tag))
+                               tags)))
+                     projects))))
 
 (defn main-grid []
   (add-styling css)
