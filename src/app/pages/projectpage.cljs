@@ -15,7 +15,7 @@
 }
 .highlight {
   background-color: yellow; /* or any other highlighting style */
-}   
+}
 .project-page {
   width: 100%;
   display: flex;

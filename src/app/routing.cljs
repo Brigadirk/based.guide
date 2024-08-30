@@ -21,27 +21,32 @@
 
 (defn handle-fragment [fragment]
   (when fragment
-    (let [element (.getElementById js/document fragment)]
-      (when element
-        (.scrollIntoView element)
-        ;; Remove highlight class from the last highlighted element
-        (when-let [last-element @last-highlighted]
-          (.remove (.-classList last-element) "highlight"))
-        ;; Add highlight class to the new element
-        (.add (.-classList element) "highlight")
-        ;; Update the last highlighted element
-        (reset! last-highlighted element)))))
+    (js/setTimeout
+     (fn []
+       (let [element (.getElementById js/document fragment)]
+         (when element
+           (.scrollIntoView element #js {:behavior "smooth"})
+           ;; Remove highlight class from the last highlighted element
+           (when-let [last-element @last-highlighted]
+             (.remove (.-classList last-element) "highlight"))
+           ;; Add highlight class to the new element
+           (.add (.-classList element) "highlight")
+           ;; Update the last highlighted element
+           (reset! last-highlighted element))))
+     100))) ; Small delay to ensure the DOM has updated
+
+(defn on-navigate [new-match]
+  (let [view (:view (:data new-match))
+        params (:path-params new-match)
+        path (:path new-match)
+        fragment (:fragment new-match)]
+    (reset! state/current-content (with-meta [view params] {:path path :fragment fragment}))
+    (handle-fragment fragment)))
 
 (defn init-routing []
   (rfe/start!
    router
-   (fn [match]
-     (let [view (:view (:data match))
-           params (:path-params match)
-           path (:path match)
-           fragment (:fragment match)]
-       (reset! state/current-content (with-meta [view params] {:path path :fragment fragment}))
-       (handle-fragment fragment)))
+   on-navigate
    {:use-fragment false})
 
   ;; Handle fragment on initial page load

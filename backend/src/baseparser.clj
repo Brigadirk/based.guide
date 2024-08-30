@@ -52,13 +52,26 @@
                      :else node))]
     (traverse hiccup)))
 
+(defn filter-tags [node]
+  (cond
+    (vector? node)
+    (let [[tag & children] node]
+      (if (#{:html :head :body} (keyword tag))
+        (map filter-tags children)
+        (into [tag] (map filter-tags children))))
+
+    (seq? node)
+    (map filter-tags node)
+
+    :else node))
+
 (defn parse-markdown-into-hiccup [content]
   (let [yaml-part (re-find #"(?s)---\n(.*?)\n---" content)
         yaml-contents (utils/parse-yaml (second yaml-part))
         body (second (re-find #"(?s)\n# .*?\n\n(.*)" content))
         parsed-body (md/md-to-html-string body)
         hiccup-body (hickory/as-hiccup (hickory/parse parsed-body))
-        hiccup-with-keys (add-unique-keys hiccup-body)]
+        hiccup-with-keys (add-unique-keys (filter-tags hiccup-body))]
     (merge yaml-contents {:body hiccup-with-keys})))
 
 (defn convert-to-db-format [parsed-content]
