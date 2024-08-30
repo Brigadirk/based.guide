@@ -53,4 +53,15 @@
   (set! (.-onload js/window)
         (fn []
           (let [fragment (-> js/window .-location .-hash (clojure.string/replace #"^#" ""))]
-            (handle-fragment fragment)))))
+            (handle-fragment fragment))))
+
+  ;; Handle fragment on link clicks within the same page
+  (.addEventListener js/document "click"
+                     (fn [e]
+                       (let [target (.-target e)]
+                         (when (and (= (.-tagName target) "A")
+                                    (.-hash target)
+                                    (= (.-hostname target) js/window.location.hostname))
+                           (let [fragment (-> target .-hash (clojure.string/replace #"^#" ""))]
+                             (handle-fragment fragment))))))
+  )
