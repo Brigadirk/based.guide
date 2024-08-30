@@ -99,7 +99,7 @@
   (string/includes? url "#"))
 
 (defn navigate-to-url [url]
-  (set! (.-href js/window.location) url))
+  (set! (.reload js/window.location) url))
 
 (defn project-page [pageid]
   (reset! state/project-page nil)
