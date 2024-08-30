@@ -10,3 +10,4 @@
 (defonce project-list (r/atom []))
 (defonce project-page (r/atom {}))
 (defonce event-list (r/atom []))
+(defonce last-highlighted (r/atom nil))

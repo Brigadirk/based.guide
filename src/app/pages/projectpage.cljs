@@ -3,7 +3,9 @@
             [app.components.utils :refer [add-styling]]
             [app.api.backend :as be]
             [reagent.core :as r]
-            [clojure.edn :as edn]))
+            [clojure.edn :as edn]
+            [clojure.string :as string]
+            [clojure.walk :as walk]))
 
 (def css
   "
@@ -93,6 +95,12 @@
 }
 ")
 
+(defn hash-link? [url]
+  (string/includes? url "#"))
+
+(defn navigate-to-url [url]
+  (set! (.-href js/window.location) url))
+
 (defn project-page [pageid]
   (reset! state/project-page nil)
   (be/fetch-project pageid)
@@ -106,11 +114,23 @@
         (reset! html-hiccup (edn/read-string hiccup-text)))
 
       [:div.project-page
-        [:h1.project-title (:name project)]
+       [:h1.project-title (:name project)]
 
-        (if (and project (empty? project))
+       (if (and project (empty? project))
 
-          [:div]
+         [:div]
 
-          [:div.project-content
-          [:div.prose @html-hiccup]])])))
+         [:div.project-content
+          [:div.prose
+           (walk/postwalk
+            (fn [item]
+              (if (and (vector? item) (= :a (first item)))
+                (let [[_ attrs & children] item
+                      href (:href attrs)
+                      external? (hash-link? href)]
+                  (if external?
+                    [:a (assoc attrs :on-click #(navigate-to-url href)) children]
+                    item))
+                item))
+            @html-hiccup)]])])))
+

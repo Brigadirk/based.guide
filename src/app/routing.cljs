@@ -4,8 +4,8 @@
             [app.pages.projectpage :refer [project-page]]
             [app.pages.events :refer [events-page]]
             [reitit.core :as r]
-            [reitit.frontend.easy :as rfe]
-            [reagent.core :as rc]))
+            [clojure.string :as string]
+            [reitit.frontend.easy :as rfe]))
 
 (def router
   (r/router [["/"
@@ -17,8 +17,6 @@
              ["/projects/:pageid"
               {:view project-page :parameters {:path ::pageid}}]]))
 
-(def last-highlighted (rc/atom nil))
-
 (defn handle-fragment [fragment]
   (when fragment
     (js/setTimeout
@@ -27,13 +25,13 @@
          (when element
            (.scrollIntoView element #js {:behavior "smooth"})
            ;; Remove highlight class from the last highlighted element
-           (when-let [last-element @last-highlighted]
+           (when-let [last-element @state/last-highlighted]
              (.remove (.-classList last-element) "highlight"))
            ;; Add highlight class to the new element
            (.add (.-classList element) "highlight")
            ;; Update the last highlighted element
-           (reset! last-highlighted element))))
-     1000))) ; Small delay to ensure the DOM has updated
+           (reset! state/last-highlighted element))))
+     8))) ; Small delay to ensure the DOM has updated
 
 (defn on-navigate [new-match]
   (let [view (:view (:data new-match))
@@ -52,16 +50,5 @@
   ;; Handle fragment on initial page load
   (set! (.-onload js/window)
         (fn []
-          (let [fragment (-> js/window .-location .-hash (clojure.string/replace #"^#" ""))]
-            (handle-fragment fragment))))
-
-  ;; Handle fragment on link clicks within the same page
-  (.addEventListener js/document "click"
-                     (fn [e]
-                       (let [target (.-target e)]
-                         (when (and (= (.-tagName target) "A")
-                                    (.-hash target)
-                                    (= (.-hostname target) js/window.location.hostname))
-                           (let [fragment (-> target .-hash (clojure.string/replace #"^#" ""))]
-                             (handle-fragment fragment))))))
-  )
+          (let [fragment (-> js/window .-location .-hash (string/replace #"^#" ""))]
+            (handle-fragment fragment)))))
