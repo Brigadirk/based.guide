@@ -18,14 +18,35 @@
    :tags (get project "projects/tags")
    :image (get project "frontimage")})
 
-(defn fetch-and-update-projects [] 
+(defn preload-lo-images [projects]
+  (doseq [project projects]
+    (let [img (js/Image.)]
+      (set! (.-src img) (str (:image project) "_lo.png")))))
+
+(defn preload-hi-images [projects]
+  (doseq [project projects]
+    (let [img (js/Image.)]
+      (set! (.-src img) (str (:image project) "_hi.png")))))
+
+(defn fetch-and-update-projects []
   (GET (str (api-url) "/front")
     {:handler (fn [response]
-                (reset! state/project-list
-                        (->> response
-                             (mapv transform-project)
-                             (remove #(= (clojure.string/lower-case (:name %)) "about")))))
+                (let [projects (->> response
+                                    (mapv transform-project)
+                                    (remove #(= (clojure.string/lower-case (:name %)) "about")))]
+                  (reset! state/project-list projects)
+                  (preload-lo-images projects)
+                  (preload-hi-images projects)))
      :error-handler error-handler}))
+
+;; (defn fetch-and-update-projects [] 
+;;   (GET (str (api-url) "/front")
+;;     {:handler (fn [response]
+;;                 (reset! state/project-list
+;;                         (->> response
+;;                              (mapv transform-project)
+;;                              (remove #(= (clojure.string/lower-case (:name %)) "about")))))
+;;      :error-handler error-handler}))
 
 (defn transform-page [project]
   {:name (get project "projects/name")
