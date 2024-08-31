@@ -40,7 +40,6 @@
 }
 ")
 
-
 (defn get-initial-visibility []
   (if-let [stored-value (js/localStorage.getItem "substack-embed-visible")]
     (= stored-value "true")
