@@ -4,15 +4,6 @@
             [clojure.string :as str]))
 
 (def css "
-.no-results {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-.no-results h2 {
-  font-size: 2rem;
-}
 .grid-item {
   width: calc(33.333% - 16px); /* 3 items per row with some margin */
   padding: 8px;
@@ -55,22 +46,33 @@
   flex-wrap: wrap;
 }
 .filter-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   margin: 5px;
   padding: 10px;
   font-size: 1rem;
-  color: white;
+  color: black;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   flex: 1;
   min-width: 100px;
+  max-width: 150px; /* Adjust the max-width to make the buttons less wide */
   text-align: center;
+  background-color: transparent; /* Remove background color */
+  text-decoration: none; /* Remove default text decoration */
 }
 .filter-button.active {
-  background-color: orange;
+  text-decoration: underline; /* Add underline for active state */
+  text-decoration-color: green; /* Set underline color to green */
 }
 .filter-button.inactive {
-  background-color: grey;
+  text-decoration: none; /* Ensure no underline for inactive state */
+}
+.filter-icon {
+  width: 20px;
+  height: 20px;
 }
 .main-grid {
   width: 100%;
@@ -139,6 +141,9 @@
                      (reset! state/filter-order (into [] (remove #(= filter %) @state/filter-order)))
                      (when (get @state/filter-state filter)
                        (swap! state/filter-order conj filter)))}
+        [:img {:src (str "/images/buttons/" (name filter) "_col.svg")
+               :alt (str/capitalize (name filter))
+               :class "filter-icon"}]
         (str/capitalize (name filter))])]))
 
 (defn filter-projects []
