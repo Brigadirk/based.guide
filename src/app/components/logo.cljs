@@ -51,10 +51,9 @@
     display: none;
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .logo-container {
     min-height: auto;
-    align-items: flex-start;
   }
   .main-logo {
     width: 100%;
