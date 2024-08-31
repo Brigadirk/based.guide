@@ -10,9 +10,10 @@
   box-sizing: border-box;
   margin: 8px;
   transition: transform 0.3s, box-shadow 0.3s; /* Add transition for smooth effect */
+  position: relative; /* Add position relative for absolute positioning of icon */
 }
 .grid-item:hover {
-  transform: scale(1.03); /* Slightly enlarge the grid item */
+  transform: scale(1.02); /* Slightly enlarge the grid item */
   box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add a subtle shadow */
 }
 .grid-item-inner {
@@ -43,6 +44,18 @@
   padding: 0 12px;
   text-shadow: 3px 3px 4px rgba(0,0,0,0.8);
 }
+.grid-item-icon {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1; /* Ensure the icon is above the image */
+}
+.grid-item-icon img {
+  width: 20px;
+  height: 20px;
+  filter: drop-shadow(6px 6px 8px rgba(0,0,0,0.9)); /* Add a stronger shadow */
+  border-radius: 0px;
+}
 .filter-bar {
   display: flex;
   justify-content: center;
@@ -62,18 +75,19 @@
   border-radius: 5px;
   cursor: pointer;
   flex: 1;
-  min-width: 100px;
+  min-width: 50px;
   max-width: 150px; /* Adjust the max-width to make the buttons less wide */
   text-align: center;
   background-color: transparent; /* Remove background color */
   text-decoration: none; /* Remove default text decoration */
 }
 .filter-button.active {
-  text-decoration: underline; /* Add underline for active state */
-  text-decoration-color: green; /* Set underline color to green */
+  text-decoration: none; /* Add underline for active state */
+  border-bottom: 4px solid #16a34a;
 }
 .filter-button.inactive {
   text-decoration: none; /* Ensure no underline for inactive state */
+  border-bottom: 4px solid #fafafa;
 }
 .filter-icon {
   width: 20px;
@@ -132,7 +146,11 @@
             :data-src (str (:image project) "_hi.png")
             :class "lazyload"}]
      [:div.grid-item-overlay
-      [:h3 (:name project)]]]]])
+      [:h3 (:name project)]]
+     [:div.grid-item-icon
+      [:img {:src (str "/images/buttons/" (first (str/split (:tags project) #", ")) "_col.svg")
+             :alt (str/capitalize (first (str/split (:tags project) #", ")))
+             :class "filter-icon"}]]]]])
 
 (defn filter-bar []
   (let [filter-state @state/filter-state]
