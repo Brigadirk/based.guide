@@ -9,6 +9,11 @@
   padding: 8px;
   box-sizing: border-box;
   margin: 8px;
+  transition: transform 0.3s, box-shadow 0.3s; /* Add transition for smooth effect */
+}
+.grid-item:hover {
+  transform: scale(1.03); /* Slightly enlarge the grid item */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add a subtle shadow */
 }
 .grid-item-inner {
   position: relative;
