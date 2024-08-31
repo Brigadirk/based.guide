@@ -4,7 +4,7 @@ name: Seasteading
 tags:
   - planned
 images:
-  front: images/grid/seasteading.png
+  front: images/grid/seasteading
 associated_links:
   website: https://www.seasteading.org/
   join: https://www.seasteading.org/get-involved/

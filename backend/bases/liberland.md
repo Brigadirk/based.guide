@@ -6,7 +6,7 @@ tags:
   - intentional-community
   - autonomous entity
 images:
-  front: images/grid/liberland.png
+  front: images/grid/liberland
 associated_links:
   website: https://liberland.org/
   join: https://sso.liberland.org/signup

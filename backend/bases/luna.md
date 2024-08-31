@@ -4,7 +4,7 @@ name: Luna
 tags:
   - fictional
 images:
-  front: images/grid/luna.png
+  front: images/grid/luna
 associated_links:
   website: https://www.goodreads.com/book/show/16690.The_Moon_Is_a_Harsh_Mistress
 ---

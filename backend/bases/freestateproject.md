@@ -5,7 +5,7 @@ tags:
   - current
   - intentional-community
 images:
-  front: images/grid/fsp.png
+  front: images/grid/fsp
 associated_links:
   website: https://www.fsp.org/
   join: https://www.fsp.org/move-to-nh

@@ -120,10 +120,12 @@
 (defn grid-item [project]
   [:div.grid-item
    [:a.navbar-link {:href (str "/projects/" (:pageid project))}
-             [:div.grid-item-inner 
-              [:img {:src (:image project)}]
-              [:div.grid-item-overlay
-               [:h3 (:name project)]]]]])
+    [:div.grid-item-inner
+     [:img {:src (str (:image project) "_lo.png")
+            :data-src (str (:image project) "_hi.png")
+            :class "lazyload"}]
+     [:div.grid-item-overlay
+      [:h3 (:name project)]]]]])
 
 (defn filter-bar []
   (let [filter-state @state/filter-state]

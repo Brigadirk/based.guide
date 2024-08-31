@@ -5,7 +5,7 @@ tags:
   - glossary
   - informational
 images:
-  front: images/grid/glossary.png
+  front: images/grid/glossary
 associated_links:
   website: https://based.guide
   join: https://based.guide

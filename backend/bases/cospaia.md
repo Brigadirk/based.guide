@@ -5,7 +5,7 @@ tags:
   - historical
   - ancap
 images:
-  front: images/grid/cospaia.png
+  front: images/grid/cospaia
 associated_links:
   website: https://en.wikipedia.org/wiki/Republic_of_Cospaia
 ---

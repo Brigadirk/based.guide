@@ -5,7 +5,7 @@ tags:
   - about
   - informational
 images:
-  front: images/grid/ancaptokyo.png
+  front: images/grid/ancaptokyo
 associated_links:
   website: https://based.guide
   join: https://based.guide

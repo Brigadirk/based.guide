@@ -42,13 +42,15 @@
     (= stored-value "true")
     true))  ; Default to visible if no stored preference
 
+
+;; TODO: visibility also for the subscribe link!
 (defn substack-embed []
   (add-styling css)
   (let [visible? (r/atom (get-initial-visibility))
         screen-width (r/atom (.-innerWidth js/window))]
     (r/create-class
      {:component-did-mount
-      (fn [this]
+      (fn []
         (set! (.-onresize js/window)
               #(reset! screen-width (.-innerWidth js/window))))
 
@@ -61,10 +63,12 @@
                         (js/localStorage.setItem "substack-embed-visible" @visible?))}
           (if @visible? "¡Afuera!" "Sign up for our newsletter!")]
          (if (< @screen-width 1100)
+           (when @visible?
            [:a.subscribe-link {:href "https://basedguide.substack.com/subscribe"
                                :target "_blank"}
-            "Subscribe to our newsletter!"]
+            "Subscribe to our newsletter!"])
            (when @visible?
              [:iframe.embed {:src "https://basedguide.substack.com/embed"
                              :frameBorder "0"
-                             :scrolling "yes"}]))])})))
+                             :scrolling "yes"}
+              :style {:background-color "#fff"}]))])})))

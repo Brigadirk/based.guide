@@ -9,7 +9,7 @@ tags:
   - special-economic-zone
   - charter-city
 images:
-  front: images/grid/island.png
+  front: images/grid/prospera
 associated_links:
   website: https://www.prospera.co/
   join: https://www.prospera.co/residence-form
