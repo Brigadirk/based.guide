@@ -8,15 +8,20 @@
             [clojure.walk :as walk]))
 
 (def css
-  "
+"
 .anchor-link {
   text-decoration: none;
+  font-weight: bold; 
 }
 .anchor-link:hover {
   color: #999;
 }
+.gay-mode .anchor-link:hover {
+  color: yellow;   
+}
 .highlight {
-  background-color: yellow; /* or any other highlighting style */
+  text-decoration: none;
+  border-bottom: 4px solid #16a34a;
 }
 .project-page {
   width: 100%;
@@ -76,9 +81,6 @@
 }
 .prose blockquote {
   padding: 0 20px;
-}
-.prose a {
-  color: #0000EE;
 }
 @media (min-width: 640px) {
   .prose {

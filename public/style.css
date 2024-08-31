@@ -4,7 +4,6 @@ body {
     font-size: 20px;
     line-height: 1.5;
     color: #8a1010;
-    
   }
 
   img.lazyload {
@@ -15,20 +14,33 @@ body {
   img.lazyloaded {
     opacity: 1;
   }
-  
-  /* Colors */
+
   :root {
-    --primary-color: #ff6347;
-    --secondary-color: #4682b4;
-    --text-color: #333;
-    --background-color: #4169E1;
+    --background-color: #f0f9ff;
+    --text-color: black;
   }
   
+  .dark-mode {
+    --background-color: #020617;
+    --text-color: white;
+  }
+  
+  .gay-mode {
+    --background-color: #FF1493;
+    --text-color: rgb(0, 0, 0); /* You can adjust this to a color that has the most contrast with pink */
+  }
+
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+  }
+    
   /* Spacing */
   body {
     margin: 0;
     padding: 0;
-    background-color: #F0FFFF	;
+    /* background-color: #F0FFFF;	*/;
   }
   
   .container {

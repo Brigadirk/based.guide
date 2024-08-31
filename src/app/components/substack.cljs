@@ -2,21 +2,29 @@
   (:require [reagent.core :as r]
             [app.components.utils :refer [add-styling]]))
 
-(def css
-  "
+(def css "
 .embed-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 20px auto;
-  color: none;
   width: 100%;
 }
 .embed {
   display: block;
   width: 100%;
   height: 300px;
-  border: none;
+  border: 20px solid transparent; /* Transparent border to apply gradient */
+  background-color: #f0f9ff; /* Regular background color */
+  border-image: linear-gradient(to bottom, #f0f9ff, #f0f9ff) 1; /* Default gradient */
+}
+.dark-mode .embed {
+  background-color: #020617; /* Dark mode background color */
+  border-image: linear-gradient(to right, #020617, #f0f9ff) 1; /* Gradient border for dark mode */
+}
+.gay-mode .embed {
+  background-color: #FF1493; /* Gay mode background color */
+  border-image: linear-gradient(to right, #FF1493, #f0f9ff) 1; /* Gradient border for gay mode */
 }
 .toggle-button {
   margin-bottom: 10px;
@@ -24,11 +32,16 @@
   background-color: transparent; /* Remove background color */
   border: none;
   cursor: pointer;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); /* Add slight shadow around the text */
+}
+.dark-mode .toggle-button {
+  color: white;
 }
 .afuera-icon {
   width: 20px;
   height: 20px;
+}
+.dark-mode .afuera-icon {
+  filter: brightness(2) invert(1);
 }
 .subscribe-link {
   font-size: 4rem;
@@ -45,8 +58,6 @@
     (= stored-value "true")
     true))  ; Default to visible if no stored preference
 
-
-;; TODO: visibility also for the subscribe link!
 (defn substack-embed []
   (add-styling css)
   (let [visible? (r/atom (get-initial-visibility))
@@ -61,24 +72,23 @@
       (fn []
         [:div.embed-container
          [:button.toggle-button
-
           {:on-click #(do
                         (swap! visible? not)
-                        (js/localStorage.setItem "substack-embed-visible" @visible?))} 
-          
+                        (js/localStorage.setItem "substack-embed-visible" @visible?))}
           [:img {:src (str "/images/buttons/afuera.svg")
                  :alt "Afuera"
                  :class "afuera-icon"}]
-
           (if @visible? "¡Afuera!" "Sign up for our newsletter!")]
-         
+
          (if (< @screen-width 1100)
            (when @visible?
-           [:a.subscribe-link {:href "https://basedguide.substack.com/subscribe"
-                               :target "_blank"}
-            "Subscribe to our newsletter!"])
+             [:a.subscribe-link {:href "https://basedguide.substack.com/subscribe"
+                                 :target "_blank"}
+              "Subscribe to our newsletter!"])
            (when @visible?
              [:iframe.embed {:src "https://basedguide.substack.com/embed"
                              :frameBorder "0"
-                             :scrolling "yes"}
-              :style {:background-color "#fff"}]))])})))
+                             :scrolling "no"
+                             :width "480"
+                             :height "320"}]))])})))
+

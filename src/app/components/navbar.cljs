@@ -27,6 +27,12 @@
   color: gray;  /* Adjust as needed */
   font-size: 16px;
 }
+.gay-mode .navbar-link  {
+  color: white;  
+}
+.dark-mode .navbar-link {
+  color: white;
+}
 .navbar-link:hover {
   color: #333;  /* Adjust as needed */
 }

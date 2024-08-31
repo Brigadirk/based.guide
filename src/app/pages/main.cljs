@@ -16,6 +16,9 @@
   transform: scale(1.02); /* Slightly enlarge the grid item */
   box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add a subtle shadow */
 }
+.dark-mode .grid-item:hover {
+  box-shadow: 0 4px 8px rgba(255,255,255, 0.2);
+}
 .grid-item-inner {
   position: relative;
   padding-top: 56.25%; /* 16:9 aspect ratio */
@@ -80,6 +83,9 @@
   text-align: center;
   background-color: transparent; /* Remove background color */
   text-decoration: none; /* Remove default text decoration */
+}
+.dark-mode .filter-button  {
+  color: white;
 }
 .filter-button.active {
   text-decoration: none; /* Add underline for active state */
