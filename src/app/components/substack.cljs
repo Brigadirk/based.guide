@@ -24,7 +24,7 @@
   background-color: transparent; /* Remove background color */
   border: none;
   cursor: pointer;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Add slight shadow around the text */
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); /* Add slight shadow around the text */
 }
 .afuera-icon {
   width: 20px;

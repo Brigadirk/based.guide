@@ -27,6 +27,7 @@
 }
 .founder-ape {
   position: absolute;
+  margin-top: 10px;
   left: 0.5rem;  /* Adjusted left position */
   top: 50%;
   transform: translateY(-50%);
