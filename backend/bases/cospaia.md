@@ -13,7 +13,7 @@ associated_links:
 # Republic of Cospaia
 
 ![cospaia](/images/articles/cospaia/cospaia.jpeg)
-*<span class="caption">from https://www.umbriatourism.it/en/-/republic-of-cospaia</span>>*
+*<center><font size="2">View of modern Cospaia, from [umbria tourism](https://www.umbriatourism.it/en/-/republic-of-cospaia)</font></center>*
 
 ## What was it?
 

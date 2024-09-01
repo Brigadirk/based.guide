@@ -15,7 +15,7 @@ associated_links:
 # Seasteading
 
 ![Seasteading](/images/articles/seasteading/seasteading.webp)
-*from <https://newatlas.com/seasteading-institute-floating-city-2020/38344/>*
+*<center><font size="2">From [New Atlas](https://newatlas.com/seasteading-institute-floating-city-2020/38344/)</font></center>*
 
 ## What is it?
 

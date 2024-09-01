@@ -19,7 +19,8 @@ associated_links:
 
 # Prospera
 
-![Prospera](/images/articles/prospera/prospera.avif)
+![Prospera](/images/articles/prospera/prospera.png)
+*<center><font size="2">From [new atlas](<https://newatlas.com/seasteading-institute-floating-city-2020/38344/>)</font></center>*
 
 ## What is it?
 

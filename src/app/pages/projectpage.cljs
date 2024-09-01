@@ -137,7 +137,9 @@
           html-hiccup (r/atom nil)]
 
       (when hiccup-text
-        (reset! html-hiccup (extract-body-content (edn/read-string hiccup-text))))
+        (reset! html-hiccup (extract-body-content 
+                             (edn/read-string 
+                              (string/replace hiccup-text "&quot;" "\"")))))
 
       [:div.project-page
        [:h1.project-title (:name project)]

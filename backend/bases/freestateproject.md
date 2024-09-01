@@ -16,6 +16,7 @@ associated_links:
 # The Free State Project
 
 ![Free State Project logo](/images/articles/fsp/fspfront.png)
+*<center><font size="2">The FSP logo. From [their website](https://www.fsp.org/)</font></center>*
 
 ## What is it?
 
