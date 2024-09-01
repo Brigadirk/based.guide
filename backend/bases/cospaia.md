@@ -37,7 +37,7 @@ Over its history, the republic's population remained relatively small, between 3
 
 ## Why did it survive for so long?
 
-While we have already talked about several factors which made The Republic of Cospaia successful, there were also structural causes which played a role too. One such example was Cospaia’s small size and as such, its strategic importance was relatively miniscule. In larger geopolitical conflicts which racked the continent during its existence, Cospaia was largely forgotten. This made it an unattractive target for invasions from its neighbors most of the time; preferring to leave Cospaia to its tobacco production which benefited them too. This combination of strategic unimportance, small size and economic usefulness to its neighbors, made Cospaia as successful as it was.
+While we have seen several factors which made The Republic of Cospaia successful, there were also structural causes which played a role too. One such example was Cospaia’s small size and as such, its strategic importance was relatively miniscule. In larger geopolitical conflicts which racked the continent during its existence, Cospaia was largely forgotten. This made it an unattractive target for invasions from its neighbors most of the time; preferring to leave Cospaia to its tobacco production which benefited them too. This combination of strategic unimportance, small size and economic usefulness to its neighbors, made Cospaia as successful as it was.
 
 Domestically, Cospaia's resilience seems to have stemmed from its small, but closely integrated community and the involvement of all individuals and their families in the process of governance. This non-rigid and open structure allowed for its adaptability to changing circumstances. Moreover, centralized projects were not needed and therefore, local problems were often identified and solved efficiently by individuals embedded in a community. This cultural and political situation in Cospaia also enabled it to enforce order without creating and maintaining armed forces.
 
@@ -49,7 +49,7 @@ The Republic of Cospaia's loss of independence in 1826 was not due to internal c
 
 This geopolitical trend towards larger and centralized states likely made Cospaia's independence less tolerable to its neighbors and increased foreign scrutiny on such an entity. Moreover, the economic markets for tobacco spread over the centuries and this likely reduced the leverage Cospaia had and thus weakened its geopolitical position amongst its neighbors.
 
-In addition, Cospaia's small size, lack of adept defense force and diplomatic ties reduced its  ability to resist the external pressures of integration. However, it is worth noting that even after losing political independence, the territory of Cospaia retained many of its defining characteristics.  Thus, Cospaia's failure, if it can be called that, was less something self-inflicted, and more a kind of political absorption.
+In addition, Cospaia's small size, lack of adept defense force and diplomatic ties reduced its  ability to resist the external pressures of integration. However, it is worth noting that even after losing political independence, the territory of Cospaia retained many of its defining characteristics. Thus, Cospaia's failure, if it can be called that, was less something self-inflicted, and more a kind of political absorption.
 
 ## Additional Information
 
@@ -63,5 +63,6 @@ In addition, Cospaia's small size, lack of adept defense force and diplomatic ti
 
 - [Libertarian Europe](https://www.youtube.com/watch?v=phjtrHm_uzs)
 - [Concerning Reality](https://www.youtube.com/watch?v=IJtY5VNY4JI)
+- [Cospaia alliance](https://cospaia.se/about)
 
 Written by Kitt Johnson
