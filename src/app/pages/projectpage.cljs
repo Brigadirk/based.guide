@@ -103,6 +103,20 @@
 (defn navigate-to-url [url]
   (.assign js/window.location url))
 
+(defn extract-body-content [hiccup]
+  (cond
+    (vector? hiccup)
+    (if (= :body (first hiccup))
+      (rest (rest hiccup)) ;; remove the :key attribute
+      (some extract-body-content (rest hiccup)))
+
+    (seq? hiccup)
+    (some extract-body-content hiccup)
+
+    :else
+    nil))
+
+
 (defn project-page [pageid]
   (reset! state/project-page nil)
   (be/fetch-project pageid)
@@ -113,15 +127,12 @@
           html-hiccup (r/atom nil)]
 
       (when hiccup-text
-        (reset! html-hiccup (edn/read-string hiccup-text)))
+        (reset! html-hiccup (extract-body-content (edn/read-string hiccup-text))))
 
       [:div.project-page
        [:h1.project-title (:name project)]
-
        (if (and project (empty? project))
-
          [:div]
-
          [:div.project-content
           [:div.prose
            (walk/postwalk

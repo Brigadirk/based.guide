@@ -2,15 +2,13 @@
 pageid: glossary
 name: Glossary
 tags:
-  - glossary
-  - informational
 images:
-  front: images/grid/glossary
+  front: 
 associated_links:
-  website: https://based.guide
-  join: https://based.guide
-  twitter: https://based.guide
-  discord: https://based.guide
+  website: 
+  join: 
+  twitter: 
+  discord: 
 ---
 
 # Glossary

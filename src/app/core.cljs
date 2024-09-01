@@ -10,8 +10,8 @@
 
 (defn ^:export main [] 
   (routing/init-routing)
-  (backend/fetch-and-update-projects)
-  (.render root (r/as-element [layout/layout])))
+  (backend/fetch-and-update-projects))
+  (.render root (r/as-element [layout/layout]))
 
 (defn ^:dev/after-load _ []
     (main))

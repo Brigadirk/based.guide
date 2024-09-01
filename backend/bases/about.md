@@ -2,15 +2,13 @@
 pageid: about
 name: About
 tags:
-  - about
-  - informational
 images:
-  front: images/grid/ancaptokyo
+  front: 
 associated_links:
-  website: https://based.guide
-  join: https://based.guide
-  twitter: https://based.guide
-  discord: https://based.guide
+  website: 
+  join: 
+  twitter: 
+  discord: 
 ---
 
 # About

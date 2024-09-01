@@ -196,7 +196,7 @@
                      projects))))
 
 (defn main-grid []
-  (add-styling css)
+  (add-styling css) 
   [:div.main-grid
    [filter-bar]
    [:div.main-grid-inner
