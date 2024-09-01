@@ -1,3 +1,5 @@
+shadow-cljs.edn
+
 public/js/cljs-runtime/*
 public/js/manifest.edn
 

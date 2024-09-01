@@ -7,6 +7,16 @@
             [clojure.string :as string]
             [clojure.walk :as walk]))
 
+;; .prose ul {
+;;   padding-left: 20px;
+;;   padding-right: 20px;
+;;   margin-bottom: 15px;
+;; }
+;; .prose ol {
+;;   padding-left: 20px;
+;;   padding-right: 20px;
+;; }
+
 (def css
 "
 .anchor-link {
@@ -32,7 +42,6 @@
 .project-title {
   font-size: 1.875rem; /* 3xl */
   font-weight: bold;
-  margin-bottom: 2rem;
   text-align: center;
   width: 100%;
 }
@@ -42,7 +51,6 @@
   padding: 2.25rem; /* 9 */
   border-radius: 0.375rem; /* rounded-lg */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-  margin: 100 auto; /* Center the content horizontally */
 }
 .prose {
   font-size: 1rem; /* sm:prose */
@@ -51,7 +59,7 @@
 .prose h2 {
   font-size: 1.5em;
   font-weight: bold;
-  padding: 0 20px 10px;
+  padding: 0 20px 5px;
   margin-bottom: 20px;
 }
 .prose h3 {
@@ -70,17 +78,20 @@
   padding: 0 20px;
   margin-bottom: 20px;
 }
-.prose ul {
-  padding-left: 40px;
-  padding-right: 20px;
-  margin-bottom: 15px;
-}
-.prose ol {
-  padding-left: 40px;
-  padding-right: 20px;
-}
 .prose blockquote {
   padding: 0 20px;
+}
+.prose img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* This adds a shadow around the image */
+  border: 1px solid black; /* This adds a thin black border around the image */
+  padding: 5px; /* This adds some space between the border and the image */
+}
+.prose .caption {
+  text-align: center;
+  font-size: 0.5em;
 }
 @media (min-width: 640px) {
   .prose {
@@ -115,7 +126,6 @@
 
     :else
     nil))
-
 
 (defn project-page [pageid]
   (reset! state/project-page nil)

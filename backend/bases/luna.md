@@ -11,6 +11,8 @@ associated_links:
 
 # Luna - The Moon is a Harsh Mistress
 
+![book covers](/images/articles/luna/books.jpg)
+
 ## What is it?
 
 In Robert A. Heinlein's 1966 novel, ‘The Moon is a Harsh Mistress’, Luna is a lunar penal colony located on a fictional version of Earth's moon in 2075. This setting serves as a backdrop for Heinlein’s exploration of both economic and political ideas about freedom and self-determination. By the time the story takes place, Luna has grown into a highly diverse society populated by convicts and their descendents. Both groups together are known as ‘Loonies’. 
@@ -57,7 +59,7 @@ Depending on the scale of nation state involvement in the beginning, a Luna like
 
 While technically feasible, and an optimistic vision for the future, such a society remains a relatively distant possibility. We have yet to return to the moon in decades and Earth has yet to land a single human astronaut so in general, far more human ingenuity and resources need to be spent on getting more people and infrastructure into space. Technically, there is no specific breakthrough which is required, but scaling current technologies to the size needed for such a colony has yet to be done or seriously thought about at the detail required.
 
-## Want to learn more? 
+## Additional information
 
 ### General Information:
 

@@ -8,10 +8,16 @@
 
 (defonce root (createRoot (gdom/getElement "app")))
 
-(defn ^:export main [] 
+(defn init []
   (routing/init-routing)
   (backend/fetch-and-update-projects))
-  (.render root (r/as-element [layout/layout]))
 
-(defn ^:dev/after-load _ []
-    (main))
+(defn render []
+  (.render root (r/as-element [layout/layout])))
+
+(defn ^:export main []
+  (init)
+  (render))
+
+(defn ^:dev/after-load reload! []
+  (render))

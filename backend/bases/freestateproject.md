@@ -15,9 +15,11 @@ associated_links:
 
 # The Free State Project
 
+![Free State Project logo](/images/articles/fsp/fspfront.png)
+
 ## What is it?
 
-The Free State Project is a libertarian migration effort founded in 2001 by Jason Sorens and is based in New Hampshire - its target relocation state. In 2016, the goal of reaching 20,000 pledges was reached and this triggered the five year countdown for pledgers to relocate their lives to New Hampshire. As of 2022, 6,232 individuals were recorded as having moved to New Hampshire. The goal was and is, to concentrate the number of persons who value individual freedoms, private property and personal choice, and to work towards reducing the size and scope of state government through democratic civic engagement and the application of libertarian principles. Sorens’ theory proposed that if 20,000 libertarian minded persons moved to a state with a small enough population, it would be possible to influence its policy, and make the culture more free and open.
+The Free State Project is a [libertarian](/projects/glossary#libertarianism) migration effort founded in 2001 by Jason Sorens and is based in New Hampshire - its target relocation state. In 2016, the goal of reaching 20,000 pledges was reached and this triggered the five year countdown for pledgers to relocate their lives to New Hampshire. As of 2022, 6,232 individuals were recorded as having moved to New Hampshire. The goal was and is, to concentrate the number of persons who value individual freedoms, private property and personal choice, and to work towards reducing the size and scope of state government through democratic civic engagement and the application of libertarian principles. Sorens’ theory proposed that if 20,000 libertarian minded persons moved to a state with a small enough population, it would be possible to influence its policy, and make the culture more free and open.
 
 ## History
 
@@ -47,9 +49,9 @@ Current efforts include electing more libertarian-minded candidates to state/loc
 
 In order to do so, you must select in the affirmative that, ‘I hereby state my solemn intent to move to the State of New Hampshire. Once there, I will exert the fullest practical effort toward the creation of a society in which the maximum role of civil government is the protection of individuals' life, liberty, and property.’
 
-Find the pledge at the bottom of the page: <https://www.fsp.org/>
+Find the pledge at the bottom of the [Free State Project website](https://www.fsp.org/)
 
-For more information about moving and inquiries related to buying or renting a home in New Hampshire, see: <https://www.fsp.org/move-to-nh>
+For more information about moving and inquiries related to buying or renting a home in New Hampshire, see: [move to NH](https://www.fsp.org/move-to-nh)
 
 ## Additional Information
 

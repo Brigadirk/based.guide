@@ -5,9 +5,7 @@
   "devDependencies": {
     "shadow-cljs": "2.26.0"
   },
-  "scripts": {
-    "build:css": "postcss public/css/tailwind.css -o public/css/main.css"
-  },
+  "scripts": {},
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

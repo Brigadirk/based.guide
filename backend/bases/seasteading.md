@@ -14,6 +14,9 @@ associated_links:
 
 # Seasteading
 
+![Seasteading](/images/articles/seasteading/seasteading.webp)
+*from <https://newatlas.com/seasteading-institute-floating-city-2020/38344/>*
+
 ## What is it?
 
 In its most basic form, seasteading embodies the idea of autonomy and new types of political units which can be free from existing nation state authority. However, in practice seasteading has a far more varied approach to how governments can and should interact with seasteading projects. In both cases, seasteading offers a future less influenced by nation state control and more freedom to direct voluntary governance and economic decisions. More than this, seasteading is an opportunity for experimentation in novel forms of governance, economic systems and even sub-cultures.

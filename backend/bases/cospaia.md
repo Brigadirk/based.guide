@@ -12,6 +12,9 @@ associated_links:
 
 # Republic of Cospaia
 
+![cospaia](/images/articles/cospaia/cospaia.jpeg)
+*<span class="caption">from https://www.umbriatourism.it/en/-/republic-of-cospaia</span>>*
+
 ## What was it?
 
 The Republic of Cospaia was one of the most distinct and long lasting examples of a [stateless society](/projects/glossary#anarcho-capitalism) in history. Originating in central Italy during 1440, it survived until 1826 and owed its creation to a mapmaking error from the negotiations between Florence and the Papal States. Due to this error, the small territory of Cospaia totalling 330 hectares was able to claim its independence. 
@@ -27,7 +30,9 @@ Even after Cospaia’s dissolution in 1826 and its integration into the Papal St
 ## History
 
 As mentioned above, The Republic of Cospaia came into existence in 1440 due to a cartographic error during border negotiations between the Republic of Florence and the Papal States. During the 1500s until the 1700s, Cospaia was largely used as a tax free haven for business enterprises and individuals. Merchants frequently traded goods within their borders and smugglers hid and transported contraband items between countries and used Cospaia as an intermediary location.
+
 In the 1500s, tobacco cultivation became a mainstream occupation for Cospaia’s population and this was largely due to its discovery in the Americas and the popularity of it in Europe thereafter. After a brief occupation by French revolutionary forces in 1798, Cospaia once again gained its independence, but this freedom was relatively short-lived. In 1826, the republic was officially split between Tuscany and the Papal States.
+
 Over its history, the republic's population remained relatively small, between 300 to 600 citizens. Even with their small populations and lack of domestic police and armed forces, Cospaia was able to avoid large scale conflicts with neighboring countries and internal conflicts, which would have threatened its existence. Moreover, after its dissolution, its citizens were granted several special privileges, one of them being an exemption from tobacco taxes, as compensation for the loss of their independence.
 
 ## Why did it survive for so long?

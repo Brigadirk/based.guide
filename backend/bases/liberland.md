@@ -15,6 +15,8 @@ associated_links:
 
 # Liberland
 
+![liberland](/images/articles/liberland/liberland.jpeg)
+
 ## What is it?
 
 The official, albeit self-proclaimed title of Liberland, is the ‘Free Republic of Liberland. It is a micronation located on a small piece of disputed territory between Croatia and Serbia - founded on libertarian principles by Czech right-libertarian politician and activist Vít Jedlička. It is part of a larger and growing libertarian movement which aims to create a sovereign state that champions individual liberty, voluntary association, and minimal government intervention.
@@ -68,11 +70,9 @@ In the future, if the claimed territory is able to be inhabited, it will be Libe
 
 As global discussions around decentralization, personal freedom, and the role of government evolve, Liberland's experimentation in libertarian nation-building will continue to be a  fascinating example - regardless of whether it ultimately succeeds. Even it’s possible failure will hold the seeds to a different micronation's success.
 
-## Apply for citizenship here! 
+## Apply for citizenship [here!](https://sso.liberland.org/signup) 
 
-## Wanting to learn more about Liberland? 
-
-Additional Information
+## Additional Information
 
 ### General Information:
 

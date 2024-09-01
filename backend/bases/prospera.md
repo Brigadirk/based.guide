@@ -19,6 +19,8 @@ associated_links:
 
 # Prospera
 
+![Prospera](/images/articles/prospera/prospera.avif)
+
 ## What is it?
 
 Próspera is an innovative, semi-autonomous city based on the island of Roatan, Honduras. Próspera Inc was founded in 2017 by Erick Brimen, but officially broke ground in 2020. It aims to develop a unique legal, regulatory and governance structure for innovative entrepreneurs, driven individuals and free thinkers within its unique special economic zone. Although not a fully autonomous entity, Próspera is part of Honduras’ ZEDE (Zone for Economic Development and Employment) legislation - giving Próspera far more autonomy over its own economic and political future. In practice, this means it presently has its own fiscal, regulatory and legal structures, but is still bound by the constitution of Honduras and its criminal code.
@@ -71,9 +73,7 @@ On the local level, the comuna of Crawfish Rock on Roatan is a portion of land t
 
 ### Want to join Prospera and get connected ? 
 
-Inquire below!
-
-<https://share.hsforms.com/1D5ohUe0_REKUW-h9ZlLhhAde98>
+[Sign up!](https://auth.eprospera.com/u/login?state=hKFo2SBVRjJJU29WVHlRUm9IN3Q5amhKaVRLaE1wQ052RURfaaFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIEc4Qm1MZkF6X25RMnEwWVM5OWU0UjNQa1MtaUR2YzlXo2NpZNkgWFpIdXhjeTJvaHVYdGwweVZwcXVncFFGR3Y5NFVnSGU)
 
 ## Additional Information
 
