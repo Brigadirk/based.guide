@@ -19,6 +19,18 @@
 
 (def css
 "
+ 
+ /* What shows when a page is loading */
+ .loading {
+   padding-top: 10rem;
+   max-witdth: 100%;
+   display: flex;
+   margin: 0 auto;
+   width: 62px;
+   height: 62px;
+ }
+
+ /* anchor linking */
 .anchor-link {
   text-decoration: none;
   font-weight: bold; 
@@ -33,79 +45,77 @@
   text-decoration: none;
   border-bottom: 4px solid #16a34a;
 }
+/* anchor linking end */
+ 
+ /* Title on the top */
+.project-title {
+  padding-top: 1rem;
+  font-weight: bold;
+}
+  
+/* Wrapper */
 .project-page {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.project-title {
-  font-size: 1.875rem; /* 3xl */
-  font-weight: bold;
-  text-align: center;
-  width: 100%;
-}
-.project-content {
-  width: 100%;
-  max-width: 1000px;
-  padding: 2.25rem; /* 9 */
+
+/* Contains the actual text */
+.prose {
+  font-size: 1.1em;
+  word-wrap: break-word; 
+  max-width: 55rem;
+  padding: 2.25rem;
   border-radius: 0.375rem; /* rounded-lg */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
 }
-.prose {
-  font-size: 1rem; /* sm:prose */
-  word-wrap: break-word; /* Ensure text wraps properly */
+
+.prose img {
+  max-width: 100%;
+  border-radius: 10px;
+  display: flex;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* This adds a shadow around the image */
+}
+
+.prose h1 {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 .prose h2 {
   font-size: 1.5em;
   font-weight: bold;
-  padding: 0 20px 5px;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 .prose h3 {
   font-size: 1.3em;
   font-weight: bold;
-  padding: 0 20px 5px;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 .prose h4 {
   font-size: 1.1em;
   font-weight: bold;
-  padding: 0 20px 5px;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 .prose p {
-  padding: 0 20px;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 .prose blockquote {
-  padding: 0 20px;
 }
-.prose img {
-  max-width: 100%;
-  display: block;
-  margin: 0 auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* This adds a shadow around the image */
-  border: 1px solid black; /* This adds a thin black border around the image */
-  padding: 5px; /* This adds some space between the border and the image */
+  
+/* special cases for phones and tablets */
+@media (max-width: 1200px) {
+  .prose {
+    font-size: 1.75rem; /* lg:prose-lg */
+  }
 }
-.prose .caption {
-  text-align: center;
-  font-size: 0.5em;
-}
-@media (min-width: 640px) {
+@media (max-width: 640px) {
   .prose {
     font-size: 2.125rem; /* prose */
   }
 }
-@media (min-width: 1200px) {
-  .project-content {
-    max-width: 1000px
-  }
-  .prose {
-    font-size: 1.25rem; /* lg:prose-lg */
-  }
-}
+
 ")
 
 (defn hash-link? [url]
@@ -137,25 +147,28 @@
           html-hiccup (r/atom nil)]
 
       (when hiccup-text
-        (reset! html-hiccup (extract-body-content 
-                             (edn/read-string 
+        (reset! html-hiccup (extract-body-content
+                             (edn/read-string
                               (string/replace hiccup-text "&quot;" "\"")))))
 
-      [:div.project-page
-       [:h1.project-title (:name project)]
-       (if (and project (empty? project))
-         [:div]
-         [:div.project-content
-          [:div.prose
-           (walk/postwalk
-            (fn [item]
-              (if (and (vector? item) (= :a (first item)))
-                (let [[_ attrs & children] item
-                      href (:href attrs)
-                      external? (hash-link? href)]
-                  (if external?
-                    [:a (assoc attrs :on-click #(navigate-to-url href)) children]
-                    item))
-                item))
-            @html-hiccup)]])])))
+      (if (nil? project)
+        [:img.loading {:src "/images/misc/planet-earth.svg"
+                       :alt "loading"}]
+        
+        (if (empty? project)
+          [:div.error "Project not found"]
+          [:div.project-page
+           [:h1.project-title (:name project)]
+           [:div.prose
+            (walk/postwalk
+             (fn [item]
+               (if (and (vector? item) (= :a (first item)))
+                 (let [[_ attrs & children] item
+                       href (:href attrs)
+                       external? (hash-link? href)]
+                   (if external?
+                     [:a (assoc attrs :on-click #(navigate-to-url href)) children]
+                     item))
+                 item))
+             @html-hiccup)]])))))
 

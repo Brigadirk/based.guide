@@ -12,3 +12,4 @@
 (defonce event-list (r/atom []))
 (defonce last-highlighted (r/atom nil))
 (defonce filter-order (r/atom []))
+(defonce search-query (r/atom []))

@@ -21,7 +21,7 @@
 }
 .main-logo {
   width: 100%;
-  max-width: 550px;  /* Slightly reduced max-width */
+  max-width: 550px;   /* Slightly reduced max-width */
   height: auto;
   position: relative;
   z-index: 1;
@@ -127,7 +127,7 @@
     ;; Ape
     [:a {:href "/"}
      [:img.founder-ape {:src "/images/logo/founder_ape.svg"
-                        :alt "Founder Ape"}]]
+                        :alt "Founder Ape!"}]]
     ;; Based.Guide
     ;; TODO: make also a link
     [:img.main-logo {:src "/images/logo/logo_font_horizontal.svg"

@@ -18,6 +18,3 @@
 (defn ^:export main []
   (init)
   (render))
-
-(defn ^:dev/after-load reload! []
-  (render))

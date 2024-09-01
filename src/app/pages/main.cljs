@@ -161,6 +161,12 @@
 (defn filter-bar []
   (let [filter-state @state/filter-state]
     [:div.filter-bar
+     
+    ;;  [:input {:type "text"
+    ;;           :placeholder "Search projects..."
+    ;;           :value @state/search-query
+    ;;           :on-change #(reset! state/search-query (-> % .-target .-value))}]
+     
      (for [filter [:current :planned :historical :fictional]]
        [:button
         {:key filter
@@ -174,6 +180,7 @@
                :alt (str/capitalize (name filter))
                :class "filter-icon"}]
         (str/capitalize (name filter))])]))
+
 
 (defn filter-projects []
   (let [projects @state/project-list

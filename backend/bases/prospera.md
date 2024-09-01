@@ -20,7 +20,7 @@ associated_links:
 # Prospera
 
 ![Prospera](/images/articles/prospera/prospera.png)
-*<center><font size="2">From [new atlas](<https://newatlas.com/seasteading-institute-floating-city-2020/38344/>)</font></center>*
+*<center><font size="2">From [the Prospera website](https://www.prospera.co/en/visit)</font></center>*
 
 ## What is it?
 
