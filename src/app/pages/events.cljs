@@ -67,11 +67,12 @@
 }
 
 p.date {
-  font-size: 1.2em;
+  font-size: 1em;
   text-align: right;
 }
 p.location {
-  font-size: 1em;
+  font-size: 1.5em;
+  text-decoration: bold;
   text-align: right;
 }
   
@@ -91,24 +92,25 @@ p.organiser a {
 (defn render-event [event key]
   (let [start-date (js/Date. (:startdate event))
         end-date (js/Date. (:enddate event))
+        format-options-start #js {:month "long" :day "numeric"}
+        format-options-end #js {:month "long" :day "numeric" :year "numeric"}
+        format-start-date (fn [date] (.toLocaleDateString date "en-EN" format-options-start))
+        format-end-date (fn [date] (.toLocaleDateString date "en-EN" format-options-end))
         date-text (if (= start-date end-date)
-                    (.toLocaleDateString start-date "en-US" {:month "long" :day "numeric" :year "numeric"})
-                    
-                    (str (.toLocaleDateString start-date "en-US" {:month "long" :day "numeric"})
-                         " - " (.toLocaleDateString end-date "en-US" {:month "long" :day "numeric"}))
-                    
-                    )
+                    (format-end-date end-date)
+                    (str (format-start-date start-date) " - " (format-end-date end-date)))
         location (:location event)]
     [:div {:key key}
-     [:div.event-item-header 
+     [:div.event-item-header
       [:div.left-block
        [:a.event {:href (:link event)} (:name event)]
-       [:p.organiser "Organised by: " [:a {:href (:organiserlink event)} (:organiser event)]]]
-      
+       [:p.organiser "Organised by: "
+        [:a {:href (:organiserlink event)} (:organiser event)]]]
       [:div.right-block
-       [:p.location 
-        [:p (str (aget location "city") ", " (str (aget location "country")))]]
-       [:p.date date-text]]]]))
+       [:p.event-item-subtext {:style {:text-align "right"}}
+        [:p.location (str (aget location "city") ", " (aget location "country"))]]
+       [:p.date {:style {:font-weight "bold" :color "#6b7280"}}
+        date-text]]]]))
 
 (defn render-events [events]
   [:div.event-page
