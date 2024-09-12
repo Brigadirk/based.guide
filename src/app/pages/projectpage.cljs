@@ -19,7 +19,6 @@
 
 (def css
 "
- 
  /* What shows when a page is loading */
  .loading {
    padding-top: 10rem;
@@ -69,6 +68,10 @@
   border-radius: 0.375rem; /* rounded-lg */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
 }
+.prose a {
+  color: black;  
+ text-decoration: underline;
+}
 
 .prose img {
   max-width: 100%;
@@ -81,25 +84,21 @@
 .prose h1 {
   font-size: 1.8em;
   font-weight: bold;
-  margin-bottom: 1rem;
 }
 .prose h2 {
   font-size: 1.5em;
   font-weight: bold;
-  margin-bottom: 1rem;
 }
 .prose h3 {
   font-size: 1.3em;
   font-weight: bold;
-  margin-bottom: 1rem;
 }
 .prose h4 {
   font-size: 1.1em;
   font-weight: bold;
-  margin-bottom: 1rem;
 }
 .prose p {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .prose blockquote {
 }
@@ -141,34 +140,35 @@
   (reset! state/project-page nil)
   (be/fetch-project pageid)
   (add-styling css)
-  (fn []
-    (let [project @state/project-page
-          hiccup-text (:hiccup-text project)
-          html-hiccup (r/atom nil)]
-
-      (when hiccup-text
-        (reset! html-hiccup (extract-body-content
-                             (edn/read-string
-                              (string/replace hiccup-text "&quot;" "\"")))))
-
-      (if (nil? project)
-        [:img.loading {:src "/images/misc/planet-earth.svg"
-                       :alt "loading"}]
-        
-        (if (empty? project)
-          [:div.error "Project not found"]
-          [:div.project-page
-           [:h1.project-title (:name project)]
-           [:div.prose
-            (walk/postwalk
-             (fn [item]
-               (if (and (vector? item) (= :a (first item)))
-                 (let [[_ attrs & children] item
-                       href (:href attrs)
-                       external? (hash-link? href)]
-                   (if external?
-                     [:a (assoc attrs :on-click #(navigate-to-url href)) children]
+  (let [parsed-content (r/atom nil)]
+    (fn []
+      (let [project @state/project-page]
+        (if (nil? project)
+          [:img.loading {:src "/images/misc/planet-earth.svg" :alt "loading"}]
+          (if (empty? project)
+            [:div.error "Project not found"]
+            (do
+              (when (and (:hiccup-text project) (nil? @parsed-content))
+                (reset! parsed-content
+                        (try
+                          (-> (:hiccup-text project)
+                              (string/replace "&quot;" "\"")
+                              (string/replace "&amp;" "&")
+                              edn/read-string
+                              extract-body-content)
+                          (catch js/Error e
+                            [:div.error "Error parsing content"]))))
+              [:div.project-page
+               [:h1.project-title (:name project)]
+               [:div.prose
+                (walk/postwalk
+                 (fn [item]
+                   (if (and (vector? item) (= :a (first item)))
+                     (let [[_ attrs & children] item
+                           href (:href attrs)
+                           external? (hash-link? href)]
+                       (if external?
+                         [:a (assoc attrs :on-click #(navigate-to-url href)) children]
+                         item))
                      item))
-                 item))
-             @html-hiccup)]])))))
-
+                 @parsed-content)]])))))))

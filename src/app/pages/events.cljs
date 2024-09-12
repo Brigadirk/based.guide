@@ -3,8 +3,7 @@
             [app.api.backend :as be]
             [app.components.utils :refer [add-styling]]))
 
-(def css
-  "
+(def css "
 .event-page {
   width: 100%;
   display: flex;
@@ -12,7 +11,6 @@
   align-items: center;
 }
 
- /* The word Events at the top */
 .event-title {
   padding-top: 1rem;
   font-weight: bold;
@@ -21,16 +19,10 @@
 .event-content {
   width: 100%;
   max-width: 60rem;
-  padding: 2.25rem; /* 9 */
-  border-radius: 0.375rem; /* rounded-lg */
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-  margin: 100 auto; /* Center the content horizontally */
-}
-
-.event-item {
-  margin-bottom: 2rem;
-  display: flex;
-  flex-direction: column;
+  padding: 2.25rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin: 100px auto;
 }
 
 .event-item-header {
@@ -42,52 +34,55 @@
   border-bottom: 1px solid black;
 }
 
-.event-item-header a {
-  font-size: 1.5em;
+.left-block, .right-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.event-item-header a.event {
+  font-size: 1.2em;
   font-weight: bold;
   text-decoration: none;
+  color: #0000EE;
+  line-height: 1.2;
 }
 
 .event-item-header p {
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .event-item-subtext {
-  font-size: 0.7em; /* sm */
-  color: #6b7280; /* gray-500 */
+  font-size: 0.7em;
+  color: #6b7280;
 }
 
 .event-item-subtext a {
   text-decoration: none;
 }
 
-.event-item a {
-  color: #0000EE;
-  text-decoration: none;
-}
-
 p.date {
   font-size: 1em;
   text-align: right;
+  margin-top: 0.25em;
 }
+
 p.location {
-  font-size: 1.5em;
-  text-decoration: bold;
-  text-align: right;
-}
-  
-a.event {
   font-size: 1.2em;
+  font-weight: bold;
+  text-align: right;
+  margin: 0;
 }
 
 p.organiser {
   font-size: 0.9em;
-}
-p.organiser a {
-  font-size: 0.9em;
+  margin-top: 0.25em;
 }
 
-")
+p.organiser a {
+  font-size: 1em;
+}"
+)
 
 (defn render-event [event key]
   (let [start-date (js/Date. (:startdate event))

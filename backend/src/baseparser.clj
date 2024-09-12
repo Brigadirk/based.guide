@@ -59,29 +59,21 @@
   (let [yaml-part (re-find #"(?s)---\n(.*?)\n---" content)
         yaml-contents (utils/parse-yaml (second yaml-part))
         body (second (re-find #"(?s)\n# .*?\n\n(.*)" content))
-        parsed-body (md/md-to-html-string body)
-
-        parsed-hiccup (hickory/parse parsed-body)
-
-        hiccup-body (hickory/as-hiccup parsed-hiccup) 
-
-        hiccup-with-keys (add-unique-keys hiccup-body)
-        ]
-    (merge yaml-contents {:body hiccup-with-keys})))
-
+        hiccup-body (-> body
+                        md/md-to-html-string
+                        hickory/parse
+                        hickory/as-hiccup
+                        add-unique-keys)]
+    (merge yaml-contents {:body hiccup-body})))
 
 (defn convert-to-db-format [parsed-content]
-  (let [{:keys [pageid name tags images associated_links]} parsed-content
-        images-json (json/generate-string images)
-        links-json (json/generate-string associated_links)
-        tags-string (str/join ", " tags)
-        hiccup-text (pr-str (:body parsed-content))]
+  (let [{:keys [pageid name tags images associated_links]} parsed-content]
     {:pageid pageid
      :name name
-     :images images-json
-     :associated_links links-json
-     :tags tags-string
-     :hiccup_text hiccup-text}))
+     :images (json/generate-string images)
+     :associated_links (json/generate-string associated_links)
+     :tags (str/join ", " tags)
+     :hiccup_text (pr-str (:body parsed-content))}))
 
 (defn process-markdown-files [directory]
   (utils/mark-entries-as-inactive "projects")

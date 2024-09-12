@@ -44,7 +44,30 @@
   filter: brightness(2) invert(1);
 }
 .subscribe-link {
-  font-size: 4rem;
+  border-bottom: 1px dotted black;
+  background-color: #16a34a;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  color: white;
+  margin: 0.5rem;
+}
+.subscribe-link a {
+  font-size: 3.5rem;
+  color: white;
+  text-decoration: none;
+}
+.subscribe-link img {
+  width: 4rem;
+  height: 4rem;
+  padding-right: 1rem;
+}
+.subtext a {
+  font-size: 1.25rem;
+  font-style: italic;
+  display: block;
+  margin: auto;
+  color: 
+  text-align: center;
 }
 @media (max-width: 600px) {
   .embed {
@@ -79,12 +102,19 @@
                  :alt "Afuera"
                  :class "afuera-icon"}]
           (if @visible? "¡Afuera!" "Sign up for our newsletter!")]
-
+         
          (if (< @screen-width 1100)
            (when @visible?
-             [:a.subscribe-link {:href "https://basedguide.substack.com/subscribe"
+           [:div.subscribe-link   
+             [:img {:src "/images/misc/newsletter.svg"}]
+             [:a {:href "https://basedguide.substack.com/subscribe"
                                  :target "_blank"}
-              "Subscribe to our newsletter!"])
+              "Subscribe to our newsletter!"]
+            ;; [:div.subtext
+            ;;  [:a.subtext {:href "https://basedguide.substack.com/subscribe"
+            ;;        :target "_blank"}
+            ;;    "Get weekly updates on network states and other freedom projects"]]]
+        ])
            (when @visible?
              [:iframe.embed {:src "https://basedguide.substack.com/embed"
                              :frameBorder "0"

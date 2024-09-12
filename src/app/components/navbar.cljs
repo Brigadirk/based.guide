@@ -11,7 +11,9 @@
   justify-content: center;
   align-items: center;
   max-width: 1280px;  /* Adjust as needed */
-  width: 100%;
+  width: 100%;    
+  padding-bottom: 1.5rem;
+
 }
 .navbar-list {
   display: flex;
@@ -53,21 +55,20 @@
      [:li.navbar-item [:a.navbar-link {:href "/projects/glossary"} "Glossary"]]
      [:li.navbar-item [:a.navbar-link {:href "/projects/about"} "About"]]]]])
 
-(def line-css "
-.horizontal-line {
-  height: 2px;
-  margin: 10px 0;
-  color: black;
-  margin-left: 145px;  /* Wrap around the logo */
-}
-@media (max-width: 1000px) {
-  .horizontal-line {
-    margin-left: 0px;
-  }
-}
-")
+;; (def line-css "
+;; .horizontal-line {
+;;   height: 2px;
+;;   border-bottom: 1px solid #D3D3D3;
+;;   margin-left: 165px;  /* Wrap around the logo */
+;; }
+;; @media (max-width: 1000px) {
+;;   .horizontal-line {
+;;     margin-left: 0px;
+;;   }
+;; }
+;; ")
 
-(defn horizontal-line []
-  (add-styling line-css)
-  [:div.horizontal-line])
+;; (defn horizontal-line []
+;;   (add-styling line-css)
+;;   [:div.horizontal-line ])
 

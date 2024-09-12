@@ -85,7 +85,7 @@ On the local level, the comuna of Crawfish Rock on Roatán is a portion of land 
 - [Doing business](https://eprospera.hn/residency)
 - [How to live in Prospera](https://wiki.prospera.city/Moving%20Guide)
 
-### Community & Events: 
+### Community and Events: 
 
 - [Community](https://eprospera.hn/community)
 - [X](https://x.com/ProsperaGlobal)

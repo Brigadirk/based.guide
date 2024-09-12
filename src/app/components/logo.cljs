@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0.5rem;
   margin-bottom: 0;  /* Remove or reduce bottom margin */
 }
 .logo-main {
@@ -36,6 +37,10 @@
   height: auto;
   max-height: none;
   z-index: 0;
+}
+.please {
+  color: gray;
+  font-size: 0.7em;
 }
 .social-links {
   display: flex;
@@ -133,9 +138,10 @@
     [:img.main-logo {:src "/images/logo/logo_font_horizontal.svg"
                      :alt "Main Logo"}]
     [:div.social-links
+     [:p.please "Change colors!"]
      [gay-mode-toggle]
      [dark-mode-toggle]
-     [:p "Talk to us: "]
+     [:p.please "Let's chat ->"]
     ;; Twitter
      [:a {:href "https://x.com/basedguide"
           :target "_blank"}
@@ -146,7 +152,10 @@
           :target "_blank"}
       [:img.social-icon {:src "/images/socials/telegram.svg"
                          :alt "Telegram"}]]
-    ;; Dark Mode Toggle
+     ;; [:p.please "Or send money"]
+     ;; [:a {:href "#"}
+     ;; [:img.social-icon {:src "/images/misc/bitcoin.svg" :alt "Bitcoin"}]
+     
      ]]])
 
 ;; Add a watch to update the body class based on the mode state
