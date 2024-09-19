@@ -47,64 +47,6 @@
 .dark-mode .afuera-icon {
   filter: brightness(2) invert(1);
 }
-.subscribe-link {
-  border-bottom: 1px dotted black;
-  background-color: #16a34a;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  color: white;
-  margin: 0.5rem;
-}
-.subscribe-link a {
-  font-size: 3.5rem;
-  color: white;
-  text-decoration: none;
-}
-.subscribe-link img {
-  width: 4rem;
-  height: 4rem;
-  padding-right: 1rem;
-}
-.subtext a {
-  font-size: 1.25rem;
-  font-style: italic;
-  display: block;
-  margin: auto;
-  color: 
-  text-align: center;
-}
-@media (max-width: 1150px) {
-  .afuera-container {
-    margin-bottom: 1rem;
-  }
-  .afuera-icon {
-    width: 4rem;
-    height: 4rem;
-    margin-bottom: 1rem;
-  }
-  .afuera-mobile-text {
-    font-size: 6vw; /* Use a relative unit to adjust the text size based on the viewport width */
-    width: 100%;
-    text-decoration: none;
-    color: white;
-    background-color: green;
-    padding: 1rem;
-    border-radius: 0.25em;
-    white-space: nowrap; /* Prevent text from wrapping onto a new line */
-    overflow: hidden; /* Hide any overflow that may occur due to the text not wrapping */
-    text-overflow: ellipsis; /* Add an ellipsis (...) to indicate that the text has been truncated */
-  }
-}
-@media (max-wdith: 387px) {
-  .afuera-icon {
-    padding-bottom: 1rem;
-  }
-}
-@media (max-width: 600px) {
-  .embed {
-    height: 400px;
-  }
-}
 ")
 
 (defn get-initial-visibility []
@@ -129,20 +71,12 @@
           {:on-click #(do
                         (swap! visible? not)
                         (js/localStorage.setItem "substack-embed-visible" @visible?))}
-          [:img {:src (str "/images/buttons/afuera.svg")
-                 :alt "Afuera"
-                 :class "afuera-icon"}] 
-          (if (> @screen-width 1150)
-            (if @visible? [:span.afuera-text "¡Afuera!"] [:span.afuera-text "Sign up for our newsletter!"])
-            [:div.afuera-container [:a.afuera-mobile-text {:href "https://basedguide.substack.com/subscribe" :target "_blank"} "Sign up for our newsletter!"]])]
-
-         (if (< @screen-width 1150)
-           (when @visible?
-             nil)
+          [:img.afuera-icon {:src (str "/images/buttons/afuera.svg")
+                             :alt "Afuera"}]
+            (if @visible? "¡Afuera!" "Sign up for our newsletter!")]
            (when @visible?
              [:iframe.embed {:src "https://basedguide.substack.com/embed"
                              :frameBorder "0"
                              :scrolling "no"
                              :width "10vw"
-                             :height "3vw"}]))])})))
-
+                             :height "3vw"}])])})))
