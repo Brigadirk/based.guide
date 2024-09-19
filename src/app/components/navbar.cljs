@@ -12,7 +12,7 @@
   align-items: center;
   max-width: 1280px;  /* Adjust as needed */
   width: 100%;    
-  padding-bottom: 1.5rem;
+  padding: 1rem;
 
 }
 .navbar-list {
@@ -27,7 +27,7 @@
 .navbar-link {
   text-decoration: none;
   color: gray;  /* Adjust as needed */
-  font-size: 16px;
+  font-size: 1rem;
 }
 .gay-mode .navbar-link  {
   color: white;  
@@ -38,9 +38,9 @@
 .navbar-link:hover {
   color: #333;  /* Adjust as needed */
 }
-@media (max-width: 1000px) {
+@media (max-width: 1150px) {
 .navbar-link {
-  font-size: 34px;
+  font-size: 2.75rem;
   }
 }
 ")

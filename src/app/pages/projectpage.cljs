@@ -7,16 +7,6 @@
             [clojure.string :as string]
             [clojure.walk :as walk]))
 
-;; .prose ul {
-;;   padding-left: 20px;
-;;   padding-right: 20px;
-;;   margin-bottom: 15px;
-;; }
-;; .prose ol {
-;;   padding-left: 20px;
-;;   padding-right: 20px;
-;; }
-
 (def css
 "
  /* What shows when a page is loading */

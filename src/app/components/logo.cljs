@@ -11,32 +11,38 @@
   flex-direction: column;
   align-items: center;
   margin: 0.5rem;
-  margin-bottom: 0;  /* Remove or reduce bottom margin */
+  margin-bottom: 0;
 }
-.logo-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  position: relative;
-}
+  .logo-and-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+  }
 .main-logo {
   width: 100%;
-  max-width: 550px;   /* Slightly reduced max-width */
-  height: auto;
+  max-width: 35vw; /* Increased from 100% to a fixed max-width */
   position: relative;
   z-index: 1;
 }
 .founder-ape {
   position: absolute;
   margin-top: 25px;
-  left: 0.5rem;  /* Adjusted left position */
+  left: 0.5rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 180px;  /* Slightly reduced width */
+  width: 180px;
   height: auto;
   max-height: none;
   z-index: 0;
+}
+.toggle-buttons {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 6.5rem;  /* Adjusted right position to avoid overlapping with social links */
+  display: flex;
+  gap: 0.5rem;
 }
 .please {
   color: gray;
@@ -54,8 +60,8 @@
   height: 32px;
 }
 .dark-mode-toggle, .gay-mode-toggle {
-  width: 32px;  /* Match the size of social icons */
-  height: 32px;
+  width: 2rem;  /* Match the size of social icons */
+  height: 2rem;
   cursor: pointer;
 }
 .dark-mode .logo-container img,
@@ -65,42 +71,45 @@
 .dark-mode .social-links .gay-mode-toggle {
   filter: none; /* Reset filter for gay-mode-toggle img */
 }
-@media (max-width: 875px) {
-  .founder-ape {
-    display: none;
-  }
-}
-@media (max-width: 1100px) {
+@media (max-width: 1150px) {
   .logo-container {
     min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .toggle-buttons {
+    display: none;
+  }
+  .please {
+    display: none;
   }
   .main-logo {
-    width: 100%;
-    max-width: 750px;
-    padding-bottom: 20px;
+    max-width: 37rem;
   }
   .social-links {
-    position: relative;
-    margin-bottom: 0.5rem; /* Reduced margin */
-    display: flex;
-    justify-content: center; /* Center the social links */
-    width: 100%;
+    position: static;
+    gap: 1rem;
+    padding-left: 2rem;
   }
   .founder-ape {
     display: none;
   }
   .social-icon {
-    width: 52px;
-    height: 52px;
-    padding-bottom: 20px;
-    padding-right: 5px;
-    padding-left: 5px;
+    width: 3.2rem;
+    height: 3.2rem;
+    padding-bottom: 0.3rem;
   }
 }
 @media (max-width: 480px) {
-  .social-links {
-    margin-bottom: 1rem;  /* Reduced margin */
-    align-items: center;
+  .logo-container {
+    padding: 0.25rem;
+  }
+  .social-icon {
+    width: 2rem;
+    height: 2rem;
   }
 }
 ")
@@ -128,35 +137,31 @@
 (defn logo []
   (add-styling css)
   [:div.logo-container
-   [:div.logo-main
-    ;; Ape
-    [:a {:href "/"}
-     [:img.founder-ape {:src "/images/logo/founder_ape.svg"
-                        :alt "Founder Ape!"}]]
+   [:div.logo-and-social
     ;; Based.Guide
-    ;; TODO: make also a link
     [:img.main-logo {:src "/images/logo/logo_font_horizontal.svg"
                      :alt "Main Logo"}]
     [:div.social-links
-     [:p.please "Change colors!"]
-     [gay-mode-toggle]
-     [dark-mode-toggle]
-     [:p.please "Let's chat ->"]
-    ;; Twitter
+     ;; Twitter
      [:a {:href "https://x.com/basedguide"
           :target "_blank"}
       [:img.social-icon {:src "/images/socials/x.svg"
                          :alt "X (Twitter)"}]]
-    ;; Telegram
+     ;; Telegram
      [:a {:href "https://t.me/+p-Z0TvQ7CL9hYzlk"
           :target "_blank"}
       [:img.social-icon {:src "/images/socials/telegram.svg"
                          :alt "Telegram"}]]
-     ;; [:p.please "Or send money"]
-     ;; [:a {:href "#"}
-     ;; [:img.social-icon {:src "/images/misc/bitcoin.svg" :alt "Bitcoin"}]
-     
-     ]]])
+     ;; Toggle buttons
+     [:div.toggle-buttons
+      [gay-mode-toggle]
+      [dark-mode-toggle]]]]
+
+   ;; Ape (visible only on larger screens)
+   [:a.founder-ape-link {:href "/"}
+    [:img.founder-ape {:src "/images/logo/founder_ape.svg"
+                       :alt "Founder Ape!"}]]])
+
 
 ;; Add a watch to update the body class based on the mode state
 (add-watch mode :mode

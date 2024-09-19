@@ -23,6 +23,6 @@
              :http-port 3000
              :after-load app.core/main
              :browser-repl true}
-  ;;  :dev {:closure-defines {app.api.backend/env "dev"}}
+  ;; :dev {:closure-defines {app.api.backend/env "dev"}}
   :release {:closure-defines {app.api.backend/env "prod"}
             :optimizations :advanced}}}}
