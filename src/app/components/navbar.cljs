@@ -1,5 +1,6 @@
 (ns app.components.navbar
-  (:require [app.components.utils :refer [add-styling]]))
+  (:require [reagent.core :as r]
+            [app.components.utils :refer [add-styling]]))
 
 (def navbar-css "
 .navbar {
@@ -10,10 +11,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 1280px;  /* Adjust as needed */
-  width: 100%;    
+  max-width: 1280px; /* Adjust as needed */
+  width: 100%;
   padding: 1rem;
-
 }
 .navbar-list {
   display: flex;
@@ -22,15 +22,15 @@
   margin: 0;
 }
 .navbar-item {
-  margin: 0 1rem;  /* Adjust as needed */
+  margin: 0 1rem; /* Adjust as needed */
 }
 .navbar-link {
   text-decoration: none;
-  color: gray;  /* Adjust as needed */
+  color: gray; /* Adjust as needed */
   font-size: 1rem;
 }
-.gay-mode .navbar-link  {
-  color: white;  
+.gay-mode .navbar-link {
+  color: white;
 }
 .dark-mode .navbar-link {
   color: white;
@@ -38,22 +38,68 @@
 .navbar-link:hover {
   color: #333;  /* Adjust as needed */
 }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 0.3rem;
+}
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background-color: gray;
+}
+.show { /* Class to show the nav items */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Adjustments for medium-sized screens */
 @media (max-width: 1150px) {
-.navbar-link {
-  font-size: 2.75rem;
+  .navbar-link {
+    font-size: 1.75rem;
+  }
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 800px) {
+  .navbar-list {
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  .navbar-link {
+    font-size: 1.2rem;
+  }
+}
+
+/* Adjustments for very small screens like iPhone SE */
+@media (max-width: 375px) {
+  .navbar-container {
+    padding: 0.25rem;
+  }
+  .navbar-link {
+    font-size: 1rem;
   }
 }
 ")
 
 (defn navbar []
-  (add-styling navbar-css)
-  [:nav.navbar
-   [:div.navbar-container
-    [:ul.navbar-list
-     [:li.navbar-item [:a.navbar-link {:href "/"} "Home"]]
-     [:li.navbar-item [:a.navbar-link {:href "/events"} "Events"]]
-     [:li.navbar-item [:a.navbar-link {:href "/projects/glossary"} "Glossary"]]
-     [:li.navbar-item [:a.navbar-link {:href "/projects/about"} "About"]]]]])
+    (fn []
+      (add-styling navbar-css)
+      [:nav.navbar
+       [:div.navbar-container
+        [:ul.navbar-list
+         [:li.navbar-item [:a.navbar-link {:href "/"} "Home"]]
+         [:li.navbar-item [:a.navbar-link {:href "/events"} "Events"]]
+         [:li.navbar-item [:a.navbar-link {:href "/projects/glossary"} "Glossary"]]
+         [:li.navbar-item [:a.navbar-link {:href "/projects/about"} "About"]]]]]))
+
+;; If you want to implement the horizontal line, you can uncomment and use the following:
 
 ;; (def line-css "
 ;; .horizontal-line {
@@ -70,5 +116,4 @@
 
 ;; (defn horizontal-line []
 ;;   (add-styling line-css)
-;;   [:div.horizontal-line ])
-
+;;   [:div.horizontal-line])

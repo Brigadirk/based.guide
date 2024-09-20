@@ -5,23 +5,22 @@
 (def css "
 .logo-container {
   position: relative;
-  max-width: 100%;
+  width: 100%;
   overflow: visible;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0.5rem;
   margin-bottom: 0;
 }
-  .logo-and-social {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 1rem;
-  }
-.main-logo {
+.logo-and-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  gap: 1rem;
+}
+.main-logo {
+  width: 90%;
   max-width: 35vw; /* Increased from 100% to a fixed max-width */
   position: relative;
   z-index: 1;
@@ -40,7 +39,7 @@
 .toggle-buttons {
   position: absolute;
   bottom: 0.5rem;
-  right: 6.5rem;  /* Adjusted right position to avoid overlapping with social links */
+  right: 6.5rem; /* Adjusted right position to avoid overlapping with social links */
   display: flex;
   gap: 0.5rem;
 }
@@ -50,17 +49,17 @@
 }
 .social-links {
   display: flex;
-  gap: 0.5rem;  /* Reduced gap */
+  gap: 0.5rem; /* Reduced gap */
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
 }
 .social-icon {
-  width: 32px;  /* Slightly reduced size */
+  width: 32px; /* Slightly reduced size */
   height: 32px;
 }
 .dark-mode-toggle, .gay-mode-toggle {
-  width: 2rem;  /* Match the size of social icons */
+  width: 2rem; /* Match the size of social icons */
   height: 2rem;
   cursor: pointer;
 }
@@ -77,8 +76,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
+  }
+  .social-links {
+   position: static;
+   gap: 1rem;
+   padding-left: 0;
   }
   .toggle-buttons {
     display: none;
@@ -103,6 +107,22 @@
     padding-bottom: 0.3rem;
   }
 }
+@media (max-width: 800px) {
+  .logo-and-social {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .logo-container {
+    width: 90%;
+  }
+@media (max-width: 600px) {
+  .main-logo {
+    max-width: 70%;  
+  }
+  .social-links {
+    gap: 0.5rem;  
+  }
+}
 @media (max-width: 480px) {
   .logo-container {
     padding: 0.25rem;
@@ -110,6 +130,29 @@
   .social-icon {
     width: 2rem;
     height: 2rem;
+  }
+}
+@media (max-width: 375px) {
+  .logo-container {
+  }
+  .logo-and-social {
+  }
+  .main-logo {
+    max-width: 65%;
+  }
+  .social-links {
+    position: static;
+    width: 100%;
+    justify-content: center;
+  }
+  .founder-ape {
+    top: auto;
+    bottom: 0.5rem;
+    width: 120px;
+  }
+  .social-icon, .dark-mode-toggle, .gay-mode-toggle {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
 ")
@@ -156,12 +199,10 @@
      [:div.toggle-buttons
       [gay-mode-toggle]
       [dark-mode-toggle]]]]
-
    ;; Ape (visible only on larger screens)
    [:a.founder-ape-link {:href "/"}
     [:img.founder-ape {:src "/images/logo/founder_ape.svg"
                        :alt "Founder Ape!"}]]])
-
 
 ;; Add a watch to update the body class based on the mode state
 (add-watch mode :mode

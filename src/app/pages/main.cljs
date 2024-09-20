@@ -108,12 +108,13 @@
   display: flex;
   flex-wrap: wrap;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1150px) {
   .grid-item {
     width: calc(50% - 16px); /* 2 items per row with some margin */
   }
   .filter-button {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    max-width: 14rem; /* Adjust the max-width to make the buttons less wide */
   }
   .grid-item-overlay h3 {
     font-size: 2.5rem;
@@ -121,25 +122,41 @@
 }
 @media (max-width: 800px) {
   .grid-item {
-    width: calc(100% - 16px); /* 1 item per row with some margin */
+    width: 100%; /* 1 item per row with some margin */
   }
   .filter-button {
-    font-size: 2rem;
+    font-size: 1.5rem; /* Adjusted for better fit */
+    max-width: 12rem; /* Adjust the max-width to make the buttons less wide */
+    padding: 10px; /* Ensure consistent padding */
   }
   .grid-item-overlay h3 {
-    font-size: 4rem;
+    font-size: 2rem; /* Adjusted for better fit */
   }
 }
 @media (max-width: 600px) {
   .filter-button {
-    font-size: 2.5rem;
-    padding: 15px;
+    font-size: 1.2rem; /* Reduced font size for smaller screens */
+    flex-basis: 40%; /* Make each button take up 50% width */
+    max-width: 48%; /* Limit the maximum width of each button */
+  }
+  .filter-bar {
+    flex-direction: row; /* Keep the filter buttons in a row */
+    flex-wrap: wrap; /* Allow the buttons to wrap to the next line */
+    justify-content: center; /* Center the buttons horizontally */
+  }
+  .grid-item {
+    margin: 8px 0; /* Reduce margin */
+    padding: 0 8px; /* Adjust padding */
   }
 }
 @media (max-width: 400px) {
   .filter-button {
-    font-size: 3rem;
-    padding: 20px;
+    font-size: 1rem; /* Further reduce font size for very small screens */
+    padding: 5px; /* Reduce padding */
+  }
+  .grid-item {
+    margin: 4px 0; /* Further reduce margin */
+    padding: 0 4px; /* Further adjust padding */
   }
 }
 ")
@@ -161,12 +178,6 @@
 (defn filter-bar []
   (let [filter-state @state/filter-state]
     [:div.filter-bar
-     
-    ;;  [:input {:type "text"
-    ;;           :placeholder "Search projects..."
-    ;;           :value @state/search-query
-    ;;           :on-change #(reset! state/search-query (-> % .-target .-value))}]
-     
      (for [filter [:current :planned :historical :fictional]]
        [:button
         {:key filter
@@ -180,7 +191,6 @@
                :alt (str/capitalize (name filter))
                :class "filter-icon"}]
         (str/capitalize (name filter))])]))
-
 
 (defn filter-projects []
   (let [projects @state/project-list
@@ -203,13 +213,13 @@
                      projects))))
 
 (defn main-grid []
-  (add-styling css) 
+  (add-styling css)
   [:div.main-grid
    [filter-bar]
    [:div.main-grid-inner
     (let [projects (filter-projects)]
       (if (and projects (empty? projects))
-        [:div ]
+        [:div]
         (for [project projects]
           ^{:key (:name project)}
           [grid-item project])))]])

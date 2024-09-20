@@ -7,16 +7,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px auto;
   width: 100%;
+  overflow: hidden; /* Prevent overflow */
+  padding-bottom: 1.5rem;
 }
 .embed {
   display: block;
   width: 100%;
-  height: 300px;
-  border: 20px solid transparent; /* Transparent border to apply gradient */
+  max-width: 100%;  /* Ensure it does not exceed container width */
+  height: 450px;
+  border-bottom: 20px solid transparent; /* Transparent border to apply gradient */
+  border-top: 20px solid transparent;
   background-color: #f0f9ff; /* Regular background color */
-  border-image: linear-gradient(to bottom, #f0f9ff, #f0f9ff) 1; /* Default gradient */
+  border-image: linear-gradient(to right, #f0f9ff, #f0f9ff) 1; /* Default gradient */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 .dark-mode .embed {
   background-color: #020617; /* Dark mode background color */
@@ -37,12 +41,8 @@
   color: white;
 }
 .afuera-icon {
-  width: 1rem;
-  height: 1rem;
-}
-.afuera-icon-mobile {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 .dark-mode .afuera-icon {
   filter: brightness(2) invert(1);
@@ -73,10 +73,8 @@
                         (js/localStorage.setItem "substack-embed-visible" @visible?))}
           [:img.afuera-icon {:src (str "/images/buttons/afuera.svg")
                              :alt "Afuera"}]
-            (if @visible? "¡Afuera!" "Sign up for our newsletter!")]
-           (when @visible?
-             [:iframe.embed {:src "https://basedguide.substack.com/embed"
-                             :frameBorder "0"
-                             :scrolling "no"
-                             :width "10vw"
-                             :height "3vw"}])])})))
+          (if @visible? "¡Afuera!" "Sign up for our newsletter!")]
+         (when @visible?
+           [:iframe.embed {:src "https://basedguide.substack.com/embed"
+                           :frameBorder "0"
+                           :scrolling "no"}])])})))

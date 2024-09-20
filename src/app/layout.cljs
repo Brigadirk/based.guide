@@ -9,7 +9,7 @@
    [substack-embed]
    [logo]
    [navbar]
-  ;;  [horizontal-line]
    (let [[view params] @state/current-content]
      ^{:key (:path (meta @state/current-content))}
-     [view params])])
+     [view params])
+   ])

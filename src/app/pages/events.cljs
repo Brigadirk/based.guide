@@ -17,8 +17,7 @@
 }
 
 .event-content {
-  width: 100%;
-  max-width: 60rem;
+  width: 90%;
   padding: 2.25rem;
   border-radius: 0.375rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -37,7 +36,6 @@
 .left-block, .right-block {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .event-item-header a.event {
@@ -81,8 +79,101 @@ p.organiser {
 
 p.organiser a {
   font-size: 1em;
-}"
-)
+}
+
+/* Media queries for responsiveness */
+
+@media (max-width: 1150px) {
+  .event-content {
+    padding: 1.5rem;
+  }
+  .event-title {
+    font-size: 2.5rem;
+  }
+  .event-item-header a.event {
+    font-size: 1.5rem;
+  }
+  .p.location, p.date {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .event-content {
+    padding: 1rem;
+    margin: 50px auto;
+  }
+  .event-title {
+    font-size: 2rem;
+  }
+  .event-item-header a.event {
+    font-size: 1.3rem;
+  }
+  .event-item-subtext,
+  p.date,
+  p.location {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .event-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .right-block {
+    align-items: flex-start;
+  }
+  .event-title {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+  .event-item-header a.event {
+    font-size: 1.2rem;
+  }
+  .event-item-subtext,
+  p.date,
+  p.location {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-content {
+    padding: 0.5rem;
+    margin: 30px auto;
+  }
+  .event-title {
+    font-size: 1.5rem;
+  }
+  .event-item-header a.event {
+    font-size: 1rem;
+  }
+  .event-item-subtext,
+  p.date,
+  p.location {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .event-content {
+    padding: 0.25rem;
+    margin: 20px auto;
+  }
+  .event-title {
+    font-size: 1.25rem;
+  }
+  .event-item-header a.event {
+    font-size: 0.9rem;
+  }
+  .event-item-subtext,
+  p.date,
+  p.location {
+    font-size: 0.6rem;
+  }
+}
+")
 
 (defn render-event [event key]
   (let [start-date (js/Date. (:startdate event))

@@ -8,11 +8,11 @@
             [clojure.walk :as walk]))
 
 (def css
-"
+  "
  /* What shows when a page is loading */
  .loading {
    padding-top: 10rem;
-   max-witdth: 100%;
+   max-width: 100%;
    display: flex;
    margin: 0 auto;
    width: 62px;
@@ -92,19 +92,44 @@
 }
 .prose blockquote {
 }
-  
+
 /* special cases for phones and tablets */
 @media (max-width: 1200px) {
   .prose {
     font-size: 1.75rem; /* lg:prose-lg */
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 800px) {
   .prose {
-    font-size: 2.125rem; /* prose */
+    font-size: 2rem; /* Modify as needed */
+    padding: 1.5rem;
   }
 }
-
+@media (max-width: 600px) {
+  .prose {
+    font-size: 2.125rem; /* prose */
+    padding: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .prose {
+    font-size: 2.25rem; /* Larger font size for very small devices */
+    padding: 0.5rem;
+  }
+  .project-title {
+    font-size: 1.5rem; /* Adjust title size */
+    text-align: center; /* Center title for better appearance */
+  }
+}
+@media (max-width: 375px) {
+  .prose {
+    font-size: 1.75rem; /* Adjust font size */
+    padding: 0.25rem;
+  }
+  .project-title {
+    font-size: 1.25rem; /* Adjust title size */
+  }
+}
 ")
 
 (defn hash-link? [url]
