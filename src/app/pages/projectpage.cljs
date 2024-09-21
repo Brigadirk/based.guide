@@ -154,7 +154,6 @@
 (defn project-page [pageid]
   (reset! state/project-page nil)
   (be/fetch-project pageid)
-  (add-styling css)
   (let [parsed-content (r/atom nil)]
     (fn []
       (let [project @state/project-page]
@@ -187,3 +186,5 @@
                          item))
                      item))
                  @parsed-content)]])))))))
+
+(add-styling css)

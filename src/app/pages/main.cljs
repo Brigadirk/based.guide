@@ -213,7 +213,6 @@
                      projects))))
 
 (defn main-grid []
-  (add-styling css)
   [:div.main-grid
    [filter-bar]
    [:div.main-grid-inner
@@ -223,3 +222,5 @@
         (for [project projects]
           ^{:key (:name project)}
           [grid-item project])))]])
+
+(add-styling css)

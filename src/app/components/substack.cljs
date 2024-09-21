@@ -55,7 +55,6 @@
     true))  ; Default to visible if no stored preference
 
 (defn substack-embed []
-  (add-styling css)
   (let [visible? (r/atom (get-initial-visibility))
         screen-width (r/atom (.-innerWidth js/window))]
     (r/create-class
@@ -78,3 +77,5 @@
            [:iframe.embed {:src "https://basedguide.substack.com/embed"
                            :frameBorder "0"
                            :scrolling "no"}])])})))
+
+(add-styling css)

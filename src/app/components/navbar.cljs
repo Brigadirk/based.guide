@@ -1,6 +1,5 @@
 (ns app.components.navbar
-  (:require [reagent.core :as r]
-            [app.components.utils :refer [add-styling]]))
+  (:require [app.components.utils :refer [add-styling]]))
 
 (def navbar-css "
 .navbar {
@@ -90,7 +89,6 @@
 
 (defn navbar []
     (fn []
-      (add-styling navbar-css)
       [:nav.navbar
        [:div.navbar-container
         [:ul.navbar-list
@@ -98,6 +96,8 @@
          [:li.navbar-item [:a.navbar-link {:href "/events"} "Events"]]
          [:li.navbar-item [:a.navbar-link {:href "/projects/glossary"} "Glossary"]]
          [:li.navbar-item [:a.navbar-link {:href "/projects/about"} "About"]]]]]))
+
+(add-styling navbar-css)
 
 ;; If you want to implement the horizontal line, you can uncomment and use the following:
 

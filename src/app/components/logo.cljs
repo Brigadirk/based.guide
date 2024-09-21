@@ -178,7 +178,6 @@
                                :gay)))}])
 
 (defn logo []
-  (add-styling css)
   [:div.logo-container
    [:div.logo-and-social
     ;; Based.Guide
@@ -213,3 +212,5 @@
                :dark (js/document.body.classList.add "dark-mode")
                :gay (js/document.body.classList.add "gay-mode")
                nil)))
+
+(add-styling css)

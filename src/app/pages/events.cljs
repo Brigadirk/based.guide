@@ -206,9 +206,10 @@ p.organiser a {
 
 (defn events-page []
   (be/fetch-events)
-  (add-styling css)
   (fn []
     (let [events @state/event-list]
       (if (empty? events)
         [:div]
         [render-events events]))))
+
+(add-styling css)
