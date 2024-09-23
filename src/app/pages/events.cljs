@@ -6,14 +6,26 @@
 (def css "
 .event-page {
   width: 100%;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
 }
 
+.organiser-link {
+  text-decoration: none;
+  color: grey;
+}
 .event-title {
   padding-top: 1rem;
   font-weight: bold;
+}
+
+.event {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
 }
 
 .event-content {
@@ -66,7 +78,7 @@ p.date {
 }
 
 p.location {
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: bold;
   text-align: right;
   margin: 0;
@@ -190,8 +202,8 @@ p.organiser a {
      [:div.event-item-header
       [:div.left-block
        [:a.event {:href (:link event)} (:name event)]
-       [:p.organiser "Organised by: "
-        [:a {:href (:organiserlink event)} (:organiser event)]]]
+       [:p.organiser "Organised by "
+        [:a.organiser-link {:href (:organiserlink event)} (:organiser event)]]]
       [:div.right-block
        [:p.event-item-subtext {:style {:text-align "right"}}
         [:p.location (str (aget location "city") ", " (aget location "country"))]]

@@ -113,8 +113,8 @@
 }
 @media (max-width: 480px) {
   .prose {
-    font-size: 2.25rem; /* Larger font size for very small devices */
-    padding: 0.5rem;
+    font-size: 2rem; /* Larger font size for very small devices */
+    padding: 1rem;
   }
   .project-title {
     font-size: 1.5rem; /* Adjust title size */
@@ -123,8 +123,8 @@
 }
 @media (max-width: 375px) {
   .prose {
-    font-size: 1.75rem; /* Adjust font size */
-    padding: 0.25rem;
+    font-size: 1.4rem; /* Adjust font size */
+    padding: 0.6rem;
   }
   .project-title {
     font-size: 1.25rem; /* Adjust title size */
