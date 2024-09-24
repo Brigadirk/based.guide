@@ -120,25 +120,7 @@ p.organiser a {
   }
 }
 
-@media (max-width: 800px) {
-  .event-content {
-    padding: 1rem;
-    margin: 50px auto;
-  }
-  .event-title {
-    font-size: 2rem;
-  }
-  .event-item-header a.event {
-    font-size: 1.3rem;
-  }
-  .event-item-subtext,
-  p.date,
-  p.location {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 730px) {
   .event-item-header {
     flex-direction: column;
     align-items: flex-start;
@@ -147,26 +129,23 @@ p.organiser a {
     align-items: flex-start;
   }
   .event-title {
-    font-size: 1.75rem;
+    font-size: 2rem;
     text-align: center;
   }
-  .event-item-header a.event {
-    font-size: 1.2rem;
+  .left-block a.event {
+    font-size: 2.5rem;
   }
   .event-item-subtext,
   p.date,
   p.location {
-    font-size: 0.8rem;
+    font-size: 1.3rem;
+    text-align: left;
   }
 }
 
 @media (max-width: 480px) {
-  .event-content {
-    padding: 0.5rem;
-    margin: 30px auto;
-  }
   .event-title {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
   .event-item-header a.event {
     font-size: 1rem;
@@ -174,25 +153,24 @@ p.organiser a {
   .event-item-subtext,
   p.date,
   p.location {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 375px) {
-  .event-content {
-    padding: 0.25rem;
-    margin: 20px auto;
-  }
   .event-title {
     font-size: 1.25rem;
   }
   .event-item-header a.event {
-    font-size: 0.9rem;
+    font-size: 1.9rem;
+  }
+  p.organiser {
+    font-size: 1rem;  
   }
   .event-item-subtext,
   p.date,
   p.location {
-    font-size: 0.6rem;
+    font-size: 1rem;
   }
 }
 ")
