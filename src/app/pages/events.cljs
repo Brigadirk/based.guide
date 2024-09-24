@@ -12,22 +12,22 @@
   align-items: center;
   margin: 0 auto;
 }
-          
-.event-img {
+         
+.event-img, .event-img-arrow {
   height: 1rem;
   width: 1.25rem;
   padding-right: 0.5rem;
 }
-          
+.dark-mode .event-img-arrow {
+  filter: brightness(2) invert(1);         
+}
+;; .gay-mode .event-img {
+;;   filter: drop-shadow(2px 2px 4px rgba(255, 255, 255, 0.4));
+}          
 .organiser-link {
   text-decoration: none;
   color: grey;
 }
-.event-title {
-  padding-top: 1rem;
-  font-weight: bold;
-}
-
 .left-block a {
   text-decoration: none;
   font-weight: bold;
@@ -41,9 +41,7 @@
 .event-content {
   width: 90%;
   padding: 2.25rem;
-  border-radius: 0.375rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  margin: 100px auto;
+  box-shadow-left: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .event-item-header {
@@ -190,7 +188,7 @@ p.organiser a {
      [:div.event-item-header
       [:div.left-block
        [:a {:href (:link event)} (:name event)]
-       [:p.organiser [:img.event-img {:src "images/events/arrow.svg"}] "Organized by "
+       [:p.organiser [:img.event-img-arrow {:src "images/events/arrow.svg"}] "Organized by "
         [:a.organiser-link {:href (:organiserlink event)} (:organiser event)]]]
       [:div.right-bloc
        [:p.event-item-subtext
@@ -203,11 +201,9 @@ p.organiser a {
         sorted-events (->> events
                            (filter #(> (js/Date. (:enddate %)) current-date)) ; Filter out events whose end date has passed
                            (sort-by :startdate))] ; Sort the events based on their start date
-    [:div.event-page
-     [:h1.event-title "Events"]
+    [:div.event-page 
      [:div.event-content
       (map-indexed (fn [index event] (render-event event index)) sorted-events)]]))
-
 
 (defn events-page []
   (be/fetch-events)

@@ -30,6 +30,9 @@
 .gay-mode .anchor-link:hover {
   color: yellow;   
 }
+.dark-mode .anchor-link {
+  color: white;   
+}
 .highlight {
   text-decoration: none;
   border-bottom: 4px solid #16a34a;
@@ -61,6 +64,9 @@
 .prose a {
   color: black;  
  text-decoration: underline;
+}
+.dark-mode .prose a {
+  color: white;
 }
 
 .prose img {
