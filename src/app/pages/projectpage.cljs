@@ -119,11 +119,11 @@
 }
 @media (max-width: 480px) {
   .prose {
-    font-size: 2rem; /* Larger font size for very small devices */
+    font-size: 1.8rem; /* Larger font size for very small devices */
     padding: 1rem;
   }
   .project-title {
-    font-size: 1.5rem; /* Adjust title size */
+    font-size: 2.125rem; /* Adjust title size */
     text-align: center; /* Center title for better appearance */
   }
 }
