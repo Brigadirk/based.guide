@@ -12,7 +12,13 @@
   align-items: center;
   margin: 0 auto;
 }
-
+          
+.event-img {
+  height: 1rem;
+  width: 1.25rem;
+  padding-right: 0.5rem;
+}
+          
 .organiser-link {
   text-decoration: none;
   color: grey;
@@ -22,11 +28,15 @@
   font-weight: bold;
 }
 
-.event {
+.left-block a {
   text-decoration: none;
   font-weight: bold;
   color: black;
 }
+
+.dark-mode .left-block a {
+  color: white;
+  }
 
 .event-content {
   width: 90%;
@@ -40,9 +50,9 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
-  border-bottom: 1px solid black;
+  padding-bottom: 0.8rem;
+  padding-top: 0.8rem;
+  border-bottom: 1px dotted black;
 }
 
 .left-block, .right-block {
@@ -201,20 +211,25 @@ p.organiser a {
     [:div {:key key}
      [:div.event-item-header
       [:div.left-block
-       [:a.event {:href (:link event)} (:name event)]
-       [:p.organiser "Organised by "
+       [:a {:href (:link event)} (:name event)]
+       [:p.organiser [:img.event-img {:src "images/events/arrow.svg"}] "Organized by "
         [:a.organiser-link {:href (:organiserlink event)} (:organiser event)]]]
-      [:div.right-block
-       [:p.event-item-subtext {:style {:text-align "right"}}
-        [:p.location (str (aget location "city") ", " (aget location "country"))]]
-       [:p.date {:style {:font-weight "bold" :color "#6b7280"}}
+      [:div.right-bloc
+       [:p.event-item-subtext
+          [:p.location [:img.event-img {:src "images/events/location.svg"}] (str (aget location "city") ", " (aget location "country"))]]
+       [:p.date [:img.event-img {:src "images/events/schedule.svg"}]
         date-text]]]]))
 
 (defn render-events [events]
-  [:div.event-page
-   [:h1.event-title "Events"]
-   [:div.event-content
-    (map-indexed (fn [index event] (render-event event index)) events)]])
+  (let [current-date (js/Date.)
+        sorted-events (->> events
+                           (filter #(> (js/Date. (:enddate %)) current-date)) ; Filter out events whose end date has passed
+                           (sort-by :startdate))] ; Sort the events based on their start date
+    [:div.event-page
+     [:h1.event-title "Events"]
+     [:div.event-content
+      (map-indexed (fn [index event] (render-event event index)) sorted-events)]]))
+
 
 (defn events-page []
   (be/fetch-events)
