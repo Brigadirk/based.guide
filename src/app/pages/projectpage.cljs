@@ -102,24 +102,21 @@
 /* special cases for phones and tablets */
 @media (max-width: 1200px) {
   .prose {
-    font-size: 1.75rem; /* lg:prose-lg */
+    font-size: 1.5rem; /* lg:prose-lg */
   }
 }
 @media (max-width: 800px) {
   .prose {
-    font-size: 2rem; /* Modify as needed */
     padding: 1.5rem;
   }
 }
 @media (max-width: 600px) {
   .prose {
-    font-size: 2.125rem; /* prose */
     padding: 1rem;
   }
 }
 @media (max-width: 480px) {
   .prose {
-    font-size: 1.8rem; /* Larger font size for very small devices */
     padding: 1rem;
   }
   .project-title {
@@ -129,7 +126,6 @@
 }
 @media (max-width: 375px) {
   .prose {
-    font-size: 1.4rem; /* Adjust font size */
     padding: 0.6rem;
   }
   .project-title {
@@ -158,39 +154,61 @@
     nil))
 
 (defn project-page [pageid]
-  (reset! state/project-page nil)
-  (be/fetch-project pageid)
-  (let [parsed-content (r/atom nil)]
-    (fn []
-      (let [project @state/project-page]
-        (if (nil? project)
-          [:img.loading {:src "/images/misc/planet-earth.svg" :alt "loading"}]
-          (if (empty? project)
-            [:div.error "Project not found"]
-            (do
-              (when (and (:hiccup-text project) (nil? @parsed-content))
-                (reset! parsed-content
-                        (try
-                          (-> (:hiccup-text project)
-                              (string/replace "&quot;" "\"")
-                              (string/replace "&amp;" "&")
-                              edn/read-string
-                              extract-body-content)
-                          (catch js/Error e
-                            [:div.error "Error parsing content"]))))
-              [:div.project-page
-               [:h1.project-title (:name project)]
-               [:div.prose
-                (walk/postwalk
-                 (fn [item]
-                   (if (and (vector? item) (= :a (first item)))
-                     (let [[_ attrs & children] item
-                           href (:href attrs)
-                           external? (hash-link? href)]
-                       (if external?
-                         [:a (assoc attrs :on-click #(navigate-to-url href)) children]
-                         item))
-                     item))
-                 @parsed-content)]])))))))
+   (reset! state/project-page nil)
+   (be/fetch-project pageid)
+   (let [parsed-content (r/atom nil)
+         parsed-links (r/atom nil)]
+     (fn []
+       (let [project @state/project-page]
+         (if (nil? project)
+           [:img.loading {:src "/images/misc/planet-earth.svg" :alt "loading"}]
+           (if (empty? project)
+             [:div.error "Project not found"]
+             (do
+              ;; Parse the main content
+               (when (and (:hiccup-text project) (nil? @parsed-content))
+                 (reset! parsed-content
+                         (try
+                           (-> (:hiccup-text project)
+                               (string/replace "&quot;" "\"")
+                               (string/replace "&amp;" "&")
+                               edn/read-string
+                               extract-body-content)
+                           (catch js/Error e
+                             [:div.error "Error parsing content"]))))
 
+              ;; Parse the associated links
+               (when (and (:associated-links project) (nil? @parsed-links))
+                 (js/console.log (str "Links:" (:associated-links project)))
+                 (reset! parsed-links
+                         (try
+                           (-> (:associated-links project)
+                               edn/read-string
+                               (js/console.log))
+                           (catch js/Error e
+                             nil)))
+                 (js/console.log (str @parsed-links)))
+
+              ;; Render the content
+               [:div.project-page
+                [:h1.project-title (:name project)]
+                [:div.prose
+                 (walk/postwalk
+                  (fn [item]
+                    (if (and (vector? item) (= :a (first item)))
+                      (let [[_ attrs & children] item
+                            href (:href attrs)
+                            external? (hash-link? href)]
+                        (if external?
+                          [:a (assoc attrs :on-click #(navigate-to-url href)) children]
+                          item))
+                      item))
+                  @parsed-content)]
+               ;; Render the associated links if available
+                (when (seq @parsed-links)
+                  [:div.associated-links
+                   (for [[name url] @parsed-links]
+                     [:div.link-block
+                      [:span.link-name name]
+                      [:a {:href url :on-click #(navigate-to-url url)} "View Link"]])])])))))))
 (add-styling css)
