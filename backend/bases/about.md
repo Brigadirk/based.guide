@@ -17,4 +17,8 @@ associated_links:
 
 ## Welcome to Based.Guide
 
-This website is a guide to the parellel establishment. We collect and write about examples of (network) states that value individual liberty, and we send a newsletter to keep you up to date with the developments of these efforts. Furthermore, we seek to provide resources, essays, and updates on: privacy, free speech, hard money, (scientific progress made possible through) de-regulation, and anything else related to individual sovereignty that interests us.
+Welcome to our digital sanctuary of freedom and knowledge! Here we delve into the frontiers of individual liberty, network states, seasteads, autonomous zones and anything else related to individual sovereignty that interests us. We're two people hoping to expand on and document the existing, historical, and potential states that respect personal freedom and human flourishing.
+
+Through our newsletter, we also cover developments in privacy tech, economic legislation and policies, hard money, deregulation-driven scientific progress and digital nomadism.
+
+By studying these parallel establishments, we aim to inspire individuals to reclaim their sovereignty in an increasingly centralized world. There’s still hope for a freer world and whether you're a die-hard crypto-anarchist or simply curious about alternatives to traditional governance, join us in mapping the expanding universe of human liberty.
