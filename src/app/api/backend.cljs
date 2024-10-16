@@ -31,6 +31,7 @@
 (defn transform-page [project]
   {:name (get project "projects/name")
    :pageid (get project "projects/pageid")
+   :images (js/JSON.parse (get project "images"))
    :associated-links (js/JSON.parse (get project "associated_links"))
    :tags (get project "projects/tags")
    :hiccup-text (get project "projects/hiccup_text")})
@@ -40,7 +41,6 @@
     {:handler (fn [response]
                 (reset! state/project-page (transform-page (first response))))
      :error-handler error-handler}))
-
 
 ;; Events
 (defn transform-event [event]

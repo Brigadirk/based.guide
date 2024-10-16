@@ -51,7 +51,7 @@
   flex-direction: column;
   align-items: center;
 }
-
+  
 /* Contains the actual text */
 .prose {
   font-size: 1.1em;
@@ -97,6 +97,32 @@
   margin-bottom: 2rem;
 }
 .prose blockquote {
+}
+
+.image-container img {
+  box-shadow: unset;
+  max-width: 1000px;
+  max-height: 500px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.navigation img {
+  box-shadow: unset;
+  width: 2rem;
+}
+  
+.navigation img.next-button {
+  margin-left: -22rem;
 }
 
 /* special cases for phones and tablets */
@@ -153,13 +179,32 @@
     :else
     nil))
 
+(defn slideshow [images]
+  (let [current-index (r/atom 0)]
+    (fn [images]
+      [:div.slideshow
+       [:div.image-container {:on-click #(when (< @current-index (dec (count images)))
+                                           (swap! current-index inc))}
+        [:img {:src (nth images @current-index) :alt "Slideshow image"}]]
+       [:div.navigation
+        [:img.previous-button {:src "/images/buttons/arrow.svg" :alt "Previous"
+                               :on-click #(when (pos? @current-index)
+                                            (swap! current-index dec))
+                               :disabled (zero? @current-index)}]
+        [:img.next-button {:style {:transform "scaleX(-1)"}
+                           :src "/images/buttons/arrow.svg" :alt "Next"
+                           :on-click #(when (< @current-index (dec (count images)))
+                                        (swap! current-index inc))
+                           :disabled (= @current-index (dec (count images)))}]]])))
+
 (defn project-page [pageid]
    (reset! state/project-page nil)
    (be/fetch-project pageid)
    (let [parsed-content (r/atom nil)
          parsed-links (r/atom nil)]
      (fn []
-       (let [project @state/project-page]
+       (let [project @state/project-page
+             images (:images project)]
          (if (nil? project)
            [:img.loading {:src "/images/misc/planet-earth.svg" :alt "loading"}]
            (if (empty? project)
@@ -193,6 +238,11 @@
                [:div.project-page
                 [:h1.project-title (:name project)]
                 [:div.prose
+                 
+                 (let [images (aget images "slideshow")]
+                   (when (seq images) [slideshow images])
+                   )
+
                  (walk/postwalk
                   (fn [item]
                     (if (and (vector? item) (= :a (first item)))
@@ -211,4 +261,5 @@
                      [:div.link-block
                       [:span.link-name name]
                       [:a {:href url :on-click #(navigate-to-url url)} "View Link"]])])])))))))
+
 (add-styling css)
