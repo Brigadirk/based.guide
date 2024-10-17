@@ -124,6 +124,11 @@
 .navigation img.next-button {
   margin-left: -22rem;
 }
+  
+p.caption {
+  font-size: 1rem;
+  text-align: center;
+}
 
 /* special cases for phones and tablets */
 @media (max-width: 1200px) {
@@ -179,23 +184,37 @@
     :else
     nil))
 
+(defn parse-markdown [text]
+  (if (string? text)
+    (-> text
+        (string/replace #"\[(.*?)\]\((.*?)\)" "<a href=\"$2\">$1</a>")
+        (string/replace #"\*\*(.*?)\*\*" "<strong>$1</strong>")
+        (string/replace #"\*(.*?)\*" "<em>$1</em>"))
+    text))
+
 (defn slideshow [images]
   (let [current-index (r/atom 0)]
     (fn [images]
-      [:div.slideshow
-       [:div.image-container {:on-click #(when (< @current-index (dec (count images)))
-                                           (swap! current-index inc))}
-        [:img {:src (nth images @current-index) :alt "Slideshow image"}]]
-       [:div.navigation
-        [:img.previous-button {:src "/images/buttons/arrow.svg" :alt "Previous"
-                               :on-click #(when (pos? @current-index)
-                                            (swap! current-index dec))
-                               :disabled (zero? @current-index)}]
-        [:img.next-button {:style {:transform "scaleX(-1)"}
-                           :src "/images/buttons/arrow.svg" :alt "Next"
-                           :on-click #(when (< @current-index (dec (count images)))
-                                        (swap! current-index inc))
-                           :disabled (= @current-index (dec (count images)))}]]])))
+      (let [current-image (nth images @current-index)]
+        [:div.slideshow
+         [:div.image-container {:on-click #(when (< @current-index (dec (count images)))
+                                             (swap! current-index inc))}
+          [:img {:src (aget current-image "src") :alt "Slideshow image"}]
+          [:p.caption {:dangerouslySetInnerHTML {:__html (parse-markdown (aget current-image "caption"))}}]]
+         [:div.navigation
+      [:img.previous-button {:src "/images/buttons/arrow.svg" :alt "Previous"
+                             :on-click #(do
+                                          (swap! current-index dec)
+                                          (when (= @current-index -1)
+                                            (reset! current-index (dec (count images)))))
+                             :disabled (zero? @current-index)}]
+      [:img.next-button {:style {:transform "scaleX(-1)"}
+                         :src "/images/buttons/arrow.svg" :alt "Next"
+                         :on-click #(do
+                                      (swap! current-index inc)
+                                      (when (= @current-index (count images))
+                                        (reset! current-index 0)))
+                         :disabled (= @current-index (dec (count images)))}]]]))))
 
 (defn project-page [pageid]
    (reset! state/project-page nil)

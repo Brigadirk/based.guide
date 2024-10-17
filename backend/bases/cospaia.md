@@ -6,16 +6,25 @@ tags:
   - ancap
 images:
   front: images/grid/cospaia
-  slideshow: 
-    - /images/articles/cospaia/cospaia-sign.png
-    - /images/articles/cospaia/klein-autotje-met-gebouw.png
-    - /images/articles/cospaia/liberty.png
-    - /images/articles/cospaia/house-cospaia-flag.png
-    - /images/articles/cospaia/via-del-tabacco.png
-    - /images/articles/cospaia/village-sight.png
-    - /images/articles/cospaia/stables.png
-    - /images/articles/cospaia/rich-house.png
-
+  slideshow:
+    - src: /images/articles/cospaia/cospaia-sign.png
+      caption: "Modern sign for Cospaia"
+    - src: /images/articles/cospaia/klein-autotje-met-gebouw.png
+      caption: "Casa della Confraternita, seat of the council from 1718 to 1826"
+    - src: /images/articles/cospaia/liberty.png
+      caption: “Strong and Perpetual Freedom”
+    - src: /images/articles/cospaia/house-cospaia-flag.png
+      caption: "A house with the flag of Cospaia"
+    - src: /images/articles/cospaia/via-del-tabacco.png
+      caption: "Tobacco Road"
+    - src: /images/articles/cospaia/village-sight.png
+      caption: "Sight of the village"
+    - src: /images/articles/cospaia/stables.png
+      caption: "Sign for the stables"
+    - src: /images/articles/cospaia/rich-house.png
+      caption: "Old building also seen on old photos"
+    - src: /images/articles/cospaia/old-map.png
+      caption: "From [Reddit](https://www.reddit.com/r/MapPorn/comments/epbp3o/micro_republic_of_cospaia_14411826_33_km%C2%B2/)"
 associated_links:
   website: https://en.wikipedia.org/wiki/Republic_of_Cospaia
 ---
@@ -25,6 +34,9 @@ associated_links:
 ## What was it?
 
 The Republic of Cospaia was one of the most distinct and long lasting examples of a [stateless society](/projects/glossary#anarcho-capitalism) in history. Originating in central Italy during 1440, it survived until 1826 and owed its creation to a mapmaking error from the negotiations between Florence, an independent city-state, and the Papal States, a large territory ruled directly by the Pope. Due to this error, the small territory of Cospaia totalling 330 hectares was able to claim its independence. 
+
+![Cospaia map showing the cartographic error](/images/articles/cospaia/map-from-wikipedia.png)
+*<center><font size="2">On the left, the "Granducato di Toscana", (Grand Duchy of Tuscany), which followed up the Republic of Florence. On the right, The Papal States. And in the middle is the literally overlooked Cospaia. From [Wikipedia](https://en.wikipedia.org/wiki/File:Repubblica_di_Cospaia_mappa.jpg)</font></center>*
 
 Its motto, ‘Perpetua et firma libertas’ (Perpetual and secure freedom), reflected Cospaia's particular values and status as one of a few successful challenges to the idea that such a nation could not exist peacefully amongst traditional nation-states. 
 
@@ -65,11 +77,13 @@ In addition, Cospaia's small size, lack of adept defense force and diplomatic ti
 - [Wikipedia](https://en.wikipedia.org/wiki/Republic_of_Cospaia)
 - [Umbria Tourism](https://www.umbriatourism.it/en/-/republic-of-cospaia)
 - [Mises Institute](https://mises.org/power-market/republic-cospaia-anarchist-renaissance-city)
+- [Location](https://maps.app.goo.gl/stpG6GeAZCePR8x29)
 
 ### Other Learning Resources:
 
 - [Libertarian Europe](https://www.youtube.com/watch?v=phjtrHm_uzs)
 - [Concerning Reality](https://www.youtube.com/watch?v=IJtY5VNY4JI)
 - [Cospaia alliance](https://cospaia.se/about)
+- [Amusing Planet](https://www.amusingplanet.com/2019/08/republic-of-cospaia-italian-hamlet-that.html)
 
 Written by Kitt Johnson
