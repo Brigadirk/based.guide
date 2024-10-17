@@ -95,6 +95,7 @@
          [:li.navbar-item [:a.navbar-link {:href "/"} "Home"]]
          [:li.navbar-item [:a.navbar-link {:href "/events"} "Events"]]
          [:li.navbar-item [:a.navbar-link {:href "/projects/glossary"} "Glossary"]]
+       ;;  [:li.navbar-item [:a.navbar-link {:href "/projects/resources"} "Resources"]]
          [:li.navbar-item [:a.navbar-link {:href "/projects/about"} "About"]]]]]))
 
 (add-styling navbar-css)
