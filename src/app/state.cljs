@@ -4,7 +4,9 @@
 (defonce filter-state (r/atom {:current true,
                                :planned true,
                                :historical true,
-                               :fictional false}))
+                               :fictional false,
+                               ;; :legacy false
+                               }))
 
 (defonce current-content (r/atom {}))
 (defonce project-list (r/atom []))
