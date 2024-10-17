@@ -178,7 +178,8 @@
 (defn filter-bar []
   (let [filter-state @state/filter-state]
     [:div.filter-bar
-     (for [filter [:current :planned :historical :fictional]]
+     (for [filter [:current :planned :historical :fictional ;; :legacy
+                   ]]
        [:button
         {:key filter
          :class (str "filter-button " (if (filter-state filter) "active" "inactive"))
